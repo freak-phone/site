@@ -24,7 +24,7 @@ content:
         type: string
       - name: text
         label: Update text
-        type: string
+        type: text
         description: update information here.
       - name: link
         label: Update link
