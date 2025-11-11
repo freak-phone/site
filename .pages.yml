@@ -34,7 +34,7 @@ content:
         label: Preview image
         type: image
   - name: neighbors
-    label: neighbors
+    label: Neighbors
     path: src/_data/neighbors.json
     type: file
     list: true
