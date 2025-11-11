@@ -1,18 +1,57 @@
 [
-
   {
-    "title": "leirin",
-    "URL": "https://leirin.neocities.org/",
-    "fileExtension": "png"
-  },
-  {
-    "title": "yuviko",
-    "URL": "https://yuviko.neocities.org/",
+    "title": "goldhillmall",
+    "URL": "https://goldhillmall.neocities.org/",
     "fileExtension": "gif"
   },
   {
-    "title": "Wikipedia",
-    "URL": "https://www.wikipedia.org/",
+    "title": "literallyfictional",
+    "URL": "https://goldhillmall.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "itatoys",
+    "URL": "https://ita.toys/",
+    "fileExtension":"gif"
+  },
+  {
+    "title": "daikonet",
+    "URL": "https://daikonet.neocities.org/",
+    "fileExtension":"gif"
+  },
+  {
+    "title": "bennizone",
+    "URL": "https://bennizone.net/",
+    "fileExtension":"gif"
+  },
+  {
+    "title": "tofokyo",
+    "URL": "https://tofokyo/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "battleguitar",
+    "URL": "https://battleguitar.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "valarkspur",
+    "URL": "https://valarkspur.neocities.org/",
+    "fileExtension":"gif"
+  },
+  {
+    "title": "leusyth",
+    "URL": "https://leusyth.neocities.org/",
     "fileExtension": "png"
+  },
+  {
+    "title": "punkray",
+    "URL": "https://punkray.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "vfmedia",
+    "URL": "https://vf.media",
+    "fileExtension": "gif"
   }
 ]

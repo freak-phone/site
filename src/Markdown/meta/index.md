@@ -8,4 +8,4 @@ permalink: "/index.html"
   
 Welcome to FREAKPHONE, a personal art website and digital junk drawer. I'm luc, and this is where I keep my creations, projects, and things I enjoy.
 
-This site looks best on desktop, and is intended for mature audiences. **Please do not reupload or use my art elsewhere.** Enjoy your stay!
+This site looks best on desktop, and is intended for mature audiences. **Please do not reupload or use my art elsewhere.** Enjoy your stay! yup
