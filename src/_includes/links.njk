@@ -32,7 +32,7 @@
         <h2><img src="/graphics/pixel/signicon.png" alt="">neighbors</h2>
 <div class="buttons">
 
-    {% for item in neighbors | reverse %}
+    {% for item in neighbors %}
     <a href="{{ item.URL }}" class="no-styling">
       <img loading="lazy" src="/assets/graphics/buttons/{{ item.title }}.{{ item.fileExtension }}" alt="{{ item.title }}">
     </a>
