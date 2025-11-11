@@ -16,7 +16,8 @@ content:
   - name: changelog
     label: Changelog
     path: src/_data/changelog.json
-    type: object
+    type: file
+    list: true
     fields:
       - name: date
         label: Date
