@@ -1,0 +1,258 @@
+<!doctype html>
+<meta charset="UTF-8" />
+
+<head>
+  <title>CALL NOW</title>
+  <link href=/css/fonts.css rel=stylesheet>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=/css/home.css rel=stylesheet>
+  <link href=/css/player.css rel=stylesheet>
+  <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css rel=stylesheet>
+  <link href=/assets/graphics/favicon.ico rel="shortcut icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+
+
+  <div id=container>
+    <div id=top>
+
+    </div>
+    <main>
+      <div id=content>
+        <div id=welcome>
+          <div class=bubble><b>YOU ARE CALLER NUMBER</b><br><br>
+
+            <script src="//counter1.fc2.com/counter.php?id=89498107"></script><noscript><img
+                src="//counter1.fc2.com/counter_img.php?id=89498107"></noscript>
+
+          </div>
+          <div class=marky>
+            <script>function getCookieVal(e) { var o = document.cookie.indexOf(";", e); return -1 == o && (o = document.cookie.length), unescape(document.cookie.substring(e, o)) } function GetCookie(e) { for (var o = e + "=", t = o.length, n = document.cookie.length, i = 0; i < n;) { var u = i + t; if (document.cookie.substring(i, u) == o) return getCookieVal(u); if (0 == (i = document.cookie.indexOf(" ", i) + 1)) break } return null } function SetCookie(e, o) { var t = SetCookie.arguments, n = SetCookie.arguments.length, i = 2 < n ? t[2] : null, u = 3 < n ? t[3] : null, c = 4 < n ? t[4] : null, a = 5 < n && t[5]; document.cookie = e + "=" + escape(o) + (null == i ? "" : "; expires=" + i.toGMTString()) + (null == u ? "" : "; path=" + u) + (null == c ? "" : "; domain=" + c) + (1 == a ? "; secure" : "") } function DeleteCookie(e) { var o = new Date; FixCookieDate(o), o.setTime(o.getTime() - 1); var t = GetCookie(e); null != t && (document.cookie = e + "=" + t + "; expires=" + o.toGMTString()) } var cookie_date = new Date(document.lastModified), expdate = new Date; expdate.setTime(expdate.getTime() + 432e6), document.write("<b>LAST UPDATED: </b> " + document.lastModified)</script>
+          </div><img src=/assets/graphics/layout/payphone.png class=telly>
+          <div id=welcometxt>
+            <h2>welcome</h2>
+            {{ content | safe }}
+          </div>
+        </div>
+        <div id=buttons><img src=/assets/graphics/affection.gif alt=""> <img src=/assets/graphics/peach.png alt="">
+          <img src=/assets/graphics/bestviewed.gif alt=""> <img src=/assets/graphics/html_learn_it_today.gif alt="">
+          <img src=/assets/graphics/AC-button-snake.gif alt=""> <img src=/assets/graphics/bookmark2.gif alt=""> <img
+            src=/assets/graphics/pn.gif alt="">
+        </div>
+        <div id="rotator" title="">
+        </div>
+
+        <div id="inside">
+          <div id="columna">
+
+            <div id="newart"><span class="capt">✱ NEW ART</span></div>
+
+            <div id="guestbook"><img src="/assets/graphics/layout/dotcircle.png" class="dotcircle"> <img
+                src="/assets/graphics/layout/phone.png" class="tel">
+              <div class="txxt"><a href="/guestbook">CONTACT ME<br>/<br>SIGN MY GUESTBOOK</a>
+                <p><a href="/guestbook"><img src="/assets/graphics/pixels/notebook.gif" alt=""> <img
+                      src="/assets/graphics/pixels/quill.gif" alt=""></a></p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="columnb">
+            <div id="newstxt">
+              <ul>
+
+
+                <h3>new work + posts</h3>
+
+                <div class="newz">
+                  <ul>
+                    {% for item in changelog %}
+                    <li>
+                      <img src="{{ item.image }}" alt="" class="thumbnail">
+                      <span class="comment">
+                        <span class="newsdate">{{ item.date }}</span>
+                        <br>
+                        {{ item.text }}
+                        
+                          <a href="{{ item.link }}">
+                            <span class="title"></span>
+                          </a>
+                        
+                      </span>
+                    </li>
+                    {% endfor %}
+                  </ul>
+
+                </div>
+
+
+                <li class="loggo">view the <a href="/devlog.html"> full update log </a> to see all posts and changes.
+                </li>
+
+
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <footer><a href=credits.html>credits</a> ✱ <a href=sitemap.html>sitemap</a> ✱ hosted by teacake and coded by luc
+          , 2021-2024</footer>
+      </div>
+      <aside>
+        <div id=player>
+          <div class=player>
+            <div class=details>
+              <div class=track-art></div>
+            </div>
+            <div class=playerright>
+              <div class=titleholder>
+                <marquee>
+                  <div class=now-playing>PLAYING x OF y</div><span class=track-name>Track Name</span> <img
+                    src=/assets/graphics/bullets/music.gif alt=""> <span class=track-artist>Track Artist</span>
+                </marquee>
+              </div>
+              <div class=buttons>
+                <div class=prev-track onclick=prevTrack()><i class="fa fa-1x fa-step-backward"></i></div>
+                <div class=playpause-track onclick=playpauseTrack()><i class="fa fa-2x fa-play-circle"></i></div>
+                <div class=next-track onclick=nextTrack()><i class="fa fa-1x fa-step-forward"></i></div>
+              </div>
+              <div class=sliderholder>
+                <div class=slider_container>
+                  <div class=current-time>00:00</div><input class=seek_slider max=100 min=1 onchange=seekTo() type=range
+                    value=0>
+                  <div class=total-duration>00:00</div>
+                </div>
+              </div>
+            </div>
+            <script src="/js/jukebox.js"></script>
+          </div>
+        </div>
+
+
+        <ul class=nav>
+
+          <a href=/about.html>
+            <li class="menu1">information</li>
+          </a>
+          <a href="//art.freakphone.net">
+            <li class="menu2">artwork</li>
+          </a>
+          <a href=/blog>
+            <li class="menu1">blog</li>
+          </a>
+          <a href=/explore>
+            <li class="menu1">explore</li>
+          </a>
+          <a href="//oekaki.freakphone.net">
+            <li class="menu1">oekaki</li>
+          </a>
+          <a href="">
+            <li class="menu4 ia">for you</li>
+          </a>
+          <a href=/links/page.html>
+            <li class="menu5">links</li>
+          </a>
+
+        </ul>
+
+
+
+
+        <a href="https://ko-fi.com/peachdeluxe">
+          <div class="linko">
+            <img src="/assets/graphics/deco/zadneew.png" class="ed" id="edcoffee" alt="visit my ko-fi!">
+            <h2 class="linkee">tipjar and shop</h2>
+          </div>
+        </a>
+
+
+        <div id=goingout>
+          <h2>linkzone</h2>
+          <div id=outgoing1><a href=https://twitter.com/rainbowmancer><img src=/assets/graphics/layout/twitter.png
+                alt=""></a><img src=/assets/graphics/layout/rss.png alt=""> <img src=/assets/graphics/buttons/freakbutton.gif alt=""> <img
+              src=/assets/graphics/buttons/freakbutton2.gif alt=""><br><a href=https://ko-fi.com/peachdeluxe><img
+                src=/assets/graphics/deco/kofi_hardrockangel.png alt=""></a><a
+              href=https://neocities.org/site/freakphone /><img src=/assets/graphics/layout/neocities.png alt=""></a><img
+              src=/assets/graphics/buttons/freakbutton3.gif alt="">
+            <img src="/assets/graphics/buttons/banner.png" alt="">
+            <br>
+
+            like the site? link back!
+            <hr>
+            <div id=ncring>
+              <script src=https://neocreatives.neocities.org/onionring-variables.js></script>
+              <script src=https://neocreatives.neocities.org/onionring-widget.js></script>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+
+        <img src=/assets/graphics/deco/b_3.gif alt="" class=angel>
+      </aside>
+    </main>
+  </div>
+
+
+</body>
+
+<link rel="stylesheet" href="/css/preload.css">
+
+<script src="/js/preloader.js"></script>
+
+
+<script language="JavaScript">
+  <!--
+  
+  /*
+  Random Image Link Script- By JavaScript Kit(http://www.javascriptkit.com) 
+  Over 200+ free JavaScripts here!
+  Updated: 00/04/25
+  */
+
+  function random_imglink() {
+    var myimages = new Array()
+    //specify random images below. You can have as many as you wish
+    myimages[1] = "/assets/graphics/layout/rotation_oc.png"
+    myimages[2] = "/assets/graphics/layout/rotation_music.png"
+    myimages[3] = "/assets/graphics/layout/rotation_draw.png"
+    myimages[4] = "/assets/graphics/layout/rotation_lucky.png"
+    myimages[5] = "/assets/graphics/layout/rotation_oc2.png"
+    //myimages[6] = "/assets/graphics/layout/rotation_diy.png"
+
+
+
+
+
+
+    //specify corresponding links below
+    var imagelinks = new Array()
+    imagelinks[1] = "//art.freakphone.net/oc"
+    imagelinks[2] = "/music"
+    imagelinks[3] = "//oekaki.freakphone.net"
+    imagelinks[4] = "/crystalball"
+    imagelinks[5] = "/oc"
+    //imagelinks[6] = "/links/resources"
+
+
+
+
+    var ry = Math.floor(Math.random() * myimages.length)
+    if (ry == 0)
+      ry = 1
+
+    document.getElementById("rotator").innerHTML = '<a href=' + '"' + imagelinks[ry] + '"' + '><img src="' + myimages[ry] + '" border=0></a>'
+
+  }
+  random_imglink()
+  //-->
+</script>
