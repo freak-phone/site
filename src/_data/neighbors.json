@@ -12,21 +12,21 @@
   {
     "title": "itatoys",
     "URL": "https://ita.toys/",
-    "fileExtension":"gif"
+    "fileExtension": "gif"
   },
   {
     "title": "daikonet",
     "URL": "https://daikonet.neocities.org/",
-    "fileExtension":"gif"
+    "fileExtension": "gif"
   },
   {
     "title": "bennizone",
     "URL": "https://bennizone.net/",
-    "fileExtension":"gif"
+    "fileExtension": "gif"
   },
   {
     "title": "tofokyo",
-    "URL": "https://tofokyo/",
+    "URL": "https://tofokyo.com/",
     "fileExtension": "gif"
   },
   {
@@ -37,7 +37,7 @@
   {
     "title": "valarkspur",
     "URL": "https://valarkspur.neocities.org/",
-    "fileExtension":"gif"
+    "fileExtension": "gif"
   },
   {
     "title": "leusyth",
@@ -52,6 +52,216 @@
   {
     "title": "vfmedia",
     "URL": "https://vf.media",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "doqmeat",
+    "URL": "https://doqmeat.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "briedraws",
+    "URL": "https://briedraws.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "denpa",
+    "URL": "https://denpa.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "derrek",
+    "URL": "https://derrek.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "megaknecht",
+    "URL": "https://megaknecht.com/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "bondiaries",
+    "URL": "https://bondiaries.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "cinni",
+    "URL": "https://cinni.net/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "cloverbell",
+    "URL": "https://cloverbell.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "coeurl",
+    "URL": "https://coeurl.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "datura",
+    "URL": "https://datura.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "dollarchive",
+    "URL": "https://dollarchive.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "fearoffun",
+    "URL": "https://fearoffun.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "goblincat",
+    "URL": "https://goblincat.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "halibox",
+    "URL": "https://halibox.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "heavendeluxe",
+    "URL": "https://www.heavendeluxe.com/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "hillhouse",
+    "URL": "https://hillhouse.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "humanfinny",
+    "URL": "https://humanfinny.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "infini",
+    "URL": "https://infini.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "karakuliiii",
+    "URL": "https://karakuliiii.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "lugnsteel",
+    "URL": "https://lugnsteel.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "maxbanshees",
+    "URL": "https://maxbanshees.com",
+    "fileExtension": "png"
+  },
+  {
+    "title": "melankorin",
+    "URL": "https://melankorin.net/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "moogleboogles",
+    "URL": "https://moogleboogles.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "newlambda",
+    "URL": "https://newlambda.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "nymphblood",
+    "URL": "https://nymphblood.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "omoulo",
+    "URL": "https://omoulo.com/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "rgbteahouse",
+    "URL": "https://rgbteahouse.neocities.org/",
+    "fileExtension": "jpg"
+  },
+  {
+    "title": "ribose",
+    "URL": "https://ribo.zone/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "runegod",
+    "URL": "https://runegod.net/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "ruralrose",
+    "URL": "https://ruralrose.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "selachemist",
+    "URL": "https://selachemist.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "shishka",
+    "URL": "https://shishka.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "silicon65",
+    "URL": "https://silicon65.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "starbage",
+    "URL": "https://starbage.art/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "subtopia",
+    "URL": "https://subtopia.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "thilinky",
+    "URL": "https://thilinky.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "tienahlfan",
+    "URL": "https://tienahlfan.neocities.org/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "vistazone",
+    "URL": "https://vinnyvistazo.com/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "wasongo",
+    "URL": "https://wasongo.art/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "wi-fu",
+    "URL": "https://wi-fu.neocities.org/",
+    "fileExtension": "gif"
+  },
+  {
+    "title": "yoikoyokochou",
+    "URL": "http://yoiko-yokochou.com/",
+    "fileExtension": "png"
+  },
+  {
+    "title": "zonaplankton",
+    "URL": "https://zonaplankton.net/",
     "fileExtension": "gif"
   }
 ]
