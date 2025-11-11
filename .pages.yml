@@ -11,3 +11,24 @@ media:
     label: Media
     input: img
     output: /img
+
+content:
+  - name: changelog
+    label: Changelog
+    path: src/_data/changelog.json
+    type: file
+    fields:
+      - name: date
+        label: Date
+        type: string
+      - name: text
+        label: Update text
+        type: string
+        description: update information here.
+      - name: link
+        label: Update link
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+      - name: image
+        label: Preview image
+        type: image
