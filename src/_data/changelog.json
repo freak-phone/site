@@ -1,6 +1,6 @@
-[
-  { "date": "11/10/25", "image": "/assets/graphics/news/6.png", "text": "FREAKPHONE is now version 3.5! Most pages have been updated. Under the hood, the site is now generated with 11ty. New pages include a blog, a few explore pages, and updates to the about and link directories."},
-  { "date": "04/20/25", "image": "/assets/graphics/news/6.png", "text": "Tweaks made to the front page. More general changes are on the way sitewide!"},
-  { "date": "08/19/24", "image": "/assets/graphics/news/1.png", "text": "I made a javascript dress-up game, featuring my OC Opal. go put some clothes on that beast", "link": "https://freakphone.net/games/dressup" },
-  { "date": "08/19/24", "image": "/assets/graphics/news/3.png", "text": "New artwork, on a rebuilt art page.", "link": "https://freakphone.net/games/dressup" }
-]
+{
+  "date": "11/11/25",
+  "text": "testing out pages dot cms.",
+  "link": "https://freakphone.net",
+  "image": "/assets/graphics/news/4.png"
+}
