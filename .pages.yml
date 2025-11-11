@@ -33,3 +33,20 @@ content:
       - name: image
         label: Preview image
         type: image
+  - name: neighbors
+    label: Neighbors
+    path: src/_data/neighbors.json
+    type: file
+    list: true
+    fields:
+      - name: title
+        label: site/button name
+        type: string
+      - name: URL
+        label: url
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+      - name: fileExtension
+        label: fileExtension
+        description: png gif or jpg idk
+        type: string
