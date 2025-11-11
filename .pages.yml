@@ -46,7 +46,7 @@ content:
         label: url
         type: string
         pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
-      - name: fileextension
-        label: file extension
+      - name: fileExtension
+        label: fileExtension
         description: png gif or jpg idk
         type: string
