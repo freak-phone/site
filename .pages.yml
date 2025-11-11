@@ -1,3 +1,13 @@
 media:
-  input: img
-  output: img
+  - name: graphics
+    label: Graphics
+    input: assets/graphics
+    output: /assets/graphics
+  - name: fonts
+    label: Fonts
+    input: assets/fonts
+    output: /assets/fonts
+  - name: media # Note: 'name' key is required here
+    label: Media
+    input: img
+    output: /img
