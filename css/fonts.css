@@ -7,6 +7,10 @@
   src: url("/assets/fonts/ank24.woff");
 }
 @font-face {
+  font-family: ft88 extended;
+  src: url("../assets/fonts/FT88-Expanded.otf");
+}
+@font-face {
   font-family: Cinetype;
   src: url("/assets/fonts/GT-Cinetype-Bold.ttf");
 }
@@ -624,7 +628,7 @@ src: url("https://www.dl.dropboxusercontent.com/s/02wgk95qclv1zca/Panic.ttf");}
 }
 @font-face {
   font-family: prime;
-  src: url("/assets/fonts/CourierPrimeCode.ttf");
+  src: url("../assets/fonts/CourierPrimeCode.ttf");
 
 }
 @font-face {

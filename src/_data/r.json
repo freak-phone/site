@@ -1,0 +1,16 @@
+{
+  "love": "<img src='/eleventy/assets/graphics/medialog/ratings/love.png' alt='Loved it!'>",
+  "like": "<img src='/eleventy/assets/graphics/medialog/ratings/like.png' alt='Liked it.'>",
+  "scary": "<img src='/eleventy/assets/graphics/medialog/ratings/scared.png' alt='SCARY!!!'>",
+  "wtf": "<img src='/eleventy/assets/graphics/medialog/ratings/wtf.png' alt='...What?'>",
+  "brainrot": "<img src='/eleventy/assets/graphics/medialog/ratings/brainrot.png' alt='Creatively inspiring!'>",
+  "hate": "<img src='/eleventy/assets/graphics/medialog/ratings/hate.png' alt='Hate.'>",
+  "imagine": "<img src='/eleventy/assets/graphics/medialog/ratings/imagine.png' alt='I can envision it being good...?'>",
+  "think": "<img src='/eleventy/assets/graphics/medialog/ratings/think.png' alt='Thought provoking.'>",
+  "weep": "<img src='/eleventy/assets/graphics/medialog/ratings/weep.png' alt='Made me emotional.'>",
+  "wow": "<img src='/eleventy/assets/graphics/medialog/ratings/wow.png' alt='Wowed me technically!'>",
+  "yahoo": "<img src='/eleventy/assets/graphics/medialog/ratings/yahoo.png' alt=' I feel insane.'>",
+  "bored": "<img src='/eleventy/assets/graphics/medialog/ratings/bored.png' alt='Bored me...'>",
+  "fun": "<img src='/eleventy/assets/graphics/medialog/ratings/fun.png' alt='This one's fun!'>",
+  "frustrating": "<img src='/eleventy/assets/graphics/medialog/ratings/frustrating' alt='Frustrating.'>"
+}

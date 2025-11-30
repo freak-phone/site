@@ -13,26 +13,26 @@
 
 <body>
   <div id="container">
-    <div class="home"><a href="/"><img src="/graphics/pixel/home.gif" alt=""></a></div>
+    <div class="home"><a href="/"><img src="/assets/graphics/pixels/home.gif" alt=""></a></div>
     <div class="circles"></div>
     <div id="description">
       If you like my site, please feel free to link back to me with one of my buttons. (Save them to your own server,
       don't
       hotlink please!)
       <p></p>
-      <img src="/freakbutton3.gif" alt="" class="button">
-      <img src="/freakbutton2.gif" alt="" class="button">
-      <img src="/freakbutton.gif" alt="" class="button">
+      <img src="/assets/buttons/freakbutton3.gif" alt="" class="button">
+      <img src="/assets/buttons/freakbutton2.gif" alt="" class="button">
+      <img src="/assets/buttons/freakbutton.gif" alt="" class="button">
 
     </div>
     <main>
       <div class="page1">
 
 
-        <h2><img src="/graphics/pixel/signicon.png" alt="">neighbors</h2>
+        <h2><img src="/assets/graphics/pixels/signicon.png" alt="">neighbors</h2>
 <div class="buttons">
 
-    {% for item in neighbors %}
+    {% for item in neighbors | reverse %}
     <a href="{{ item.URL }}" class="no-styling">
       <img loading="lazy" src="/assets/graphics/buttons/{{ item.title }}.{{ item.fileExtension }}" alt="{{ item.title }}">
     </a>
@@ -51,7 +51,7 @@
 
       <div class="page2">
        <details id="art">
-        <summary> <img src="/graphics/pixel/painticon.png" alt="">art resources</summary>
+        <summary> <img src="/assets/graphics/pixels/painticon.png" alt="">art resources</summary>
         <p><a href="http://referenceangle.com/">reference angle</a>
           find reference photos for the human head at any angle using a posable head.</p>
         <p><a href="https://x6ud.github.io/pose-search/#/">pose search</a>
@@ -134,7 +134,7 @@
         
       </details>
       <details id="museums">
-        <summary><img src="/graphics/pixel/frameicon.png" alt="">e-museums</summary>
+        <summary><img src="/assets/graphics/pixels/frameicon.png" alt="">e-museums</summary>
 
         <p><a href="https://movie-screencaps.com/">movie-screencaps</a>
           hq movie screenshots.</p>
@@ -241,7 +241,7 @@
       </details>
 
       <details id="writing">
-        <summary> <img src="/graphics/pixel/deviceicon.png" alt="">writing tools</summary>
+        <summary> <img src="/assets/graphics/pixels/deviceicon.png" alt="">writing tools</summary>
 
         <p><a href="https://www.inklestudios.com/ink/">ink</a>
           scripting tool for narrative games.</p>
@@ -261,7 +261,7 @@
       </details>
 
       <details id="library">
-        <summary><img src="/graphics/pixel/booksicon.png" alt="">library</summary>
+        <summary><img src="/assets/graphics/pixels/booksicon.png" alt="">library</summary>
 
         <p><a href="https://zlibrary-asia.se/">z-library</a>
           online library. Be wary of scam sites! zlib.io, z-lib.is and zlibrary.to are scams.</p>
@@ -302,7 +302,7 @@
 
 
       <details id="software">
-        <summary><img src="/graphics/pixel/softwareicon.png" alt=""> software</summary>
+        <summary><img src="/assets/graphics/pixels/softwareicon.png" alt=""> software</summary>
 
                 <p><a href="https://mybrowseraddon.com/">https://mybrowseraddon.com/</a>
                   repository of many open-source useful browser add-ons.</p>
@@ -317,7 +317,7 @@
 
       <details id="media">
 
-        <summary><img src="/graphics/pixel/tapesicon.png" alt="">media</summary>
+        <summary><img src="/assets/graphics/pixels/tapesicon.png" alt="">media</summary>
 
           <p><a href="https://www.myretrotvs.com/">my retro tv</a>
             watch tv from different decades</p>
@@ -336,7 +336,7 @@
 
 
       <details id="fun">
-        <summary><img src="/graphics/pixel/laddericon.png" alt="">fun</summary>
+        <summary><img src="/assets/graphics/pixels/laddericon.png" alt="">fun</summary>
 
         <p><a href="https://3d.laingame.net/#/">3d lain game</a>
           in-browser recreation of a strange serial experiments lain game.</p>
