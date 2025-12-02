@@ -30,7 +30,8 @@ content:
     - name: type
       label: Type
       type: select
-      values: [ movie, book, game, misc ]
+      options:
+        values: [ movie, book, game, misc ]
     - name: ratings
       label: Ratings
       type: select
