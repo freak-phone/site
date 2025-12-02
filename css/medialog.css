@@ -134,6 +134,13 @@
     width: 100%;
   }
 
+  .postlink{
+    position: sticky;
+    top: 10px;
+    width: 100%;
+    background-color: white;
+  }
+
   .movie>.mediatitle,
   .movie>.summary>.infotable b {
     background-color: var(--accent5);
@@ -143,9 +150,10 @@
     border-color: var(--accent5);
   }
 
-  .movie>.postlink {
+  .movie details>.postlink {
     color: var(--accent5);
   }
+
 
   .book>.mediatitle,
   .book>.summary>.infotable b {
@@ -156,7 +164,7 @@
     border-color: var(--accent1);
   }
 
-  .book>.postlink {
+  .book details>.postlink {
     color: var(--accent1);
   }
 
@@ -169,7 +177,7 @@
     border-color: var(--accent3);
   }
 
-  .misc>.postlink {
+  .misc details>.postlink {
     color: var(--accent3);
   }
 
@@ -182,7 +190,7 @@
     border-color: var(--accent2);
   }
 
-  .game>.postlink {
+  .game details>.postlink {
     color: var(--accent2);
   }
 

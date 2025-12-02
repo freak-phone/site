@@ -20,3 +20,5 @@ I have a very hard time grading things in terms of stars, and sometimes it just 
 | ![](/assets/graphics/medialog/ratings/weep.png) weep... | emotional response. I love when things make me sad or leave me upset afterwards. |
 | ![](/assets/graphics/medialog/ratings/imagine.png) imagining... | do you ever like something but like... mostly because of a version of it that exists in your mind...? This rating is when I like something because I see what it could be-- maybe it has a budget that wasn't enough for its vision, or I get the impression that corporate influence changed the final product from its undiluted form. |
 | ![](/assets/graphics/medialog/ratings/think.png) thought provoking | media that has something that tickled my brain in some weird way, or had a concept I really felt interested in. media that I am probably going to have to think more about for a while. often means i'm going to spend the post going on some barely related tangent. |
+| ![](/assets/graphics/medialog/ratings/scared.png) scary... | SHIT WAS SCARY! |
+| ![](/assets/graphics/medialog/ratings/dislike.png) disliked | I just didn't like it. |
