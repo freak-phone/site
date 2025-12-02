@@ -16,7 +16,7 @@ content:
   - name: medialog
     label: Medialog
     type: collection
-    path: src\Markdown\medialog\posts
+    path: src/Markdown/medialog/posts
   - name: changelog
     label: Changelog
     path: src/_data/changelog.json
