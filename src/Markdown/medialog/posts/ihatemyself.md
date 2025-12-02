@@ -17,7 +17,9 @@ The movie, an autobio doc by Joanna Arnow, claims from the outset to be about he
 
 But the documentary isn't _really_ about him?
 
-( ✱ read more?)
+<details>
+
+<summary class="postlink">( ✱ read more?)</summary>
 
 Joanna is definitely portrayed as a victim in a dysfunctional and honestly emotionally abusive relationship, and beyond that, just a very sad and lonely person. Still, it becomes clear that as terrible as James is, he is ultimately a weapon that Joanna is using against herself. Joanna is characterized as someone who... hates herself! But beyond that, the relationship has turned into a vehicle for her to hurt herself.
 
@@ -36,3 +38,4 @@ There is a shot I keep thinking about, where Joanna is filming James talking whi
 I saw a lot of reviews (understandably!) questioning the 'point' of filming her white boyfriend calling his black audience niggers to their faces, but I think it's an important key to how the film characterizes her and her agency. She passively films it, and at a point tepidly asks a black woman if what James says makes her uncomfortable, but never meaningfully has anything to say about or bothers to challenge this behavior of his.
 
 I don't think I would recommend this, but I did think about it for a long time afterwards.
+</details>
