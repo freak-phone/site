@@ -4,19 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ILLUSTRATION</title>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <title>GALLERY</title>
 
   <link rel="stylesheet" href="/css/art.css">
-
-
 </head>
 
 <body>
   <div id="container" class="flex">
-    <aside class="flex">
+    <aside class="flex pieces">
       <div class="bar">
         <span>ILLUSTRATION</span>
       </div>
@@ -38,13 +33,13 @@
         <a href="/art/log">
           <li class="lisketch">sketchlog</li>
         </a>
-        <a href="/art/log">
+        <a href="/art/oc">
           <li class="lioc">oc wiki</li>
         </a>
         <a href="/art/games">
           <li class="ligame">games</li>
         </a>
-        <a href="/art/crafts">
+        <a href="/art/craft">
           <li class="licraft">crafts</li>
         </a>
         <a href="/">
@@ -53,33 +48,27 @@
 
       </ul>
 
-      <div id="spacey"></div>
+      <div id="spacey" class="pieces"></div>
     </aside>
-    <main class="flex">
+    <main class="flex pieces">
       <div class="bar"></div>
       <hr>
-      <div id="content" class="mainpage flex">
-        <div id="gallery">
-
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script><a  class="glightbox" href="/img/gallery/illustration/dot.jpg">
-            <img src="/img/gallery/illustration/thumbs/dot.png" class="piece hvr-grow-rotate ">
+      <div id="content" class="flex pieces">
+        <div id="piece">
+          <!-- Simple image -->
+          <a href="/img/gallery/illustration/why.png" class="glightbox">
+            <img src="/img/gallery/illustration/why.png" alt="image" />
           </a>
-
         </div>
 
 
       </div>
     </main>
     <footer></footer>
-    <span class="gohome"> <a href="//">go home</a></span>
+    <span class="gohome"> <a href="index">go back</a> - <a href="//">go home</a></span>
   </div>
 </body>
-<script>
-  const lightbox = GLightbox({
-      touchNavigation: true,
-      zoomable: true,
-    });
-</script>
+
+<script src="/js/glightbox.min.js"></script>
 
 </html>
