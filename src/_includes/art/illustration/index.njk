@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
   <link rel="stylesheet" href="/css/art.css">
+
+
 </head>
 
 <body>
@@ -55,6 +60,7 @@
       <hr>
       <div id="content" class="mainpage flex">
         <div id="gallery">
+
           {{ content | safe }}
 
         </div>
@@ -66,5 +72,11 @@
     <span class="gohome"> <a href="//">go home</a></span>
   </div>
 </body>
+<script>
+  const lightbox = GLightbox({
+      touchNavigation: true,
+      zoomable: true,
+    });
+</script>
 
 </html>

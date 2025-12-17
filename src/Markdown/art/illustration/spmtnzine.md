@@ -1,11 +1,10 @@
 ---
-title: dot
-permalink: "/art/illustration/dot.html"
+title: spmtnzine
+permalink: "/art/illustration/spmtna"
 fileExtension: jpg
 layout: art/illustration/posts.njk
 tags: 
     - illustration
-    - ocValdes
-date: 2025-02-07
+date: 2025-12-16
 alttext: Description of image here
 ---

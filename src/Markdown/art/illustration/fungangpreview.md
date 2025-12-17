@@ -1,11 +1,10 @@
 ---
-title: dot
-permalink: "/art/illustration/dot.html"
+title: fungangpreview
+permalink: "/art/illustration/fungang"
 fileExtension: jpg
 layout: art/illustration/posts.njk
 tags: 
     - illustration
-    - ocValdes
-date: 2025-02-07
+date: 2025-11-24
 alttext: Description of image here
 ---

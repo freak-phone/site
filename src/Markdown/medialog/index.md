@@ -3,7 +3,7 @@ layout: medialog_index.njk
 title: MEDIALOG
 permalink: /medialog/index.html
 ---
-  {%- for post in collections.medialog -%}
+  {% for post in collections.medialog | reverse %}
               <article class="{{ post.data.type }}">
               <h3 class="mediatitle">{{ post.data.title }}</h3>
               <img src="{{ post.data.cover }}" class="cover">

@@ -50,6 +50,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy(".htaccess");
   eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });
   // Set custom directories for input, output, includes, and data
   return {

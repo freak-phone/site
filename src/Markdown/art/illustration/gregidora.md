@@ -1,11 +1,13 @@
 ---
-title: dot
-permalink: "/art/illustration/dot.html"
+title: gregidora
+permalink: "/art/illustration/ggdra"
 fileExtension: jpg
 layout: art/illustration/posts.njk
 tags: 
     - illustration
-    - ocValdes
-date: 2025-02-07
+    - ocGregor
+    - ocIsidora
+    - storyOub
+date: 2025-10-09
 alttext: Description of image here
 ---

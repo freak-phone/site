@@ -1,11 +1,10 @@
 ---
-title: dot
-permalink: "/art/illustration/dot.html"
+title: huniedham
+permalink: "/art/illustration/hndhm"
 fileExtension: jpg
 layout: art/illustration/posts.njk
 tags: 
     - illustration
-    - ocValdes
-date: 2025-02-07
+date: 2025-11-11
 alttext: Description of image here
 ---
