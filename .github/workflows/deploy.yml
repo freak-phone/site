@@ -11,18 +11,18 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
-        node-version: '22.20.0' # Or a version compatible with your project
+        node-version: '22' # Or a version compatible with your project
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build Eleventy site
-      run: npm run build
+    - name: Build
+      uses: TartanLlama/actions-eleventy@master
 
     - name: Deploy to cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # A popular FTP deployment action
