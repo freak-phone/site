@@ -1,6 +1,6 @@
 ---
 layout: art/illustration/posts.njk
-title: secretsant
+title: secretsanto
 date: 2025-12-24
 image: /img/gallery/illustration/izzy.png
 thumb: /img/photobash.png
