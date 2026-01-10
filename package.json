@@ -18,6 +18,7 @@
     "markdown-it-emoji-customizer": "github:actuallysomecat/markdown-it-emoji-customizer"
   },
   "devDependencies": {
+    "find-unused-images": "^1.2.0",
     "markdown-it-emoji": "^3.0.0"
   }
 }
