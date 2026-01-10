@@ -23,8 +23,6 @@ jobs:
       run: npm install
 
     - name: Build Eleventy site
-      permissions:
-        contents: write
       run: npm run build # Assuming you have a "build" script in your package.json
 
     - name: Deploy to cPanel via FTP
