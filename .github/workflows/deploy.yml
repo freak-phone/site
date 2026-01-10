@@ -21,8 +21,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build Eleventy site
-      run: npm run build
+    - name: Build
+      uses: TartanLlama/actions-eleventy@master
 
     - name: Deploy to cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # A popular FTP deployment action
