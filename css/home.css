@@ -365,7 +365,7 @@ main {
   border-radius: .5em;
   filter: drop-shadow(2px 4px 4px #777);
   position: absolute;
-  top: 250px;
+  top: 240px;
   right: 23px;
   z-index: 99;
 }
