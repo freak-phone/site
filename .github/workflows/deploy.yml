@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
-        server: ftp.freakphone.net
+        server: freakphone.net
         username: freakpho
         protocol: ftps
         port: 21 # todo replace with your web hosts ftps port
