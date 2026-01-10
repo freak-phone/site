@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
-        server: https://ftp.freakphone.net
+        server: "https://mi3-sr110.supercp.com"
         username: freakpho
         password: ${{ secrets.FTP_PASSWORD }} # Use GitHub secrets for credentials
         local-dir: ./_dist/ # The output directory of your Eleventy build
