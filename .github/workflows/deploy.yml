@@ -22,7 +22,7 @@ jobs:
         node-version: '20' # Use a recent Node version
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
     - name: Build Eleventy site
       run: npm run build
