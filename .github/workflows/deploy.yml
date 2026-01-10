@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: '20' # Use a recent Node version
 
@@ -25,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Build Eleventy site
-      run: npm run build # Assuming you have a "build" script in your package.json
+      run: npx @11ty/eleventy
 
     - name: Deploy to cPanel via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
