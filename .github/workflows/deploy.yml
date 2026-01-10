@@ -1,10 +1,9 @@
-# .github/workflows/deploy.yml
-name: Build and Deploy to cPanel
+name: Eleventy Build and Deploy to cPanel
 
 on:
   push:
     branches:
-      - main # or whatever your main branch is called
+      - main # or master
 
 jobs:
   build-and-deploy:
@@ -17,20 +16,19 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' # Use a recent Node version
+        node-version: '20' # Or a version compatible with your project
 
     - name: Install dependencies
       run: npm install
 
     - name: Build Eleventy site
-      run: npm run build # Assuming you have a "build" script in your package.json
+      run: npm run build
 
-    - name: Deploy to cPanel via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Deploy to cPanel
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # A popular FTP deployment action
       with:
-        server: ftp.freakphone.net
-        username: freakpho
-        password: ${{ secrets.FTP_PASSWORD }} # Use GitHub secrets for credentials
-        local-dir: ./_dist/ # The output directory of your Eleventy build
-        server-dir: ./public_html/ # The target directory on your cPanel
-        # You will need to add a FTP_PASSWORD secret in GitHub settings
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/ # Target directory on cPanel (e.g., public_html/ or public_html/your-site-folder/)
+        local-dir: _dist/ # Your Eleventy output directory
