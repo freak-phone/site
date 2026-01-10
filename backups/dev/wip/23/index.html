@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<style>
+
+  @font-face {
+    font-family: Lito;
+    src: url(assets/LITOCLEAN.ttf);
+  }
+
+  button span {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Lito", sans-serif;
+    letter-spacing: 5px;
+  }
+
+  .wrapper {
+    transform: skewX(-8deg);
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+justify-content: center;
+  }
+  button:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: #ff1005;
+    content: "";
+    z-index: -1;
+    transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;
+  }
+  button {
+    border: 4px solid white;
+    padding: 16px 24px;
+    position: relative;
+    background-color: transparent;
+    color: black;
+    font-size: 2em;
+  }
+
+  body {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: manrope;
+  width: 45%;
+color: white;
+margin: 30px auto;
+}
+
+#description {
+margin: 23px auto;
+border-top: 1px solid;
+padding: 10px;
+width: 100%;
+text-align: center;
+border-bottom: 1px solid;
+}
+
+#tube {
+  background-image: url('assets/screen.png');
+  background-color: transparent;
+  width: 81%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+  min-height: 580px;
+}
+
+#tube::after {
+content: '';
+  display: block;
+  height: 83%;
+  position: relative;
+  background: black;
+    background-image: none;
+  left: 10px;
+  bottom: -11px;
+  background-image: url('assets/placeholder.jpg');
+  z-index: -1;
+  width: 86%;
+}
+
+
+button::after {
+  /* background-color: #ff1005; */
+  background: linear-gradient;
+background: #777785;
+background: linear-gradient(0deg, rgba(119, 119, 133, 1) 10%, rgba(169, 63, 54, 1) 84%);
+  border-radius: 4px;
+  top: 14px;
+  left: 14px;
+}
+
+button {
+  /* border: 4px solid white; */
+  /* padding: 16px 24px; */
+  border: 3px solid white;
+  padding: 12px 18px;
+  border-radius: 2px;
+  background-color: white;
+  padding: 6px 16px;
+}
+
+button span {
+  /* font-family: "Lito", sans-serif; */
+  font-size: 31px;
+}
+
+body {
+  /* background-color: black; */
+  background-color: #131313;
+  width: 50%;
+}
+
+#wips {
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px;
+  margin: 8px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  grid-gap: 8px;
+}
+
+#wips img {
+ width: 100%;
+height: auto;
+  border-radius: 10px;
+}
+
+
+
+.tape::before{
+content: "";
+display: block;
+width: 100px;
+height: 30px;
+position: relative;
+top: 20px;
+margin: auto;
+background: rgba(255,255,200,0.6);
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    width: 90%;
+  }
+button span {
+  font-size: 22px;
+}
+
+button {
+  padding: 2px 13px;
+}
+
+nav {
+  gap: 18px;
+}
+
+button span {
+ letter-spacing: normal;
+}
+
+button::after {
+  top: 9px;
+  left: 11px;
+}
+
+#tube {
+  width: 88%;
+  min-height: 38vh;
+}
+
+#wips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tape::before {
+  display: ;
+  position: absolute;
+  top: -8px;
+  left: 23px;
+}
+
+.tape {
+  height: ;
+  width: calc(50% - 20px);
+  position: relative;
+}
+
+
+}
+
+
+</style>
+
+<body>
+
+    <nav>
+    
+      <div class="wrapper">
+        <button> <span> gallery </span> </button>
+      </div>
+      <div class="wrapper">
+        <button> <span>
+            about
+          </span> </button>
+      </div>
+      <div class="wrapper">
+        <button> <span> sales
+    
+          </span> </button>
+      </div>
+    
+    
+    </nav>
+
+    <div id="description">
+      Put your description here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan eros eu nulla consequat ultrices. Vestibulum
+      eleifend sodales metus et gravida. Aliquam quis enim ac ante aliquet eleifend.
+      <p><b>contact:</b> email@placeholder.com</p>
+    </div>
+
+
+  
+    <div id="tube">
+    </div>
+
+    <div id="wips">
+
+      <div class="tape"><img src="https://placehold.co/200" alt=""></div>
+      <div class="tape"><img src="https://placehold.co/200" alt=""></div>
+      <div class="tape"><img src="https://placehold.co/200" alt=""></div>
+      <div class="tape"><img src="https://placehold.co/200" alt=""></div>
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>put some clothes on that beast</title>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="shortcut icon" href="/favicon.gif" />
+  <link rel="stylesheet" href="part.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+  <style type="text/css">
+    :root {
+      --width: 389px;
+      --height: 710px;
+          --accent1: #cb5a03;
+    --accent2: #000000;
+    --accent3: #f7f7f4;
+    --accent4: #d4c81e;
+    }
+
+    #canvas {
+      width: 937px;
+      height: 707px;
+      position: relative;
+      margin: auto;
+      background: url('/bg/gridylw.gif');
+      animation: scrollBg 10s linear infinite;
+      background-size: 40px
+    }
+
+    @keyframes scrollBg {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -40px -40px
+      }
+    }
+
+    * {
+      cursor: url('/graphics/pixel/pointer1.png'), auto;
+    }
+
+    input:hover,
+    button:hover,
+    button h1:hover {
+      cursor: url('/graphics/pixel/pointer2.png'), auto;
+    }
+
+    #body {
+
+      background-image: url('assets/body.png');
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+
+    .part {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: var(--width);
+      height: var(--height);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: "";
+    }
+
+    #menu {
+      padding: 10px;
+      width: 500px;
+      height: 400px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding-right: 10px;
+    }
+
+    #menu h1 {
+      font-family: circulate;
+      text-align: center;
+    }
+
+    #menu h1 {
+      color: var(--accent3);
+      text-shadow: 2px 2px var(--accent1), 2px 6px var(--accent1), 2px -2px var(--accent1), -2px 2px var(--accent1), -2px -2px var(--accent1), 0 2px var(--accent1), 0 -2px var(--accent1), -2px 0 var(--accent1), 2px 0 var(--accent1);
+    }
+
+    #choices {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 4px;
+      background-color: var(--accent3);
+      height: 100%;
+      padding: 5px;
+      overflow: auto;
+      box-shadow: 11px 7px 20px 5px #f5c086;
+      border-radius: 20px;
+      /* overflow: hidden; */
+      padding-left: 10px;
+
+
+    }
+
+    #choices h2 {
+      border-bottom: 1px dotted;
+      width: 100%;
+      display: block;
+      margin-top: 0;
+      font-family: spacemono;
+      font-size: 19px;
+    }
+
+    #choices h2::before {
+      content: url("/graphics/pixel/byarrow.gif");
+      margin-right: 10px;
+    }
+
+    .choice {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      border: none;
+      border-radius: 8px;
+      margin: 2px;
+      position: relative;
+      background-color: white;
+    }
+
+    .choice::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      content: "";
+      z-index: 2;
+      border-radius: 8px;
+    }
+
+    #him {
+      width: var(--width);
+      height: var(--height);
+    }
+
+    #him div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: var(--width);
+      height: var(--height);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+    #music-player {
+      position: absolute;
+      /* background: linear-gradient(#FF99B7 20%, white); */
+      display: inline-flex;
+      /* border-radius: 0.875em; */
+      padding: 0.125em;
+      /* transition-delay: 0.75s; */
+      right: 0;
+    }
+
+    #section01,
+    #section02 {
+      overflow: hidden;
+      white-space: nowrap;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #section01 {
+      margin-right: 0.125em;
+      flex: 33%;
+    }
+
+    #section01 img {}
+
+    #section01 h2 {
+      color: var(--accent1);
+      font-family: spacemono;
+      font-size: 15px;
+    }
+
+    #section01 img:hover {
+      filter: drop-shadow(2px #a2a850);
+    }
+
+    #exportImage, #readyy{
+      background: none;
+      border: none;
+    }
+
+    /*----------------------- Preloader -----------------------*/
+#preloader {
+position: fixed;
+background-color: #F9F9F9;
+z-index: 9999 !important;
+top:0;
+left:0;
+height: 100vh;
+width:100vw;
+overflow: hidden;
+}
+
+#status {
+width: 150px;
+height: 200px;
+position: absolute;
+left: 50%;
+top: 50%;
+background-image: url(/graphics/biggraphic/loading3.gif);
+background-repeat: no-repeat;
+background-position: center;
+margin: -100px 0 0 -100px;
+}
+#status::before{
+      content: url('/graphics/pixel/opal.gif');
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#ready{
+  z-index: 70;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+background-image: url(assets/8.png);
+    background-size: cover;
+    background-position-y: 17px;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+}
+#ready h3{
+  font-family: spacemono;
+}
+
+#ready::before{
+  content: url(assets/op.png);
+      position: absolute;
+    bottom: -10px;
+}
+
+#readyy{
+  font-family: circulate;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 40px;
+  color: var(--accent4);
+  filter: drop-shadow(1px 1px var(--accent2)) drop-shadow(1px 0 var(--accent2)) drop-shadow(6px 6px var(--accent2)) drop-shadow(0 -1px var(--accent2)) drop-shadow(-1px 0 var(--accent2)) drop-shadow(-2px -2px var(--accent2)) drop-shadow(0 2px var(--accent2)) drop-shadow(0 -2px var(--accent2)) drop-shadow(-2px 0 var(--accent2)) drop-shadow(2px 0 var(--accent2));
+}
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+ <div id="preloader">
+  <div id="status"></div>
+ </div>
+
+  <div id="canvas">
+    <div id="ready">
+      <button id="readyy" onclick="hide();playit()"><h1>click to begin!</h1></button>
+      <h3>(please play on computer, not mobile!)</h3>
+    </div>
+    <div id="him">
+      <div id="body" class="part"></div>
+      <div class="part" id="top"></div>
+      <div class="part" id="feet"></div>
+      <div class="part" id="bottom"></div>
+      <div class="part" id="face"></div>
+      <div class="part hair1" id="hair"></div>
+      <div class="part" id="accessories"></div>
+    </div>
+
+    <div id="menu">
+
+      <h1>put some clothes on that beast</h1>
+
+      <div id="choices">
+        <h2>hair</h2>
+        <button class="choice" onclick="hair1()" style="background-image: url('assets/icon/h1.png');"></button>
+        <button class="choice" onclick="hair2()" style="background-image: url('assets/icon/h2.png');"></button>
+        <button class="choice" onclick="hair3()" style="background-image: url('assets/icon/h3.png');"></button>
+        <button class="choice" onclick="hair4()" style="background-image: url('assets/icon/h4.png');"></button>
+        <button class="choice" onclick="hair5()" style="background-image: url('assets/icon/h5.png');"></button>
+
+        <h2>face</h2>
+        <button class="choice" onclick="face1()" style="background-image: url('assets/icon/face1.png');"></button>
+        <button class="choice" onclick="face2()" style="background-image: url('assets/icon/face2.png');"></button>
+        <button class="choice" onclick="face3()" style="background-image: url('assets/icon/face3.png');"></button>
+        <button class="choice" onclick="face4()" style="background-image: url('assets/icon/face4.png');"></button>
+        <button class="choice" onclick="face5()" style="background-image: url('assets/icon/undo.png');"></button>
+
+
+
+        <h2>accessories</h2>
+        <button class="choice" onclick="acc1()" style="background-image: url('assets/icon/a1.png');"></button>
+        <button class="choice" onclick="acc2()" style="background-image: url('assets/icon/a2.png');"></button>
+        <button class="choice" onclick="acc3()" style="background-image: url('assets/icon/a3.png');"></button>
+        <button class="choice" onclick="acc4()" style="background-image: url('assets/icon/a4.png');"></button>
+        <button class="choice" onclick="acc5()" style="background-image: url('assets/icon/a5.png');"></button>
+        <button class="choice" onclick="acc6()" style="background-image: url('assets/icon/a6.png');"></button>
+        <button class="choice" onclick="acc7()" style="background-image: url('assets/icon/a7.png');"></button>
+        <button class="choice" onclick="accundo()" style="background-image: url('assets/icon/undo.png');"></button>
+
+
+
+
+
+
+
+        <h2>tops</h2>
+
+        <button class="choice" onclick="top1()" style="background-image: url('assets/icon/t1.png');"></button>
+        <button class="choice" onclick="top2()" style="background-image: url('assets/icon/t2.png');"></button>
+        <button class="choice" onclick="top3()" style="background-image: url('assets/icon/t3.png');"></button>
+        <button class="choice" onclick="top4()" style="background-image: url('assets/icon/t4.png');"></button>
+        <button class="choice" onclick="top5()" style="background-image: url('assets/icon/t5.png');"></button>
+        <button class="choice" onclick="top6()" style="background-image: url('assets/icon/t6.png');"></button>
+        <button class="choice" onclick="top7()" style="background-image: url('assets/icon/t7.png');"></button>
+        <button class="choice" onclick="top8()" style="background-image: url('assets/icon/t8.png');"></button>
+        <button class="choice" onclick="top9()" style="background-image: url('assets/icon/t9.png');"></button>
+        <button class="choice" onclick="top10()" style="background-image: url('assets/icon/t10.png');"></button>
+        <button class="choice" onclick="top11()" style="background-image: url('assets/icon/t11.png');"></button>
+        <button class="choice" onclick="topundo()" style="background-image: url('assets/icon/undo.png');"></button>
+
+
+        <h2>bottom</h2>
+        <button class="choice" onclick="bottom1()" style="background-image: url('assets/icon/b1.png');"></button>
+        <button class="choice" onclick="bottom2()" style="background-image: url('assets/icon/b2.png');"></button>
+        <button class="choice" onclick="bottom3()" style="background-image: url('assets/icon/b3.png');"></button>
+        <button class="choice" onclick="bottom4()" style="background-image: url('assets/icon/b4.png');"></button>
+        <button class="choice" onclick="bottom5()" style="background-image: url('assets/icon/b5.png');"></button>
+        <button class="choice" onclick="bottom6()" style="background-image: url('assets/icon/b6.png');"></button>
+        <button class="choice" onclick="bottom7()" style="background-image: url('assets/icon/b7.png');"></button>
+        <button class="choice" onclick="bottom8()" style="background-image: url('assets/icon/b8.png');"></button>
+        <button class="choice" onclick="bottom9()" style="background-image: url('assets/icon/b9.png');"></button>
+        <button class="choice" onclick="bottom10()" style="background-image: url('assets/icon/b10.png');"></button>
+        <button class="choice" onclick="bottom11()" style="background-image: url('assets/icon/b11.png');"></button>
+        <button class="choice" onclick="bottom12()" style="background-image: url('assets/icon/b12.png');"></button>
+        <button class="choice" onclick="bottomundo()" style="background-image: url('assets/icon/undo.png');"></button>
+
+
+
+        <h2>shoes</h2>
+        <button class="choice" onclick="feet1()" style="background-image: url('assets/icon/f1.png');"></button>
+        <button class="choice" onclick="feet2()" style="background-image: url('assets/icon/f2.png');"></button>
+        <button class="choice" onclick="feet3()" style="background-image: url('assets/icon/f3.png');"></button>
+        <button class="choice" onclick="feet4()" style="background-image: url('assets/icon/f4.png');"></button>
+        <button class="choice" onclick="feet5()" style="background-image: url('assets/icon/f5.png');"></button>
+        <button class="choice" onclick="feet6()" style="background-image: url('assets/icon/f6.png');"></button>
+        <button class="choice" onclick="feet7()" style="background-image: url('assets/icon/f7.png');"></button>
+        <button class="choice" onclick="feetundo()" style="background-image: url('assets/icon/undo.png');"></button>
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <button id="exportImage">
+        <h1>export image!</h1>
+      </button>
+
+      <div id="music-player">
+        <div id="section01">
+          <p>
+            <img src="/graphics/biggraphic/cd.gif" id="startOrStopImg" alt="Play Button">
+          <h2>play/pause</h2>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("startOrStopImg").onclick = function () {
+      var audio = document.getElementById("audio");
+      if (audio.paused)
+        audio.play();
+      else
+        audio.pause();
+    };
+  </script>
+
+  <audio id="audio" src="https://files.catbox.moe/hv8wb0.mp3"></audio>
+
+
+</body>
+<script>
+  // create a variable that grabs the export button
+  var exportBtn = document.getElementById("exportImage");
+
+  // add a click listener to the button
+  exportBtn.addEventListener("click", exportClick);
+
+  // this is the function which runs when the export button is clicked
+  // I could put the export functions in here, but to keep things tidy I made a new function for it and execute it from within this function.
+  function exportClick(e) {
+    // prevent default event actions
+    e.preventDefault();
+    // execute the convert2image function
+    convert2image();
+  }
+
+
+  /* The below function will throw an error of the DOM-to-Image script is not included. 
+  Read the instructions for more information. */
+  function convert2image() {
+    domtoimage
+      // make sure this ID matches the ID of the area you want to export
+      .toJpeg(document.getElementById("him"), {
+        quality: 0.95
+      })
+      .then(function (dataUrl) {
+        // this actually makes the download "happen"
+        var link = document.createElement("a");
+        // you can name the file whatever you'd like
+        // this is the file the user sees when downloading
+        link.download = "opal.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
+  }
+
+</script>
+
+<script>
+  // makes sure the whole site is loaded
+  $(window).load( function () {
+      // will first fade out the loading animation
+      $("#status").delay(2000).fadeOut("slow");
+      // will fade out the whole DIV that covers the website.
+      $("#preloader").delay(2000).fadeOut("slow");
+    })
+
+</script>
+
+
+<script src="code.js"></script>
+
+</html>

@@ -1,0 +1,67 @@
+
+RewriteOptions inherit
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d          
+RewriteCond %{REQUEST_FILENAME}\.html -f    
+RewriteRule ^(.*)$ $1.html                  
+RewriteCond %{REQUEST_FILENAME}\.php -f    
+RewriteRule ^(.*)$ $1.php
+
+
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L,R=301]
+
+
+ 
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 46.234.110.151
+deny from 78.177.137.138
+deny from 93.155.104.17
+deny from 212.175.73.136
+deny from 94.142.241.42
+deny from 192.42.116.183
+deny from 208.77.16.10
+deny from 62.141.6.123
+deny from 195.248.190.196
+deny from 93.127.64.37
+deny from 101.165.211.211
+
+RewriteCond %{HTTP_REFERER} !^http://art.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://art.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://new.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://new.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://oekaki.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://oekaki.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.art.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.art.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.new.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.new.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.oekaki.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.oekaki.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://art.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://art.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://new.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://new.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://oekaki.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://oekaki.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.art.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.art.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.new.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.new.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.freakphone.net$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.oekaki.freakphone.net/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.oekaki.freakphone.net$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+

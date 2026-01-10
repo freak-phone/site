@@ -1,0 +1,218 @@
+   #top {}
+
+   .top1 {
+     background-image: url(assets/top1.png);
+   }
+
+   .top2 {
+     background-image: url(assets/top2.png);
+   }
+
+   .top3 {
+     background-image: url(assets/top3.png);
+   }
+
+   .top4 {
+     background-image: url('assets/top4.png');
+   }
+
+   .top5 {
+     background-image: url('assets/top5.png');
+   }
+
+   .top6 {
+     background-image: url('assets/top6.png');
+   }
+
+   .top7 {
+     background-image: url('assets/top7.png');
+   }
+
+   .top8 {
+     background-image: url('assets/top8.png');
+   }
+
+   .top9 {
+     background-image: url('assets/top9.png');
+   }
+
+   .top10 {
+     background-image: url('assets/top10.png');
+   }
+
+   .top11 {
+     background-image: url('assets/top11.png');
+   }
+
+   /*bottom*/
+
+   #bottom {}
+
+   .bottom1 {
+     background-image: url(assets/pant1.png);
+    z-index: 3;
+   }
+
+   .bottom2 {
+     background-image: url(assets/pant2.png);
+    z-index: 3;
+   }
+
+   .bottom3 {
+     background-image: url(assets/pant3.png);
+    z-index: 3;
+   }
+
+
+   .bottom4 {
+     background-image: url(assets/pant4.png);
+   }
+
+   .bottom5 {
+     background-image: url(assets/pant5.png);
+     z-index: 3;
+   }
+
+   .bottom6 {
+     background-image: url(assets/pant6.png);
+     z-index: 3;
+   }
+
+   .bottom7 {
+     background-image: url(assets/pant7.png);
+    z-index: 3;
+   }
+
+   .bottom8 {
+     background-image: url(assets/pant8.png);
+    z-index: 3;
+   }
+
+   .bottom9 {
+     background-image: url(assets/pant9.png);
+     z-index: 3;
+   }
+
+   .bottom10 {
+     background-image: url(assets/pant10.png);
+   }
+
+   .bottom11 {
+     background-image: url(assets/pant11.png);
+   }
+
+   .bottom12 {
+     background-image: url(assets/pant12.png);
+   }
+
+   /*feet*/
+
+   #feet {
+    z-index: 2;
+   }
+
+   .feet1 {
+     background-image: url(assets/feet1.png);
+   }
+
+   .feet2 {
+     background-image: url(assets/feet2.png);
+   }
+
+   .feet3 {
+     background-image: url(assets/feet3.png);
+   }
+
+   .feet4 {
+     background-image: url(assets/feet4.png);
+   }
+
+   .feet5 {
+     background-image: url(assets/feet5.png);
+   }
+
+   .feet6 {
+     background-image: url(assets/feet6.png);
+   }
+
+   .feet7 {
+     background-image: url(assets/feet7.png);
+   }
+
+   /*face */
+
+   #face {}
+
+   .face1 {
+     background-image: url(assets/face1.png);
+   }
+
+   .face2 {
+     background-image: url(assets/face2.png);
+   }
+
+   .face3 {
+     background-image: url(assets/face3.png);
+   }
+
+   .face4 {
+     background-image: url(assets/face4.png);
+   }
+
+   .face5 {
+     background-image: none;
+   }
+
+   #hair {}
+
+   .hair1 {
+     background-image: url(assets/hair1.png);
+   }
+
+   .hair2 {
+     background-image: url(assets/hair2.png);
+   }
+
+   .hair3 {
+     background-image: url(assets/hair3.png);
+   }
+
+   .hair4 {
+     background-image: url(assets/hair4.png);
+   }
+
+   .hair5 {
+     background-image: url(assets/hair5.png);
+   }
+
+   #accessories {
+    z-index: 4;
+   }
+
+   .acc1 {
+     background-image: url(assets/acc1.png);
+   }
+
+   .acc2 {
+     background-image: url(assets/acc2.png);
+   }
+
+   .acc3 {
+     background-image: url(assets/acc3.png);
+   }
+
+   .acc4 {
+     background-image: url(assets/acc4.png);
+   }
+
+   .acc5 {
+     background-image: url(assets/acc5.png);
+   }
+
+   .acc6 {
+     background-image: url(assets/acc6.png);
+   }
+
+   .acc7 {
+     background-image: url(assets/acc7.png)
+   }
