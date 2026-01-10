@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
     "@kevingimbel/eleventy-plugin-emoji-rating": "^1.0.0",
+    "fast-glob": "^3.3.3",
     "markdown-it-emoji-customizer": "github:actuallysomecat/markdown-it-emoji-customizer"
   },
   "devDependencies": {

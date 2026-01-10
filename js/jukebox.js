@@ -23,6 +23,12 @@ let curr_track = document.createElement('audio');
 // Define the list of tracks that have to be played
 let track_list = [
   {
+    name: "Peace at Last",
+    artist: "Rotary Connection",
+    image: "/assets/graphics/music/peace.jpg",
+    path: "https://files.catbox.moe/h3cgrb.mp3"
+  },
+  {
     name: "How Do You Think?",
     artist: "Date of Birth",
     image: "/assets/graphics/music/featuredsong11.png",

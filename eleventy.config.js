@@ -1,6 +1,30 @@
 const emojiRating = require("@kevingimbel/eleventy-plugin-emoji-rating");
 
+
 module.exports = function (eleventyConfig) {
+
+  eleventyConfig.addFilter("itemLimit", function (array, maximum) {
+    return array.slice(0, maximum);
+  });
+
+  // file: .eleventy.js
+  const fs = require("fs");
+  const path = require("path");
+
+  exports.addGalleryCollection = (eleventyConfig) => {
+    eleventyConfig.addCollection("albumz", () => {
+      const galleryPath = path.resolve(__dirname, "/assets/graphics/about/albums");
+      const files = fs.readdirSync(galleryPath);
+
+      return files.map((file) => {
+        console.log(`🖼 Adding picture to gallery: ${file}`)
+        return {
+          name: file.split(".")[0], // Get image name without extension
+          src: `/assets/graphics/about/albums/${file}`,
+        };  // Array<{name: "Image name", src: "/image.jpg"}>
+      });
+    });
+  };
 
   const { DateTime } = require("luxon");
 
@@ -60,7 +84,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("guestbook");
   eleventyConfig.addPassthroughCopy(".htaccess");
+  eleventyConfig.addPassthroughCopy("404.html");
   eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });
   // Set custom directories for input, output, includes, and data
   return {
