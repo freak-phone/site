@@ -18,12 +18,9 @@ jobs:
       with:
         node-version: '22' # Or a version compatible with your project
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build
-      uses: TartanLlama/actions-eleventy@master
-
+    - name: Install 11ty and build website
+      uses: extrawitz/11ty-dockerless-build@v1
+   
     - name: Deploy to cPanel
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # A popular FTP deployment action
       with:
