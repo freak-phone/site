@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- mocked drawing page -->
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <link rel="icon" href="favicon.png">
+	<title><?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?></title>
+
+ <!-- this is important -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<style>
+ :not(input){
+ -moz-user-select: none;
+ -webkit-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ }
+ </style>
+
+</head>
+<body>
+
+<!-- embed start -->
+<script src="klecks/embed.js?<?php echo \htmlentities($parameter_day??'', ENT_QUOTES, 'UTF-8', false); ?>"></script>
+<script type="text/javascript">
+
+ /*
+ Using Klecks in a drawing community:
+ - on first time opening, start with a manually created project (klecks.openProject)
+ - on submit, upload psd (and png) to the server
+ - on continuing a drawing, read psd that was stored on server (klecks.readPsd -> klecks.openProject)
+ */
+
+	 const psdURL = '<?php if($img_klecks): ?><?php echo \htmlentities($img_klecks??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>';
+
+ let saveData = (function () {
+ let a = document.createElement("a");
+ document.body.appendChild(a);
+ a.style = "display: none";
+ return function (blob, fileName) {
+ let url = window.URL.createObjectURL(blob);
+ console.log(url);
+ a.href = url;
+ a.download = fileName;
+ a.click();
+ window.URL.revokeObjectURL(url);
+ };
+
+ }());
+
+ const klecks = new Klecks({
+
+ onSubmit: (onSuccess, onError) => {
+ // download png
+ // saveData(klecks.getPNG(), 'drawing.png');
+
+ /*// download psd
+ klecks.getPSD().then((blob) => {
+ saveData(blob, 'drawing.psd');
+ });*/
+
+ setTimeout(() => {
+ onSuccess();
+
+ //2022 (c)satopian MIT LICENCE
+ //この箇所はさとぴあが作成したMIT LICENCEのコードです。
+ klecks.getPSD().then((psd)=>{
+ var formData = new FormData();
+ formData.append("picture", klecks.getPNG(),'blob');
+ formData.append("psd", psd,'blob');
+ formData.append("usercode", "<?php echo \htmlentities($klecksusercode??'', ENT_QUOTES, 'UTF-8', false); ?>");
+ <?php if($rep): ?>formData.append("repcode", "<?php echo \htmlentities($repcode??'', ENT_QUOTES, 'UTF-8', false); ?>");<?php endif; ?>
+ formData.append("stime", <?=time();?>);
+ formData.append("resto", "<?php echo \htmlentities($resto??'', ENT_QUOTES, 'UTF-8', false); ?>");
+
+ var request = new XMLHttpRequest();
+ request.open("POST", "saveklecks.php");
+ request.send(formData);
+
+ request.onreadystatechange = function() {
+
+ console.log(request.readyState);
+ console.log(request.status);
+ console.log(request.responseText);
+
+ if(request.readyState === 4 && request.status>=400){
+ let req_status=request.status;
+ alert(<?php if($en): ?>'Error '<?php else: ?>'エラー '<?php endif; ?> + req_status);
+ return;
+ }
+ if ( request.readyState === 4 && request.status ===200) {
+
+ if(request.responseText === 'ok'){
+ //PHPからOKが返って来た時は画面を推移。OKが返って来ない時は、alertを出す。
+ return window.location.href="?mode=<?php echo $mode; ?>&stime=<?php echo \htmlentities($stime??'', ENT_QUOTES, 'UTF-8', false); ?>";
+
+ }
+ alert(<?php if($en): ?>'Your picture upload failed! Please try again!'<?php else: ?>'投稿に失敗。時間をおいて再度投稿してみてください。'<?php endif; ?>);
+ return;
+ }
+ }
+ });
+ //2022 (c)satopian MIT LICENCE ここまで
+
+ // location.reload();
+
+	}, 500);
+	}
+ });
+ if (psdURL) {
+ fetch(new Request(psdURL)).then(response => {
+ return response.arrayBuffer();
+ }).then(buffer => {
+ return klecks.readPSD(buffer); // resolves to Klecks project
+ }).then(project => {
+ klecks.openProject(project);
+ }).catch(e => {
+ klecks.initError('failed to read image');
+ });
+
+ } else {
+
+ klecks.openProject({
+ width: <?php echo \htmlentities($picw??'', ENT_QUOTES, 'UTF-8', false); ?>,
+ height: <?php echo \htmlentities($pich??'', ENT_QUOTES, 'UTF-8', false); ?>,
+
+ layers: [{
+ name: 'Background',
+ opacity: 1,
+ mixModeStr: 'source-over',
+
+ image: (() => {
+ const canvas = document.createElement('canvas');
+ canvas.width = <?php echo \htmlentities($picw??'', ENT_QUOTES, 'UTF-8', false); ?>;
+ canvas.height = <?php echo \htmlentities($pich??'', ENT_QUOTES, 'UTF-8', false); ?>;
+ const ctx = canvas.getContext('2d');
+ //PSDがなくて画像がある時はcanvasに読み込む
+ <?php if($imgfile): ?>
+ var img = new Image();
+ img.src = "<?php echo \htmlentities($imgfile??'', ENT_QUOTES, 'UTF-8', false); ?>";
+ img.onload = function(){
+ ctx.drawImage(img, 0, 0);
+ }
+ <?php endif; ?>
+ ctx.save();
+ ctx.fillStyle = '#fff';
+ ctx.fillRect(0, 0, canvas.width, canvas.height);
+ ctx.restore();
+ return canvas;
+ })(),
+ }]
+ });
+}
+</script>
+<!-- embed end -->
+
+</body>
+</html>

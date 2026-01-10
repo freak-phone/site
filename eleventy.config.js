@@ -85,6 +85,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("guestbook");
+  eleventyConfig.addPassthroughCopy("oekaki");
   eleventyConfig.addPassthroughCopy(".htaccess");
   eleventyConfig.addPassthroughCopy("404.html");
   eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });

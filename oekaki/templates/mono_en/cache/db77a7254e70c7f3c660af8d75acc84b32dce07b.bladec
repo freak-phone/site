@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/daydream.css" id="css0">
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/orangepicnic.css" id="css1" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/confetti.css" id="css2" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/starrynight.css" id="css3" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/limesoda.css" id="css4" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/latte.css" id="css5" disabled>
+
+	<link rel="preload" as="script" href="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>">
+	<link rel="preload" as="style" href="lib/luminous/luminous-basic.min.css" onload="this.rel='stylesheet'">
+	<link rel="preload" as="script" href="lib/luminous/luminous.min.js">
+	<link rel="preload" as="style" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>icomoon/style.css" onload="this.rel='stylesheet'">
+
+	<script src="changecss.js"></script>
+
+	<style>
+ .del_page form {
+ display: inline-block;
+ }
+
+ .del_page {
+ margin: 6px 0;
+ display: inline-block;
+ }
+	</style>
+	<title><?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?></title>
+	<style id="for_mobile"></style>
+	<script>
+ function is_mobile() {
+ if (navigator.maxTouchPoints && (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)){
+ return	document.getElementById("for_mobile").textContent = ".for_pc{display: none;}";
+ }
+ return false;
+ }
+ document.addEventListener('DOMContentLoaded',is_mobile,false);
+	</script>
+
+</head>
+
+<body>
+	<header>
+ <?php echo $this->runChild('parts.title'); ?>
+ <hr>
+ <div>
+ <nav class="menu">
+ <a href="https://freakphone.net/">[Main Site]</a>
+ <?php if($for_new_post): ?>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=newpost">[Post]</a>
+ <?php endif; ?>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=catalog">[Catalog]</a>
+ <a href="index.html">[Top]</a>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=piccom">[Recover Images]</a>
+ <a href="info.html">[Info]</a>
+ <a href="#footer" title="to bottom">[↓]</a>
+ </nav>
+ <hr>
+ <?php /* <!-- 変則的に管理者お絵かきモードをここにも挿入 --> */ ?>
+ <?php if($post_mode): ?>
+ <?php if($regist): ?>
+ <script type="text/javascript" src="loadcookie.js"></script>
+ <?php endif; ?>
+ <?php if($admin): ?><?php if($rewrite): ?><?php else: ?>
+ <div class="epost">
+
+ <?php /* ペイントフォーム */ ?>
+ <?php echo $this->runChild('parts.mono_paint_form',['admin'=>$admin]); ?>
+
+ </div>
+ <?php endif; ?> <?php endif; ?>
+ <?php endif; ?>
+ <?php /* <!-- 管理者お絵かきモードおわり --> */ ?>
+	</header>
+	<main>
+ <?php if($post_mode): ?>
+ <?php /* ========== POST MODE(投稿モード) start ========== */ ?>
+ <?php /* 【NEW(新規投稿)、OEKAKI(お絵かき投稿)、UPDATE(編集)】 */ ?>
+
+ <section>
+ <div class="thread">
+ <h2 class="oekaki">post form <?php if($admin): ?> - ADMIN MODE-<?php endif; ?></h2>
+ <?php if($pictmp): ?>
+ <div class="tmpimg">
+ <?php if($notmp): ?>
+ <p>There are no unposted oekaki images.</p>
+ <?php endif; ?>
+ <?php if($tmp): ?>
+ <div>
+ <?php $__currentLoopData = $tmp; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $tmpimg): $loop = $this->incrementLoopIndices();  ?>
+ <figure>
+ <img src="<?php echo \htmlentities($tmpimg['src']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <figcaption><?php echo \htmlentities($tmpimg['srcname']??'', ENT_QUOTES, 'UTF-8', false); ?>[<?php echo \htmlentities($tmpimg['date']??'', ENT_QUOTES, 'UTF-8', false); ?>]</figcaption>
+ </figure>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <?php endif; ?>
+ </div>
+ <?php endif; ?>
+ <hr class="hr">
+ <?php if($ptime): ?><p class="ptime">PaintTime : <?php echo \htmlentities($ptime??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ <?php /* 未投稿画像の画像が無い時はフォームを表示しない */ ?>
+ <?php if(!$notmp): ?>
+ <form class="" action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" enctype="multipart/form-data">
+ <input type="hidden" name="token" value="<?php echo \htmlentities($token??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <table>
+ <tr>
+ <td>Name <?php if($usename): ?><?php echo \htmlentities($usename??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+ <td><input class="form" type="text" name="name" size="28" autocomplete="username" <?php if($name): ?>
+ value="<?php echo \htmlentities($name??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php endif; ?>></td>
+ </tr>
+ <tr>
+ <td>E-mail</td>
+ <td><input class="form" type="text" name="email" size="28" autocomplete="email" <?php if($email): ?>
+ value="<?php echo \htmlentities($email??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php endif; ?>></td>
+ </tr>
+ <tr>
+ <td>URL</td>
+ <td>
+ <input class="form" type="text" name="url" size="28" autocomplete="url" <?php if($url): ?>
+ value="<?php echo \htmlentities($url??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php endif; ?>></td>
+ </tr>
+ <tr>
+ <td>Title <?php if($usesub): ?><?php echo \htmlentities($usesub??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+ <td>
+ <input class="form" type="text" name="sub" size="20" autocomplete="section-sub"
+ <?php if($sub): ?> value="<?php echo \htmlentities($sub??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php endif; ?>>
+ <input class="button" type="submit" value="Post">
+ <?php if($regist): ?>
+ <input type="hidden" name="mode" value="regist">
+ <?php endif; ?>
+ <?php /* <!--モード指定:編集--> */ ?>
+ <?php if($rewrite): ?>
+ <input type="hidden" name="mode" value="rewrite">
+ <?php if($thread_no): ?><input type="hidden" name="thread_no" value="<?php echo \htmlentities($thread_no??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php endif; ?>
+ <?php if($logfilename): ?><input type="hidden" name="logfilename" value="<?php echo \htmlentities($logfilename??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php endif; ?>
+ <?php if($mode_catalog): ?><input type="hidden" name="mode_catalog"
+ value="<?php echo \htmlentities($mode_catalog??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php endif; ?>
+ <?php if($catalog_pageno): ?><input type="hidden" name="catalog_pageno"
+ value="<?php echo \htmlentities($catalog_pageno??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php endif; ?>
+ <?php if(!$catalog_pageno): ?><input type="hidden" name="catalog_pageno" value="0"><?php endif; ?>
+ <input type="hidden" name="no" value="<?php echo \htmlentities($rewrite??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="hidden" name="pwd" value="<?php echo \htmlentities($pwd??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+ <?php if($admin): ?>
+ <input type="hidden" name="admin" value="<?php echo \htmlentities($admin??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+ <?php if($pictmp): ?>
+ <input type="hidden" name="pictmp" value="<?php echo \htmlentities($pictmp??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+ <?php if($ptime): ?>
+ <input type="hidden" name="ptime" value="<?php echo \htmlentities($ptime??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+ <!--レスお絵かき対応-->
+ <?php if($resno): ?>
+ <input type="hidden" name="resto" value="<?php echo \htmlentities($resno??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+ <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo \htmlentities($maxbyte??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php if($ipcheck): ?>Checking IP address ...<?php endif; ?>
+ </td>
+ </tr>
+ <tr>
+ <td>Description <?php if($usecom): ?><?php echo \htmlentities($usecom??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+ <td><textarea class="form" name="com" cols="48" rows="4"
+ wrap="soft"><?php if($com): ?><?php echo \htmlentities($com??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></textarea></td>
+ </tr>
+ <?php if($upfile): ?>
+ <tr>
+ <td>UpFile</td>
+ <td><input class="form" type="file" name="upfile" size="35" accept="image/*">
+ </td>
+ </tr>
+ <?php endif; ?>
+ <?php if($tmp): ?>
+ <?php 
+ rsort($tmp);
+  ?>
+
+ <tr>
+ <td>Images</td>
+ <td><select name="picfile">
+ <?php $__currentLoopData = $tmp; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $tmpimg): $loop = $this->incrementLoopIndices();  ?>
+ <option value="<?php echo \htmlentities($tmpimg['srcname']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($tmpimg['srcname']??'', ENT_QUOTES, 'UTF-8', false); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select></td>
+ </tr>
+ <?php endif; ?>
+ <?php if($regist): ?>
+ <tr>
+ <td>Pass</td>
+ <td><input class="form" type="password" name="pwd" value="" autocomplete="current-password">
+ <small>(For editing and deleting)</small></td>
+ </tr>
+ <?php endif; ?>
+ </table>
+ <?php if($regist): ?>
+ <ul>
+ <?php if($upfile): ?>
+ <li>Attachable files type: GIF, JPG, PNG and WEBP.</li>
+ <li>Images larger than width <?php echo \htmlentities($maxw??'', ENT_QUOTES, 'UTF-8', false); ?>px height <?php echo \htmlentities($maxh??'', ENT_QUOTES, 'UTF-8', false); ?>px will be displayed in reduced size.</li>
+ <li>The maximum amount of posted data is <?php echo \htmlentities($maxkb??'', ENT_QUOTES, 'UTF-8', false); ?>KB. With sage function.</li>
+ <?php endif; ?>
+ <?php if($rewrite): ?>
+ <li>Cookies are not saved in edit mode. The position does not change even if sage is added.</li>
+ <li>The maximum amount of posted data is <?php echo \htmlentities($maxkb??'', ENT_QUOTES, 'UTF-8', false); ?>KB. With sage function.</li>
+ <?php endif; ?>
+ </ul>
+ <?php endif; ?>
+ </form>
+ <?php endif; ?>
+ <?php if($regist): ?>
+ <script>
+ document.addEventListener('DOMContentLoaded',l,false);
+ </script>
+ <?php endif; ?>
+ </div>
+ </section>
+ <!-- (========== POST MODE(投稿モード) end ==========) -->
+ <?php endif; ?>
+ <?php if($admin_in): ?>
+ <!-- (========== ADMIN MODE -LOGIN-(管理モード(認証)) start ==========) -->
+ <section>
+ <div class="thread">
+ <h2 class="oekaki">Admin mode</h2>
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" class="adminin">
+ <label><input type="radio" name="admin" value="update" checked>Update</label>
+ <label><input type="radio" name="admin" value="del">Manage posts</label>
+ <label><input type="radio" name="admin" value="post">Admin Post</label>
+ <input type="hidden" name="mode" value="admin">
+ <input class="form" type="password" name="pass">
+ <input class="button" type="submit" value="ADMIN IN">
+ </form>
+ </div>
+ </section>
+ <!-- (========== ADMIN MODE -LOGIN-(管理モード(認証)) end ==========) -->
+ <?php endif; ?>
+ <?php if($admin_del): ?>
+ <!-- (========== ADMIN MODE -DELETE-(管理モード(削除)) start ==========) -->
+ <section>
+ <div class="thread">
+ <h2 class="oekaki">Admin mode</h2>
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post">
+ <input type="hidden" name="admin" value="update">
+ <input type="hidden" name="mode" value="admin">
+ <input type="hidden" name="pass" value="<?php echo \htmlentities($pass??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="submit" value="UPDATE" class="button delbtton">
+ Update the html file
+ </form>
+ <hr>
+ <form id="delete" action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" class="delmode">
+ <input type="hidden" name="mode" value="admin">
+ <input type="hidden" name="admin" value="del">
+ <input type="hidden" name="pass" value="<?php echo \htmlentities($pass??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <p>Check the checkbox of the article you want to delete and press the delete button.</p>
+ <input class="button delbtton" type="submit" value="DELETE">
+ <input class="button delbtton" type="reset" value="RESET">
+ <label>[<input type="checkbox" name="onlyimgdel" value="on">ImageOnly]</label>
+ </form>
+ <table class="delfo">
+ <tr>
+ <th>Check</th>
+ <th>No</th>
+ <th>Time</th>
+ <th>Subject</th>
+ <th>Name</th>
+ <th>Comment</th>
+ <th>Host</th>
+ <th>Image (KB) </th>
+ <th>MD5</th>
+ </tr>
+ <?php $__currentLoopData = $dels; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $del): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td><input form="delete" type="checkbox" name="del[]" value="<?php echo \htmlentities($del['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"></td>
+ <td>
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" id="form<?php echo \htmlentities($del['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="hidden" name="del[]" value="<?php echo \htmlentities($del['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><input type="hidden" name="pwd"
+ value="<?php echo \htmlentities($pass??'', ENT_QUOTES, 'UTF-8', false); ?>"><input type="hidden" name="mode" value="edit">
+ <a href="javascript:form<?php echo \htmlentities($del['no']??'', ENT_QUOTES, 'UTF-8', false); ?>.submit()"><?php echo \htmlentities($del['no']??'', ENT_QUOTES, 'UTF-8', false); ?></a></form>
+ </td>
+ <td><?php echo \htmlentities($del['now']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($del['sub']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo $del['name']; ?></td>
+ <td><?php echo \htmlentities($del['com']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($del['host']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php if($del['src']): ?>
+ <a href="<?php echo \htmlentities($del['src']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="luminous"><?php echo \htmlentities($del['srcname']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ (<?php echo \htmlentities($del['size_kb']??'', ENT_QUOTES, 'UTF-8', false); ?>)KB <?php endif; ?></td>
+ <td><?php if($del['src']): ?><?php echo \htmlentities($del['chk']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </table>
+ <?php if($del_pages): ?>
+ <?php $__currentLoopData = $del_pages; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $del_page): $loop = $this->incrementLoopIndices();  ?>
+ <div class="del_page">[
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" id="form_page<?php echo \htmlentities($del_page['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="hidden" name="mode" value="admin">
+ <input type="hidden" name="admin" value="del">
+ <input type="hidden" name="pass" value="<?php echo \htmlentities($pass??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="hidden" name="del_pageno" value="<?php echo \htmlentities($del_page['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php if($del_page['notlink']): ?>
+ <strong><?php echo \htmlentities($del_page['pageno']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </strong>
+ </form>
+ <?php else: ?>
+ <a href="javascript:form_page<?php echo \htmlentities($del_page['no']??'', ENT_QUOTES, 'UTF-8', false); ?>.submit()"><?php echo \htmlentities($del_page['pageno']??'', ENT_QUOTES, 'UTF-8', false); ?></a></form>
+ <?php endif; ?>
+ ]</div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+
+
+
+ <p>&lt;&lt;Image all size : <?php echo \htmlentities($all??'', ENT_QUOTES, 'UTF-8', false); ?> KB &gt;&gt;</p>
+ </div>
+ </section>
+ <?php /* <!-- (========== ADMIN MODE -DELETE-(管理モード(削除)) end ==========) --> */ ?>
+ <?php endif; ?>
+ <?php if($err_mode): ?>
+ <?php /* <!-- (========== ERROR MODE(エラー画面) start ==========) --> */ ?>
+ <section>
+ <div class="thread">
+ <h2 class="oekaki">ERROR</h2>
+ <p class="err"><?php echo $mes; ?></p>
+ <p><a href="#" onclick="javascript:window.history.back(-1);return false;">[Back]</a></p>
+ </div>
+ </section>
+ <?php /* <!-- (========== ERROR MODE(エラー画面) end ==========) --> */ ?>
+ <?php endif; ?>
+	</main>
+	<footer>
+	<?php /*  Copyright notice, do not delete  */ ?>
+ <?php echo $this->runChild('parts.mono_copyright'); ?>
+	</footer>
+	<div id="page_top"><a class="icon-angles-up-solid"></a></div>
+	<script src="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>"></script>
+	<script src="lib/luminous/luminous.min.js"></script>
+	<script>
+ jQuery(function() {
+ window.onpageshow = function () {
+ var $btn = $('[type="submit"]');
+ //disbledを解除
+ $btn.prop('disabled', false);
+ $btn.click(function () { //送信ボタン2度押し対策
+ $(this).prop('disabled', true);
+ $(this).closest('form').submit();
+ });
+ }
+ // https://cotodama.co/pagetop/
+ var pagetop = $('#page_top');
+ pagetop.hide();
+ $(window).scroll(function () {
+ if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+ pagetop.fadeIn();
+ } else {
+ pagetop.fadeOut();
+ }
+ });
+ pagetop.click(function () {
+ $('body,html').animate({
+ scrollTop: 0
+ }, 500); //0.5秒かけてトップへ移動
+ return false;
+ });
+ // https://www.webdesignleaves.com/pr/plugins/luminous-lightbox.html
+ const luminousElems = document.querySelectorAll('.luminous');
+ //取得した要素の数が 0 より大きければ
+ if( luminousElems.length > 0 ) {
+ luminousElems.forEach( (elem) => {
+ new Luminous(elem);
+ });
+ }
+ });
+
+</script>
+</body>
+
+</html>

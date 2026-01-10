@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="{{$skindir}}css/daydream.css" id="css0">
+	<link rel="stylesheet" href="{{$skindir}}css/orangepicnic.css" id="css1" disabled>
+	<link rel="stylesheet" href="{{$skindir}}css/confetti.css" id="css2" disabled>
+	<link rel="stylesheet" href="{{$skindir}}css/starrynight.css" id="css3" disabled>
+	<link rel="stylesheet" href="{{$skindir}}css/limesoda.css" id="css4" disabled>
+	<link rel="stylesheet" href="{{$skindir}}css/latte.css" id="css5" disabled>
+
+	<link rel="preload" as="style" href="{{$skindir}}icomoon/style.css" onload="this.rel='stylesheet'">
+	<link rel="preload" as="script" href="lib/{{$jquery}}">
+	<link rel="preload" as="script" href="loadcookie.js">
+	<style>
+		.input_disp_none {
+			display: none;
+		}
+	</style>
+
+<script src="changecss.js"></script>
+	<title>{{$title}}</title>
+</head>
+
+<body>
+	<header>
+		@include('parts.title')
+		<hr>
+		<div>
+			<nav class="menu">
+				<a href="https://freakphone.net/">[Main Site]</a>
+				@if($for_new_post)
+				<a href="{{$self}}?mode=newpost">[Post]</a>
+				@endif
+				<a href="{{$self}}?mode=catalog">[Catalog]</a>
+				<a href="index.html">[Top]</a>
+				<a href="{{$self}}?mode=piccom">[Recover Images]</a>
+				<a href="info.html">[Info]</a>
+				<a href="#footer" title="to bottom">[↓]</a>
+			</nav>
+			<hr>
+			<h2><span class="oyano"></span>Catalog mode</h2>
+		</div>
+	</header>
+	<main>
+		<div id="catalog">
+			<hr>
+			<div>
+				@if(isset($oya) and !(empty($oya)))
+				@foreach ($oya as $i => $ress)
+				@foreach ($ress as $res)
+				<div>
+					@if($res['imgsrc'])
+					<p><a href="{{$self}}?res={{$res['no']}}" title="{{$res['sub']}} by {{$res['name']}}"><img
+								src="{{$res['imgsrc']}}" alt="{{$res['sub']}} by {{$res['name']}}" width="{{$res['w']}}"
+								@if($res['h']) height="{{$res['h']}}" @endif @if($i>23)loading="lazy"@endif></a></p>
+					@endif
+					@if($res['txt'])
+					<p><a href="{{$self}}?res={{$res['no']}}"
+							title="{{$res['sub']}} by {{$res['name']}}">{{$res['sub']}} by {{$res['name']}}</a></p>
+					@endif
+					<p>[{{$res['no']}}] {{$res['now']}}@if($res['updatemark']){{$res['updatemark']}}@endif
+						@if($res['id']) ID:{{$res['id']}}@endif</p>
+				</div>
+				@endforeach @endforeach
+				@endif
+
+			</div>
+			<hr>
+		</div>
+	</main>
+	<footer id="footer">
+		<div>
+			{{-- 前、次のナビゲーション --}}
+			@include('parts.mono_prev_next')
+
+			{{--  メンテナンスフォーム欄  --}}
+			@include('parts.mono_mainte_form')
+
+			<script src="loadcookie.js"></script>
+			<script>
+			document.addEventListener('DOMContentLoaded',l,false);
+			</script>
+		</div>
+				{{--  Copyright notice, do not delete  --}}
+				@include('parts.mono_copyright')
+	</footer>
+	<div id="page_top"><a class="icon-angles-up-solid"></a></div>
+	<script src="lib/{{$jquery}}"></script>
+	<script>
+		colorIdx = GetCookie('colorIdx');
+		document.getElementById("mystyle").selectedIndex = colorIdx;
+		jQuery(function() {
+		window.onpageshow = function () {
+			var $btn = $('[type="submit"]');
+			//disbledを解除
+			$btn.prop('disabled', false);
+			$btn.click(function () { //送信ボタン2度押し対策
+				$(this).prop('disabled', true);
+				$(this).closest('form').submit();
+			});
+		}
+		// https://cotodama.co/pagetop/
+		var pagetop = $('#page_top');
+		pagetop.hide();
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+				pagetop.fadeIn();
+			} else {
+				pagetop.fadeOut();
+			}
+		});
+		pagetop.click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 500); //0.5秒かけてトップへ移動
+			return false;
+		});
+	});
+	</script>
+</body>
+
+</html>

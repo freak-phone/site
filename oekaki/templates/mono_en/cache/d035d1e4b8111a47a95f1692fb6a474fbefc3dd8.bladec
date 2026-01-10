@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+	<meta charset="utf-8">
+
+	<link rel="icon" href="favicon.png">
+
+
+
+
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/daydream.css" id="css0">
+
+
+
+	<link rel="preload" as="style" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>icomoon/style.css" onload="this.rel='stylesheet'">
+
+	<link rel="preload" as="script" href="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<link rel="preload" as="style" href="lib/luminous/luminous-basic.min.css" onload="this.rel='stylesheet'">
+
+	<link rel="preload" as="script" href="lib/luminous/luminous.min.js">
+
+	<link rel="preload" as="script" href="loadcookie.js">
+
+
+
+
+
+	<style>
+
+ .input_disp_none {
+
+ display: none;
+
+ }
+
+	</style>
+
+<script src="changecss.js"></script>
+
+	<title><?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?></title>
+
+	<?php if($notres): ?>
+
+	<?php /* I would be happy if you could change this area.
+
+	Please ask google for the detailed meaning. */ ?>
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="">
+
+	<meta property="og:site_name" content="">
+
+	<meta property="og:title" content="<?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<meta property="og:type" content="article">
+
+	<meta property="og:description" content="">
+
+	<meta property="og:image" content="<?php echo \htmlentities($rooturl??'', ENT_QUOTES, 'UTF-8', false); ?><?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>img/og.png">
+
+	<meta property="og:image:width" content="1028">
+
+	<meta property="og:image:height" content="1028">
+
+	<meta property="og:url" content="<?php echo \htmlentities($rooturl??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<meta name="description" content="">
+
+	<?php endif; ?>
+
+	<?php if($resno): ?>
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="">
+
+	<meta property="og:site_name" content="">
+
+	<meta property="og:title" content="[<?php echo \htmlentities($oya[0][0]['no']??'', ENT_QUOTES, 'UTF-8', false); ?>] <?php echo \htmlentities($oya[0][0]['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($oya[0][0]['name']??'', ENT_QUOTES, 'UTF-8', false); ?> - <?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<meta property="og:type" content="article">
+
+	<meta property="og:description" content="<?php echo \htmlentities($oya[0][0]['descriptioncom']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<meta property="og:url" content="<?php echo \htmlentities($rooturl??'', ENT_QUOTES, 'UTF-8', false); ?><?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($oya[0][0]['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+	<?php if($oya[0][0]['src']): ?>
+
+	<meta property="og:image" content="<?php echo \htmlentities($rooturl??'', ENT_QUOTES, 'UTF-8', false); ?><?php echo \htmlentities($oya[0][0]['imgsrc']??'', ENT_QUOTES, 'UTF-8', false); ?>" />
+
+	<meta property="og:description" content="<?php echo \htmlentities($oya[0][0]['descriptioncom']??'', ENT_QUOTES, 'UTF-8', false); ?>" />
+
+	<?php endif; ?>
+
+	<?php endif; ?>
+
+	<style id="for_mobile"></style>
+
+	<script>
+
+ function is_mobile() {
+
+ if (navigator.maxTouchPoints && (window.matchMedia && window.matchMedia('(max-width: 768px)').matches)) {
+
+ return document.getElementById("for_mobile").textContent = ".for_pc{display: none;}";
+
+ }
+
+ return false;
+
+ }
+
+ document.addEventListener('DOMContentLoaded', is_mobile, false);
+
+	</script>
+
+</head>
+
+
+
+<body>
+
+ <h1>
+ <img src="https://freakphone.net/graphics/layout/oelogo.png" alt="">
+ </h1>
+
+	<header id="header">
+
+ <?php echo $this->runChild('parts.title'); ?>
+
+
+ <div>
+
+ <nav class="menu">
+
+ <a href="https://freakphone.net/">[Main Site]</a>
+
+ <?php if($for_new_post): ?>
+
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=newpost">[Post]</a>
+
+ <?php endif; ?>
+
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=catalog">[Catalog]</a>
+
+ <a href="index.html">[Top]</a>
+
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=piccom">[Recover Images]</a>
+
+ <a href="info.html">[Info]</a>
+
+ <a href="#footer" title="to bottom">[↓]</a>
+
+ </nav>
+
+ <hr class="fruta">
+
+ <?php if($resno): ?>
+
+ <?php if($form): ?>
+
+ <p class="resm">
+
+ Reply mode
+
+ <?php if($resname): ?>
+
+ <script>
+
+ function add_to_com() {
+
+ document.getElementById("p_input_com").value +=
+
+ "<?php echo htmlspecialchars($resname,ENT_QUOTES,'utf-8'); ?><?php echo \htmlentities($_san??'', ENT_QUOTES, 'UTF-8', false); ?>";
+
+ }
+
+ </script>
+
+ <?php /* コピーボタン  */ ?>
+
+ <button class="copy_button" onclick="add_to_com()">Copy the poster name</button>
+
+ <?php endif; ?>
+
+ </p>
+
+ <hr>
+
+ <?php endif; ?>
+
+ <?php endif; ?>
+
+ <?php if($paintform): ?>
+
+ <?php if($paint and ($resno or !$diary)): ?>
+
+ <?php if($resno): ?>
+
+ <p class="resm">Reply with oekaki</p>
+
+ <hr>
+ 
+ <?php endif; ?>
+
+ <div class="epost">
+
+ <center>
+
+ <div class="box09">
+ <div class="box-inner">
+ Welcome to my Oekaki board!
+ <br>
+ <br>
+ <ul>
+ <li> be respectful</li>
+ <li> no spam</li>
+ <li> no r18</li>
+ <li> have fun!</li>
+ </ul>
+ </div>
+
+ </div>
+
+ </center>
+
+ <br>
+
+ <hr>
+
+<br><center>
+
+ <?php /* ペイントボタン */ ?>
+
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" enctype="multipart/form-data">
+
+ <p>
+
+ Width :<input name="picw" type="number" title="Width :" class="form" value="<?php echo \htmlentities($pdefw??'', ENT_QUOTES, 'UTF-8', false); ?>" min="300" max="<?php echo \htmlentities($pmaxw??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ Height :<input name="pich" type="number" title="Height" class="form" value="<?php echo \htmlentities($pdefh??'', ENT_QUOTES, 'UTF-8', false); ?>" min="300" max="<?php echo \htmlentities($pmaxh??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <?php if($select_app): ?>
+
+ Tool:
+
+ <select name="shi">
+
+ <option value="neo">PaintBBS NEO</option>
+
+ <?php if($use_shi_painter): ?><option value="1" class="for_pc">Shi-Painter</option>
+
+ <?php endif; ?>
+
+ <?php if($use_chickenpaint): ?><option value="chicken">ChickenPaint</option>
+
+ <?php endif; ?>
+
+ <?php if($use_klecks): ?><option value="klecks">Klecks</option>
+
+ <?php endif; ?>
+
+ </select>
+
+ <?php else: ?>
+
+ <?php /* <!-- 選択メニューを出さない時に起動するアプリ --> */ ?>
+
+ <input type="hidden" name="shi" value="neo">
+
+ <?php endif; ?>
+
+
+
+ <?php if($use_select_palettes): ?>
+
+ Palette：<select name="selected_palette_no" title="Palette" class="form"><?php echo $palette_select_tags; ?></select>
+
+ <?php endif; ?>
+
+ <?php if($resno): ?>
+
+ <input type="hidden" name="resto" value="<?php echo \htmlentities($resno??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <?php endif; ?>
+
+ <?php if($anime): ?><label><input type="checkbox" value="true" name="anime" title="Save Playback" <?php if($animechk): ?><?php echo \htmlentities($animechk??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>>Save Playback</label>
+
+ <?php endif; ?>
+
+ <input type="hidden" name="mode" value="paint">
+
+ <input class="button" type="submit" value="Paint">
+
+ </p>
+
+ </form>
+
+ <?php endif; ?>
+
+
+
+ <?php if($notres and (!$diary or $addinfo)): ?>
+
+ <ul>
+
+ <?php if($paint2 and !$diary): ?>
+
+ <li>Canvas size is width 300px to <?php echo \htmlentities($pmaxw??'', ENT_QUOTES, 'UTF-8', false); ?>px, height 300px to <?php echo \htmlentities($pmaxh??'', ENT_QUOTES, 'UTF-8', false); ?>px.</li>
+
+ <li>Images larger than width <?php echo \htmlentities($maxw??'', ENT_QUOTES, 'UTF-8', false); ?>px height <?php echo \htmlentities($maxh??'', ENT_QUOTES, 'UTF-8', false); ?>px will be displayed in reduced size.</li>
+
+ <br>
+
+ <hr>
+
+ <br>
+
+ </center>
+
+ <div style="text-align:right">
+
+ <?php echo $this->runChild('parts.stylechanger'); ?>
+
+ </div>
+
+ <?php endif; ?>
+
+ <?php echo $addinfo; ?>
+
+
+ </ul>
+
+ <?php endif; ?>
+
+
+
+ </div>
+
+ <?php endif; ?>
+
+ <?php if($form): ?>
+
+ <div>
+
+ <form action="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>" method="post" enctype="multipart/form-data">
+
+ <input type="hidden" name="token" value="<?php if($token): ?><?php echo \htmlentities($token??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>">
+
+ <input type="hidden" name="mode" value="regist">
+
+ <?php if($resno): ?><input type="hidden" name="resto" value="<?php echo \htmlentities($resno??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <?php endif; ?>
+
+ <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo \htmlentities($maxbyte??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <table>
+
+ <tr>
+
+ <td>Name <?php if($usename): ?><?php echo \htmlentities($usename??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+
+ <td><input class="form" type="text" name="name" size="28" value="" autocomplete="username">
+
+ </td>
+
+ </tr>
+
+ <tr>
+
+ <td>Mail</td>
+
+ <td><input class="form" type="text" name="email" size="28" value="" autocomplete="email">
+
+ </td>
+
+ </tr>
+
+ <tr>
+
+ <td>URL</td>
+
+ <td><input class="form" type="text" name="url" size="28" autocomplete="url"></td>
+
+ </tr>
+
+ <tr>
+
+ <td>Sub <?php if($usesub): ?><?php echo \htmlentities($usesub??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+
+ <td>
+
+ <input class="form" type="text" name="sub" size="20" value="<?php if($resub): ?><?php echo \htmlentities($resub??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
+
+ autocomplete="section-sub">
+
+ <input class="button" type="submit" value="Post">
+
+ </td>
+
+ </tr>
+
+ <tr>
+
+ <td>Com <?php if($usecom): ?><?php echo \htmlentities($usecom??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></td>
+
+ <td><textarea class="form" name="com" cols="28" rows="4" wrap="soft" id="p_input_com"></textarea></td>
+
+ </tr>
+
+ <?php if($upfile): ?>
+
+ <tr>
+
+ <td>UpFile</td>
+
+ <td>
+
+ <input class="form" type="file" name="upfile" accept="image/*">
+
+ <span class="preview"></span>
+
+ </td>
+
+ </tr>
+
+ <?php endif; ?>
+
+ <tr>
+
+ <td>Pass</td>
+
+ <td><input class="form" type="password" name="pwd" value="" autocomplete="current-password"><small>(For editing and deleting)</small></td>
+
+ </tr>
+
+ </table>
+
+ <ul>
+
+ <?php if($upfile): ?>
+
+ <li>Attachable files type: GIF, JPG, PNG and WEBP. </li>
+
+ <li>Images larger than width <?php echo \htmlentities($maxw??'', ENT_QUOTES, 'UTF-8', false); ?>px height <?php echo \htmlentities($maxh??'', ENT_QUOTES, 'UTF-8', false); ?>pxpx will be displayed in reduced size.</li>
+
+ <?php endif; ?>
+
+ <li>The maximum amount of posted data is <?php echo \htmlentities($maxkb??'', ENT_QUOTES, 'UTF-8', false); ?>KB. With sage function.</li>
+
+ <?php echo $addinfo; ?>
+
+
+ </ul>
+
+ </form>
+
+ </div>
+
+ <?php endif; ?>
+
+ </div>
+
+	</header>
+
+
+
+	<main>
+
+ <section>
+
+ <?php /* スレッドのループ */ ?>
+
+ <?php $__currentLoopData = $oya; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $i=>$ress): $loop = $this->incrementLoopIndices();  ?>
+
+ <div class="thread">
+
+
+
+ <?php if(isset($ress) and !
+
+ @empty($ress)): ?>
+
+ <?php $__currentLoopData = $ress; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $res): $loop = $this->incrementLoopIndices();  ?>
+
+ <?php /* 記事表示 */ ?>
+
+ <?php if($loop->first): ?>
+
+ <?php /* 最初のループ */ ?>
+
+ <?php /* レスモードの時 */ ?>
+
+ <?php if($resno): ?>
+
+ <h2><span class="oyano">[<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>]</span> <?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+
+ <?php else: ?>
+
+ <h2><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="oyano">[<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>]</span>
+
+ <?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?></a></h2>
+
+ <?php endif; ?>
+
+ <?php /* 親記事のヘッダ */ ?>
+
+ <h3>
+
+ <img src="/bullets/icon_97_10.gif" alt=""> <span class="name"><a href="search.php?page=1&amp;imgsearch=on&amp;query=<?php echo \htmlentities($res['encoded_name']??'', ENT_QUOTES, 'UTF-8', false); ?>&amp;radio=2" target="_blank" rel="noopener"><?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?></a></span><span class="trip"><?php echo \htmlentities($res['trip']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+
+ <?php echo \htmlentities($res['now']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php if($res['id']): ?> ID : <?php echo \htmlentities($res['id']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php endif; ?>
+
+ <?php if($res['url']): ?> <span class="url">[<a href="<?php echo \htmlentities($res['url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span>
+
+ <?php endif; ?>
+
+ <?php if($res['updatemark']): ?><?php echo \htmlentities($res['updatemark']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>
+
+ </h3>
+
+ <?php else: ?>
+
+ <hr>
+
+ <?php /* 子レス */ ?>
+
+ <div class="res">
+
+ <?php /* 子レスヘッダ */ ?>
+
+ <h4>
+
+ <img src="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>img/comment.gif" alt="">
+
+ <span class="name"><a href="search.php?page=1&amp;imgsearch=on&amp;query=<?php echo \htmlentities($res['encoded_name']??'', ENT_QUOTES, 'UTF-8', false); ?>&amp;radio=2" target="_blank" rel="noopener"><?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?></a></span><span class="trip"><?php echo \htmlentities($res['trip']??'', ENT_QUOTES, 'UTF-8', false); ?></span> : <?php echo \htmlentities($res['now']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php if($res['id']): ?> ID :
+
+ <?php echo \htmlentities($res['id']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php endif; ?>
+
+ <?php if($res['url']): ?> <span class="url">[<a href="<?php echo \htmlentities($res['url']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="nofollow noopener noreferrer">URL</a>]</span>
+
+ <?php endif; ?>
+
+ <?php if($res['updatemark']): ?> <?php echo \htmlentities($res['updatemark']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php endif; ?>
+
+ </h4>
+
+ <?php /* 子レスヘッダここまで */ ?>
+
+ <?php endif; ?>
+
+ <?php /* 親子共通 */ ?>
+
+ <?php if($res['src']): ?>
+
+ <div class="img_info_wrap">
+
+ <a href="<?php echo \htmlentities($res['src']??'', ENT_QUOTES, 'UTF-8', false); ?>" title="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" class="luminous"><?php echo \htmlentities($res['srcname']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+
+ (<?php echo \htmlentities($res['size_kb']??'', ENT_QUOTES, 'UTF-8', false); ?> KB)
+
+ <?php if($res['thumb']): ?> - Showing thumbnail -
+
+ <?php endif; ?>
+
+ <?php if($res['painttime']): ?> PaintTime :
+
+ <?php echo \htmlentities($res['painttime']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+
+ <?php endif; ?>
+
+ <br>
+
+ </div>
+
+ <figure <?php if($res['w']>=750): ?> style="float:none;margin-right:0"<?php endif; ?>>
+
+ <a href="<?php echo \htmlentities($res['src']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" rel="noopener" class="luminous">
+
+ <img src="<?php echo \htmlentities($res['imgsrc']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?>" title="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?>" width="<?php echo \htmlentities($res['w']??'', ENT_QUOTES, 'UTF-8', false); ?>" height="<?php echo \htmlentities($res['h']??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php if($i>4): ?>loading="lazy"<?php endif; ?>>
+
+ </a>
+
+ <div align="center" style="padding-top:5px;">
+
+ <?php if($res['continue']): ?> <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=continue&amp;no=<?php echo \htmlentities($res['continue']??'', ENT_QUOTES, 'UTF-8', false); ?>">*Continue</a>
+
+ <?php endif; ?>
+
+ <?php if($res['spch']): ?><span class="for_pc">
+
+ <?php endif; ?>
+
+ <?php if($res['pch']): ?> <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=openpch&amp;pch=<?php echo \htmlentities($res['pch']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank">*Replay</a>
+
+ <?php endif; ?>
+
+ <?php if($res['spch']): ?></span><?php endif; ?>
+
+
+
+ </div>
+
+ </figure>
+
+ <?php endif; ?>
+
+ <div class="comment_wrap">
+
+ <p><?php echo $res['com']; ?></p>
+
+ <?php /* 親のコメント部分 */ ?>
+
+ </div>
+
+ <?php if($loop->first): ?>
+
+ <?php if($res['skipres']): ?>
+
+ <hr>
+
+ <div class="article_skipres">
+
+ <?php echo \htmlentities($res['skipres']??'', ENT_QUOTES, 'UTF-8', false); ?> posts Omitted.
+
+ </div>
+
+ <?php endif; ?>
+
+ <?php endif; ?>
+
+ <?php /* 子レスなら */ ?>
+
+ <?php if(!$loop->first): ?>
+
+ </div>
+
+ <?php endif; ?>
+
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+ <?php endif; ?>
+
+ <div class="thfoot">
+
+ <hr>
+
+ <?php if($sharebutton): ?>
+
+ <?php /* シェアボタン */ ?>
+
+ <span class="share_button">
+
+ <a target="_blank"
+
+ href="https://twitter.com/intent/tweet?&text=%5B<?php echo \htmlentities($ress[0]['encoded_no']??'', ENT_QUOTES, 'UTF-8', false); ?>%5D%20<?php echo \htmlentities($ress[0]['share_sub']??'', ENT_QUOTES, 'UTF-8', false); ?>%20by%20<?php echo \htmlentities($ress[0]['share_name']??'', ENT_QUOTES, 'UTF-8', false); ?>%20-%20<?php echo \htmlentities($encoded_title??'', ENT_QUOTES, 'UTF-8', false); ?>&url=<?php echo \htmlentities($encoded_rooturl??'', ENT_QUOTES, 'UTF-8', false); ?><?php echo \htmlentities($encoded_self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($ress[0]['encoded_no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><span
+
+ class="button"><img src="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>img/twitter.svg" alt=""> Tweet</span></a>
+
+ <a target="_blank" class="fb btn" href="http://www.facebook.com/share.php?u=<?php echo \htmlentities($encoded_rooturl??'', ENT_QUOTES, 'UTF-8', false); ?><?php echo \htmlentities($encoded_self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($ress[0]['encoded_no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="button"><img src="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>img/facebook.svg" alt="">
+
+ Share</span></a>
+
+ </span>
+
+ <?php endif; ?>
+
+ <?php if($notres): ?><span class="button"><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($ress[0]['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><img src="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>img/rep.svg" alt="">
+
+ <?php if($ress[0]['disp_resbutton']): ?>Reply
+
+ <?php else: ?>
+
+ View <?php endif; ?></a></span><?php endif; ?>
+
+ <a href="#header" title="to top">[&uarr;]</a>
+
+ </div>
+
+ </div>
+
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+ <?php /* スレッドループここまで */ ?>
+
+ </section>
+
+	</main>
+
+
+
+
+
+	<footer id="footer">
+
+ <div>
+
+
+
+ <nav>
+
+ <?php if($resno): ?>
+
+ <div class="pcdisp page">
+
+
+
+ <?php if($res_prev): ?><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res_prev['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">≪<?php echo \htmlentities($res_prev['substr_sub']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+
+ <?php endif; ?>
+
+ | <a href="<?php echo \htmlentities($self2??'', ENT_QUOTES, 'UTF-8', false); ?>">Top</a> |
+
+ <?php if($res_next): ?><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res_next['no']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+
+ <?php echo \htmlentities($res_next['substr_sub']??'', ENT_QUOTES, 'UTF-8', false); ?>≫</a>
+
+ <?php endif; ?>
+
+ </div>
+
+
+
+ <div class="mobiledisp">
+
+ <?php if($res_prev): ?>
+
+ Prev: <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res_prev['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($res_prev['sub']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+
+ <br>
+
+ <?php endif; ?>
+
+ <?php if($res_next): ?>
+
+ Next: <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res_next['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($res_next['sub']??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+
+ <br>
+
+ <?php endif; ?>
+
+ </div>
+
+
+
+ <?php if($view_other_works): ?>
+
+ <div class="view_other_works">
+
+ <?php $__currentLoopData = $view_other_works; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $view_other_work): $loop = $this->incrementLoopIndices();  ?><div><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($view_other_work['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"><img src="<?php echo \htmlentities($view_other_work['imgsrc']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="<?php echo \htmlentities($view_other_work['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($view_other_work['name']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+
+ title="<?php echo \htmlentities($view_other_work['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($view_other_work['name']??'', ENT_QUOTES, 'UTF-8', false); ?>" width="<?php echo \htmlentities($view_other_work['w']??'', ENT_QUOTES, 'UTF-8', false); ?>" height="<?php echo \htmlentities($view_other_work['h']??'', ENT_QUOTES, 'UTF-8', false); ?>" loading="lazy"></a></div>
+
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+
+ </div>
+
+ <?php endif; ?>
+
+
+
+ <?php endif; ?>
+
+
+
+ <?php if($notres): ?>
+
+
+
+ <?php /* 前、次のナビゲーション */ ?>
+
+ <?php echo $this->runChild('parts.mono_prev_next'); ?>
+
+
+
+ <?php endif; ?>
+
+ </nav>
+
+ <?php /* <!-- メンテナンスフォーム欄 --> */ ?>
+
+ <?php echo $this->runChild('parts.mono_mainte_form'); ?>
+
+
+
+ <script src="loadcookie.js"></script>
+
+ <script>
+
+ document.addEventListener('DOMContentLoaded', l, false);
+
+ </script>
+
+ </div>
+
+ <?php /* <!-- 著作権表示 削除しないでください --> */ ?>
+
+ <?php echo $this->runChild('parts.mono_copyright'); ?>
+
+	</footer>
+
+
+
+	<script src="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>"></script>
+
+	<script src="lib/luminous/luminous.min.js"></script>
+
+	<script>
+
+ colorIdx = GetCookie('colorIdx');
+
+ document.getElementById("mystyle").selectedIndex = colorIdx;
+
+
+
+ jQuery(function() {
+
+ window.onpageshow = function() {
+
+ var $btn = $('[type="submit"]');
+
+ //disbledを解除
+
+ $btn.prop('disabled', false);
+
+ $btn.click(function() { //送信ボタン2度押し対策
+
+ $(this).prop('disabled', true);
+
+ $(this).closest('form').submit();
+
+ });
+
+ }
+
+ // https://cotodama.co/pagetop/
+
+
+
+ // https://www.webdesignleaves.com/pr/plugins/luminous-lightbox.html
+
+ const luminousElems = document.querySelectorAll('.luminous');
+
+ //取得した要素の数が 0 より大きければ
+
+ if (luminousElems.length > 0) {
+
+ luminousElems.forEach((elem) => {
+
+ new Luminous(elem);
+
+ });
+
+ }
+
+ });
+
+	</script>
+
+</body>
+
+
+
+</html>
+

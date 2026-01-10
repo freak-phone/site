@@ -1,0 +1,23 @@
+/*----------------------- Preloader -----------------------*/
+#preloader {
+position: fixed;
+background-color: #F9F9F9;
+z-index: 9999 !important;
+top:0;
+left:0;
+height: 100vh;
+width:100vw;
+overflow: hidden;
+}
+
+#status {
+width: 200px;
+height: 200px;
+position: absolute;
+left: 50%;
+top: 50%;
+background-image: url(/graphics/biggraphic/gold-hourglass.gif);
+background-repeat: no-repeat;
+background-position: center;
+margin: -100px 0 0 -100px;
+}

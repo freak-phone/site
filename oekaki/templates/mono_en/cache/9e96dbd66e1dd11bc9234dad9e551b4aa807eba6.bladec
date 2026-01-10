@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/daydream.css" id="css0">
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/orangepicnic.css" id="css1" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/confetti.css" id="css2" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/starrynight.css" id="css3" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/limesoda.css" id="css4" disabled>
+	<link rel="stylesheet" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>css/latte.css" id="css5" disabled>
+
+	<link rel="preload" as="style" href="<?php echo \htmlentities($skindir??'', ENT_QUOTES, 'UTF-8', false); ?>icomoon/style.css" onload="this.rel='stylesheet'">
+	<link rel="preload" as="script" href="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>">
+	<link rel="preload" as="script" href="loadcookie.js">
+	<style>
+ .input_disp_none {
+ display: none;
+ }
+	</style>
+
+<script src="changecss.js"></script>
+	<title><?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?></title>
+</head>
+
+<body>
+	<header>
+ <?php echo $this->runChild('parts.title'); ?>
+ <hr>
+ <div>
+ <nav class="menu">
+ <a href="https://freakphone.net/">[Main Site]</a>
+ <?php if($for_new_post): ?>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=newpost">[Post]</a>
+ <?php endif; ?>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=catalog">[Catalog]</a>
+ <a href="index.html">[Top]</a>
+ <a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?mode=piccom">[Recover Images]</a>
+ <a href="info.html">[Info]</a>
+ <a href="#footer" title="to bottom">[↓]</a>
+ </nav>
+ <hr>
+ <h2><span class="oyano"></span>Catalog mode</h2>
+ </div>
+	</header>
+	<main>
+ <div id="catalog">
+ <hr>
+ <div>
+ <?php if(isset($oya) and !(empty($oya))): ?>
+ <?php $__currentLoopData = $oya; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $i => $ress): $loop = $this->incrementLoopIndices();  ?>
+ <?php $__currentLoopData = $ress; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $res): $loop = $this->incrementLoopIndices();  ?>
+ <div>
+ <?php if($res['imgsrc']): ?>
+ <p><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>" title="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?>"><img
+ src="<?php echo \htmlentities($res['imgsrc']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?>" width="<?php echo \htmlentities($res['w']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ <?php if($res['h']): ?> height="<?php echo \htmlentities($res['h']??'', ENT_QUOTES, 'UTF-8', false); ?>" <?php endif; ?> <?php if($i>23): ?>loading="lazy"<?php endif; ?>></a></p>
+ <?php endif; ?>
+ <?php if($res['txt']): ?>
+ <p><a href="<?php echo \htmlentities($self??'', ENT_QUOTES, 'UTF-8', false); ?>?res=<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($res['sub']??'', ENT_QUOTES, 'UTF-8', false); ?> by <?php echo \htmlentities($res['name']??'', ENT_QUOTES, 'UTF-8', false); ?></a></p>
+ <?php endif; ?>
+ <p>[<?php echo \htmlentities($res['no']??'', ENT_QUOTES, 'UTF-8', false); ?>] <?php echo \htmlentities($res['now']??'', ENT_QUOTES, 'UTF-8', false); ?><?php if($res['updatemark']): ?><?php echo \htmlentities($res['updatemark']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>
+ <?php if($res['id']): ?> ID:<?php echo \htmlentities($res['id']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></p>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?> <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+
+ </div>
+ <hr>
+ </div>
+	</main>
+	<footer id="footer">
+ <div>
+ <?php /* 前、次のナビゲーション */ ?>
+ <?php echo $this->runChild('parts.mono_prev_next'); ?>
+
+ <?php /*  メンテナンスフォーム欄  */ ?>
+ <?php echo $this->runChild('parts.mono_mainte_form'); ?>
+
+ <script src="loadcookie.js"></script>
+ <script>
+ document.addEventListener('DOMContentLoaded',l,false);
+ </script>
+ </div>
+ <?php /*  Copyright notice, do not delete  */ ?>
+ <?php echo $this->runChild('parts.mono_copyright'); ?>
+	</footer>
+	<div id="page_top"><a class="icon-angles-up-solid"></a></div>
+	<script src="lib/<?php echo \htmlentities($jquery??'', ENT_QUOTES, 'UTF-8', false); ?>"></script>
+	<script>
+ colorIdx = GetCookie('colorIdx');
+ document.getElementById("mystyle").selectedIndex = colorIdx;
+ jQuery(function() {
+ window.onpageshow = function () {
+ var $btn = $('[type="submit"]');
+ //disbledを解除
+ $btn.prop('disabled', false);
+ $btn.click(function () { //送信ボタン2度押し対策
+ $(this).prop('disabled', true);
+ $(this).closest('form').submit();
+ });
+ }
+ // https://cotodama.co/pagetop/
+ var pagetop = $('#page_top');
+ pagetop.hide();
+ $(window).scroll(function () {
+ if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+ pagetop.fadeIn();
+ } else {
+ pagetop.fadeOut();
+ }
+ });
+ pagetop.click(function () {
+ $('body,html').animate({
+ scrollTop: 0
+ }, 500); //0.5秒かけてトップへ移動
+ return false;
+ });
+	});
+	</script>
+</body>
+
+</html>
