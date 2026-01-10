@@ -34,6 +34,23 @@ content:
         multiple: true
         creatable: true
         values: [ Illustration ]
+  - name: design
+    label: Design
+    type: collection
+    path: src/Markdown/art/design
+    fields:
+    - { name: layout, hidden: true, type: string, default: art/illustration/posts.njk }
+    - { name: title, label: Title, type: string }
+    - { name: date, label: Date, type: date }
+    - { name: description, label: Description, type: string }
+    - { name: image, label: Image, media: art, type: image }
+    - name: tags
+      label: Tags
+      type: select
+      options:
+        multiple: true
+        creatable: true
+        values: [ Design ]
   - name: medialog
     label: Medialog
     type: collection
