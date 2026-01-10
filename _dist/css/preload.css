@@ -11,13 +11,13 @@ overflow: hidden;
 perspective: 500px;
 }
 
-#status {
+#preloader-status {
 width: 200px;
 height: 200px;
 position: absolute;
 left: 50%;
 top: 50%;
-background-image: url(/graphics/layout/round3.png);
+background-image: url(/assets/graphics/layout/round3.png);
 background-repeat: no-repeat;
 background-position: center;
 margin: -100px 0 0 -100px;

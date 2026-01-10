@@ -115,7 +115,7 @@ main {
   --padding: 5px;
   --borders: #BDBF9D;
   --container: #F9FBFA;
-  --mainfont: consolas;
+  --mainfont: Inconsolata;
   --accentfont: pandub;
   --newart: url(/assets/graphics/layout/newart.png);
 }
@@ -167,7 +167,6 @@ header {
   float: left;
   overflow: hidden;
   width: 100% !important;
-      min-width: 381px !important;
 }
 
 .updatepic,
@@ -355,7 +354,7 @@ main {
   background-repeat: no-repeat;
   background-position-x: 10px;
   background-position-y: 10px;
-  height: 234px;
+  height: 205px;
 
 }
 
@@ -521,8 +520,6 @@ main {
   border-radius: 5px;
   font-size: 12px;
   line-height: 12px;
-  scrollbar-width: thin;
-  scrollbar-color: #474842;
   position: relative;
 
 }
@@ -575,19 +572,11 @@ span.title a {
   display: flex;
 }
 
-#newstxt::-webkit-scrollbar {
-  width: 8px
-}
-
-#newstxt::-webkit-scrollbar-track {
-  background: #fff
-}
-
-#newstxt::-webkit-scrollbar-thumb {
-  background-color: #474842;
-  border-radius: 8px;
-  border: 2px solid #fff
-}
+    /* Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #cf8e4e;
+    }
 
 
 
@@ -850,7 +839,8 @@ h2.linkee::before {
 
 #footer {
   margin: 0 auto;
-  align-content: center
+  align-content: center;
+  font-family: var(--mainfont);
 }
 
 
@@ -905,7 +895,8 @@ footer {
   font-size: 11px;
   color: #1e2117;
   padding-top: 10px;
-  border-top: 1px solid #7a4023
+  border-top: 1px solid #7a4023;
+  font-family: var(--mainfont);
 }
 
 #guestbook {
@@ -997,6 +988,7 @@ span.article {
   border-color: #7D8661;
   border-radius: 6px;
   position: relative;
+  background-size: cover;
 }
 
 .capt {
@@ -1116,4 +1108,67 @@ span.title {
   background-color: white;
   float: right;
   margin-top: 5px;
+}
+
+/* Inline | http://localhost:8080/ */
+
+#latestblog {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #ECECE4;
+}
+
+h {}
+
+#latestblogThumb {
+  height: 70px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+#latestblogContent {
+  width: calc(100% - 145px);
+}
+
+#latestblogContent h1 {
+  margin: 0;
+  background-color: #cf8e4e;
+  padding: 5px;
+  font-size: 15px;
+}
+
+#blogDate {
+  text-align: right;
+  display: block;
+  color: gray;
+  border-bottom: 1px dotted;
+}
+
+/* home.css | http://localhost:8080/css/home.css */
+
+.comment {
+  /* min-width: 381px !important; */
+}
+
+.newz {
+  overflow-x: hidden;
+}
+
+/* Inline | http://localhost:8080/ */
+
+.readme {
+  text-align: right;
+  display: block;
+  border-top: 1px dotted;
+  padding-top: 2px;
+}
+
+/* home.css | http://localhost:8080/css/home.css */
+
+#latestblog {
+  padding-bottom: 5px;
 }

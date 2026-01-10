@@ -11,10 +11,32 @@
 
   <link rel="stylesheet" href="/css/art.css">
 
+  <style>
+    @media only screen and (max-width: 500px) {
+      aside{
+        display: hidden!important;
+      }
+}
+  </style>
+
 
 </head>
 
 <body>
+          <head>
+  <link rel="stylesheet" href="/css/preload.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/js/preloader.js"></script>
+
+
+</head>
+<body>
+  <div id="preloader">
+    <div id="preloader-status"></div>
+  </div>
+</body>
+
+
   <div id="container" class="flex">
     <aside class="flex">
       <div class="bar">
@@ -80,8 +102,8 @@
         <img src="/img/gallery/illustration/thumbs/wet.png" class="piece hvr-grow-rotate ">
       </a><a  class="glightbox" href="/img/gallery/illustration/waow.jpg">
         <img src="/img/gallery/illustration/thumbs/waow.png" class="piece hvr-grow-rotate ">
-      </a><a  class="glightbox" href="/img/gallery/illustration/thumbs/dedodo.png">
-        <img src="/img/gallery/illustration/dedodo.jpg" class="piece hvr-grow-rotate ">
+      </a><a  class="glightbox" href="/img/gallery/illustration/dedodo.jpg">
+        <img src="/img/gallery/illustration/thumbs/dedodo.png" class="piece hvr-grow-rotate ">
       </a><a  class="glightbox" href="/img/gallery/illustration/feelyweely.jpg">
         <img src="/img/feelyweely.png" class="piece hvr-grow-rotate ">
       </a>
@@ -92,7 +114,7 @@
       </div>
     </main>
     <footer></footer>
-    <span class="gohome"> <a href="/">go home</a></span>
+    <span class="gohome"> <a href="../">go home</a></span>
   </div>
 </body>
 <script>

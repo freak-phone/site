@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESIGN</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+  <link rel="stylesheet" href="/css/art.css">
+</head>
+
+<body>
+
+          {% include 'preloader.njk' %}
+
+  <div id="container" class="flex">
+    <aside class="flex">
+      <div class="bar">
+        <span>DESIGN</span>
+      </div>
+      <hr>
+      <div id="description">
+        selected artwork and current projects. click thumbnails to fullview images.
+        <br>
+        contains some artwork meant for mature audiences. browse at your own discretion.
+        <p class="dont">
+          please do not use, repost, or copy/reproduce my artwork without my permission.
+        </p>
+      </div>
+
+
+      <ul class="nav">
+        <a href="/art/illustration">
+          <li class="liillu">illustration</li>
+        </a>
+        <a href="/art/log">
+          <li class="lisketch">sketchlog</li>
+        </a>
+        <a href="/art/oc">
+          <li class="lioc">oc wiki</li>
+        </a>
+        <a href="/art/games">
+          <li class="ligame">games</li>
+        </a>
+        <a href="/art/crafts">
+          <li class="licraft">crafts</li>
+        </a>
+        <a href="tip">
+          <li class="litip">tipjar</li>
+        </a>
+
+      </ul>
+
+      <div id="spacey"></div>
+    </aside>
+    <main class="flex">
+      <div class="bar"></div>
+      <hr>
+      <div id="content" class="designpage flex">
+        <div id="galleryDesign">
+          {{ content | safe }}
+        </div>
+
+
+      </div>
+    </main>
+    <footer></footer>
+    <span class="gohome"> <a href="../">go home</a></span>
+  </div>
+</body>
+
+<script>
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    zoomable: true,
+  });
+</script>
+
+</html>

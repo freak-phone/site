@@ -11,10 +11,20 @@
 
   <link rel="stylesheet" href="/css/art.css">
 
+  <style>
+    @media only screen and (max-width: 500px) {
+      aside{
+        display: hidden!important;
+      }
+}
+  </style>
+
 
 </head>
 
 <body>
+          {% include 'preloader.njk' %}
+
   <div id="container" class="flex">
     <aside class="flex">
       <div class="bar">
@@ -69,7 +79,7 @@
       </div>
     </main>
     <footer></footer>
-    <span class="gohome"> <a href="/">go home</a></span>
+    <span class="gohome"> <a href="../">go home</a></span>
   </div>
 </body>
 <script>
