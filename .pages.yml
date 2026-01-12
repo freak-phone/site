@@ -3,6 +3,14 @@ media:
     label: Media
     input: img
     output: /img
+  - name: ocIcons # Note: 'name' key is required here
+    label: OC Icons
+    input: img/oc/icons
+    output: /img/oc/icons
+  - name: ocAssets # Note: 'name' key is required here
+    label: OC Assets
+    input: img/oc/template
+    output: /img/oc/template
   - name: art # Note: 'name' key is required here
     label: Gallery
     input: img/gallery
@@ -17,6 +25,55 @@ media:
     output: /assets/fonts
 
 content:
+  - name: OCJson
+    label: OC Json
+    type: collection
+    path: src/Markdown/oc/characters
+    format: json
+    filename: {fields.shortName}.11tydata.json
+    fields:
+    - { name: shortName, label: First Name, type: string }
+    - { name: Name, label: Name, type: string }
+    - { name: Pfp, label: Bio Image, type: image}
+    - name: Stats 
+      label: Bio Stats
+      fields:
+      - { name: Pronouns, label: Pronouns, type: string }
+      - { name: Age, label: Age, type: string }
+      - { name: Height, label: Height, type: string }
+      - { name: Setting, label: Setting, type: string }
+      - { name: Species, label: Species, type: string }
+      - { name: Job, label: Job, type: string }
+    - name: Song
+      label: Song
+      fields:
+        - { name: songPath, label: Song Link, type: string }
+        - { name: songTitle, label: Song Title, type: string }
+    - { name: Bio, label: Bio, type: rich-text }
+    - name: Refs
+      label: Reference Images
+      type: image
+      options:
+        multiple: true
+        path: ocAssets
+    - { name: Notes, label: Design Notes, type: string, list: true }
+    - name: Traits
+      label: Traits
+      fields:
+        - { name: Confidence, label: Confidence, type: string }
+        - { name: Intelligence, label: Intelligence, type: string }
+        - { name: Kindness, label: Kindness, type: string }
+        - { name: Social, label: Social, type: string }
+        - { name: Luck, label: Luck, type: string }
+    - name: Ships
+      label: Relations
+      list: true
+      fields:
+        - { name: pfp, label: icon, type: image }
+        - { name: name, label: Name, type: string}
+        - { name: relation, label: Relationship, type: string }
+        - { name: description, label: Description, type: string }
+        
   - name: illustration
     label: Illustration
     type: collection
