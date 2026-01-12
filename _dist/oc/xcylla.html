@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xcylla Hecatonchires</title>
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/profileplayer.css" />
+  <link rel="stylesheet" type="text/css" href="/css/transition.css" />
+  <link rel="stylesheet" href="/css/octemplate.css">
+
+</head>
+
+<body>
+  <main class="ld ld-float-btt-in">
+    <section id="basics">
+      <div id="Name" class="box">Xcylla Hecatonchires</div>
+      <div id="Icon" class="box ld ld-blur-in" style="background-image: url('/img/oc/icons/xcylla.png');"></div>
+      <div id="Song" class="box ld ld-float-btt-in">
+        <!-------MUSIC PLAYER BY GLENTHEMES------->
+        <div id="glenplayer04">
+          <div id="gt-player">
+            <div id="music-controls">
+              <div class="playy">►</div>
+              <div class="pausee">❚❚</div>
+            </div>
+            <div id="gt-barwrap">
+              <div id="gt-musicbar">
+                <div id="gt-musictrack"></div>
+                <div id="gt-blob"></div>
+              </div>
+            </div>
+
+            <div id="music-duration"></div>
+          </div>
+
+          <div id="gt-songtext">Venus As A Boy</div>
+        </div>
+
+        <audio id="symphonia" src="https://files.catbox.moe/p4l6yj.mp3" type="audio"></audio>
+        <!----end music player---->
+      </div>
+      <div id="Stats" class="box ld ld-float-btt-in">
+
+        <span><b>Pronouns:</b> she/her</span>
+        <span><b>Age:</b> 2 Centuries</span>
+        <span><b>Species:</b> Robot</span>
+        <span><b>Height:</b> 7&#39;4</span>
+        <span><b>Setting:</b> Depends!</span>
+        <span><b>Job:</b> Cleric</span>
+
+
+
+      </div>
+      <div id="Bio" class="box ld ld-float-btt-in">
+        <h2>about</h2>
+        <p class="description">
+          <style>
+  :root{
+--accentDark: #211e20;
+--accentlight: #555568;
+--background: url("/assets/graphics/bg/squares1.gif");
+
+  }
+  </style>
+<p>ztuff</p>
+
+        </p>
+      </div>
+    </section>
+    <section id="menu" class="ld ld-float-ltr-in">
+      <ul>
+        <a href="#design">
+          <li class="btn-des"><i>&#xE067;</i> DESIGN</li>
+        </a>
+        <a href="#info">
+          <li class="btn-sto"><i>&#xE032;</i> INFO</li>
+        </a>
+        <a href="#relationships">
+          <li class="btn-rel"><i>&#xE085;</i> RELATIONSHIPS</li>
+        </a>
+      </ul>
+    </section>
+
+    <section id="design">
+      <h2>DESIGN</h2>
+      <div id="designCarousel">
+        <div id="preview" class="box" style="background-image: url('/img/oc/template/xcylla_design2.png');"></div>
+      </div>
+      <div id="designNotes">
+        <ul>
+
+<li>note one</li>
+
+<li>note two haha</li>
+
+</ul>
+        </ul>
+      </div>
+      <div class="references box">
+        
+          <img src="/img/oc/template/xcylla_design2.png" alt="" class="ref">
+        
+          <img src="/img/oc/template/xcylla_design1.png" alt="" class="ref">
+        
+      </div>
+    </section>
+
+    <section id="info">
+      <h2>information</h2>
+      <div id="infoContainer">
+        <div id="summary" class="box">
+          <div class="longtext">
+            put your bio here lol
+          </div>
+        </div>
+        <div id="personality">
+          <div id="personalityPic1"></div>
+          <div id="traits">
+            <span><b>confidence</b> 4 </span>
+            <span><b>intelligence</b>4</span>
+            <span><b>kindness</b> 4 </span>
+            <span><b>social</b> 4 </span>
+            <span><b>luck</b> 4 </span>
+
+          </div>
+          <div id="personalityPic2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships">
+      <h2>relationships</h2>
+
+      
+
+      <div class="ship">
+        <img src="/img/oc/template/relation_placeholder.png" alt="" class="shipImg">
+        <div class="shipInfo">
+          <span class="bond">
+            <b>name here</b>
+            relationship here
+          </span>
+          <div class="shipBio">
+            blah blah blah
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="ship">
+        <img src="/img/oc/template/relation_placeholder.png" alt="" class="shipImg">
+        <div class="shipInfo">
+          <span class="bond">
+            <b>name here</b>
+            relationship here
+          </span>
+          <div class="shipBio">
+            blah blah blah
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <footer>
+      <a href="./">go back</a>
+    </footer>
+
+
+  </main>
+</body>
+<script>
+  // select all objects of the class
+  var backgrounds = document.querySelectorAll(".ref");
+
+  // apply an eventlistener which listens for "hover" or mouseover events
+  // when an image is hovered over, the changeBackground function executes
+  backgrounds.forEach((ref) => {
+    ref.addEventListener("click", changeBackground);
+  });
+
+  function changeBackground() {
+    // "this" refers to the image being hovered over
+    // we can get the URL of the image this way
+    var imageURL = this.getAttribute("src");
+    // then we change the body's background to the URL
+    document.getElementById("preview").style.backgroundImage =
+      "url(" + imageURL + ")";
+  }
+</script>
+
+</html>

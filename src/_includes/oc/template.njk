@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ Name }}</title>
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/profileplayer.css" />
+  <link rel="stylesheet" type="text/css" href="/css/transition.css" />
+  <link rel="stylesheet" href="/css/octemplate.css">
+
+</head>
+
+<body>
+  <main class="ld ld-float-btt-in">
+    <section id="basics">
+      <div id="Name" class="box">{{ Name }}</div>
+      <div id="Icon" class="box ld ld-blur-in" style="background-image: url('/img/oc/icons/{{ shortName }}.png');"></div>
+      <div id="Song" class="box ld ld-float-btt-in">
+        <!-------MUSIC PLAYER BY GLENTHEMES------->
+        <div id="glenplayer04">
+          <div id="gt-player">
+            <div id="music-controls">
+              <div class="playy">►</div>
+              <div class="pausee">❚❚</div>
+            </div>
+            <div id="gt-barwrap">
+              <div id="gt-musicbar">
+                <div id="gt-musictrack"></div>
+                <div id="gt-blob"></div>
+              </div>
+            </div>
+
+            <div id="music-duration"></div>
+          </div>
+
+          <div id="gt-songtext">{{ Song.songTitle }}</div>
+        </div>
+
+        <audio id="symphonia" src="{{ Song.songPath }}" type="audio"></audio>
+        <!----end music player---->
+      </div>
+      <div id="Stats" class="box ld ld-float-btt-in">
+
+        <span><b>Pronouns:</b> {{ Stats.Pronouns }}</span>
+        <span><b>Age:</b> {{ Stats.Age }}</span>
+        <span><b>Species:</b> {{ Stats.Species }}</span>
+        <span><b>Height:</b> {{ Stats.Height }}</span>
+        <span><b>Setting:</b> {{ Stats.Setting }}</span>
+        <span><b>Job:</b> {{ Stats.Job }}</span>
+
+
+
+      </div>
+      <div id="Bio" class="box ld ld-float-btt-in">
+        <h2>about</h2>
+        <p class="description">
+          {{ content | safe }}
+        </p>
+      </div>
+    </section>
+    <section id="menu" class="ld ld-float-ltr-in">
+      <ul>
+        <a href="#design">
+          <li class="btn-des"><i>&#xE067;</i> DESIGN</li>
+        </a>
+        <a href="#info">
+          <li class="btn-sto"><i>&#xE032;</i> INFO</li>
+        </a>
+        <a href="#relationships">
+          <li class="btn-rel"><i>&#xE085;</i> RELATIONSHIPS</li>
+        </a>
+      </ul>
+    </section>
+
+    <section id="design">
+      <h2>DESIGN</h2>
+      <div id="designCarousel">
+        <div id="preview" class="box" style="background-image: url('{{ Refs[0]}}');"></div>
+      </div>
+      <div id="designNotes">
+        <ul>
+{% for note in Notes %}
+<li>{{ note }}</li>
+{% endfor %}
+</ul>
+        </ul>
+      </div>
+      <div class="references box">
+        {% for ref in Refs %}
+          <img src="{{ ref }}" alt="" class="ref">
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="info">
+      <h2>information</h2>
+      <div id="infoContainer">
+        <div id="summary" class="box">
+          <div class="longtext">
+            {{ Bio }}
+          </div>
+        </div>
+        <div id="personality">
+          <div id="personalityPic1"></div>
+          <div id="traits">
+            <span><b>confidence</b> {{ Traits.Confidence }} </span>
+            <span><b>intelligence</b>{{ Traits.Intelligence }}</span>
+            <span><b>kindness</b> {{ Traits.Kindness }} </span>
+            <span><b>social</b> {{ Traits.Social }} </span>
+            <span><b>luck</b> {{ Traits.Luck }} </span>
+
+          </div>
+          <div id="personalityPic2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="relationships">
+      <h2>relationships</h2>
+
+      {%for ship in Ships %}
+
+      <div class="ship">
+        <img src="{{ ship.pfp }}" alt="" class="shipImg">
+        <div class="shipInfo">
+          <span class="bond">
+            <b>{{ ship.name }}</b>
+            {{ ship.relation }}
+          </span>
+          <div class="shipBio">
+            {{ ship.description }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <footer>
+      <a href="./">go back</a>
+    </footer>
+
+
+  </main>
+</body>
+<script>
+  // select all objects of the class
+  var backgrounds = document.querySelectorAll(".ref");
+
+  // apply an eventlistener which listens for "hover" or mouseover events
+  // when an image is hovered over, the changeBackground function executes
+  backgrounds.forEach((ref) => {
+    ref.addEventListener("click", changeBackground);
+  });
+
+  function changeBackground() {
+    // "this" refers to the image being hovered over
+    // we can get the URL of the image this way
+    var imageURL = this.getAttribute("src");
+    // then we change the body's background to the URL
+    document.getElementById("preview").style.backgroundImage =
+      "url(" + imageURL + ")";
+  }
+</script>
+
+</html>

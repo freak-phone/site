@@ -3,6 +3,30 @@ const emojiRating = require("@kevingimbel/eleventy-plugin-emoji-rating");
 
 module.exports = function (eleventyConfig) {
 
+  module.exports = function(eleventyConfig) {
+  return {
+    // Sets Nunjucks as the default pre-processor for all .md files
+    markdownTemplateEngine: "njk",
+
+    // Sets Pug as the default pre-processor for all .html files
+    htmlTemplateEngine: "njk"
+  };
+};
+
+module.exports = function(eleventyConfig) {
+    // Creates custom collection "myPosts"
+    eleventyConfig.addCollection("myPosts", function(collection) {
+        return collection.getFilteredByGlob("/oc/*.md");
+    });
+}
+
+eleventyConfig.addCollection("ocCollection", function(collectionApi) {
+    // Returns an array of content items that have the specific tag
+    return collectionApi.getFilteredByTags("oc");
+  });
+
+
+
   eleventyConfig.addFilter("itemLimit", function (array, maximum) {
     return array.slice(0, maximum);
   });
