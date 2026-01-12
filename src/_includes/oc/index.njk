@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Atlas</title>
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/atlas.css">
+  <link rel="stylesheet" href="/css/transition.css">
+
+
+</head>
+
+
+
+<body class="ld ld-fade-in ld-float-btt-in">
+  <header>
+    <div id="description">
+      A directory of my characters that feature in my artwork. All artwork and designs by me unless credited otherwise.
+      Please do not use, copy or repost any of my characters, art or writing. Thank you!
+    </div>
+
+  </header>
+  <main>
+    <hr class="pagebar">
+    <div id="categorybar">
+      <form id="categories">
+        <label for="cat-select"> <img src="/eleventy/assets/graphics/bullets/kb03-icon-arrow.gif" alt="">
+          Category</label>
+        <select id="cat-select">
+          <button>
+            <selectedcontent></selectedcontent>
+          </button>
+
+          <option value=""> </option>
+          <option value="dnd">
+            <span class="option-label">D&D / TTRPG</span>
+          </option>
+          <option value="oubliette">
+            <span class="option-label">oubliette</span>
+          </option>
+        </select>
+      </form>
+
+
+    </div>
+    <section id="cards" class="ld ld-float-btt-in">
+
+      {{ content | safe }}
+
+    </section>
+  </main>
+  <aside>
+
+    <ul class="navigation">
+      <h3><img src="/graphics/pixel/down.gif" alt="">NAV</h3>
+      <a href="https://clap.fc2.com/post/freakphone/?url=https%3A%2F%2Ffreakphone.net%2Flog%2Ftegalog.cgi"
+        target="_blank">
+        <li class="menuinbox">oc ask box</li>
+      </a>
+
+      <a href="//art.freakphone.net/log/?tag=oc">
+        <li class="menuart">oc artlog tag</li>
+      </a>
+      <a href="/">
+        <li class="menuhome">back home</li>
+      </a>
+    </ul>
+    <div id="updates">
+      <div id="featured"></div>
+      <h3> featured</h3>
+
+      <div id="news">
+        <b>9/21/24</b>
+        <br>
+        page added. mini profiles for <a href="/oc/dnd/">all dnd characters</a> added.
+      </div>
+    </div>
+
+  </aside>
+
+</body>
+
+</html>

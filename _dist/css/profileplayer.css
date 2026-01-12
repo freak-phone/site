@@ -1,0 +1,120 @@
+/*-------MUSIC PLAYER BY GLENTHEMES-------*/
+#glenplayer04 {
+  /* position: fixed; */
+  bottom: 0;
+  /*! margin-top: 10px; */
+  left: 0;
+  /* margin-left: 25px; */
+  z-index: 99;
+  /*! max-width: 205px; */
+  height: 100%;
+}
+
+#gt-player {
+  display: flex;
+  padding: 15px;
+  background: var(--accentlight);
+  /* main music player background color */
+  border-radius: 3px 3px 0 0;
+  height: 34%;
+}
+#gt-player>div {
+  align-self: center;
+  -webkit-align-self: center;
+}
+
+#music-controls {
+  user-select: none;
+  -webkit-user-select: none;
+  width: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  /* play & pause button color */
+}
+
+.pausee {
+  display: none;
+}
+
+#gt-barwrap {
+  margin-left: 15px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+#gt-musicbar {
+  min-width: 100px;
+  height: 2px;
+  background: #222;
+  /* music bar color (not played) */
+  border-radius: 4px;
+  display: flex;
+}
+
+#gt-musictrack {
+  height: inherit;
+  background: #ceccdb;
+  /* music track color (played) */
+  border-radius: 4px;
+  width: 0;
+}
+
+#gt-blob {
+  align-self: center;
+  -webkit-align-self: center;
+  margin-left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #000000;
+  /* music slider blob color */
+}
+
+#music-duration {
+  margin-left: 15px;
+  font-family: consolas-alt;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #b5b5b5;
+  /* music time text color */
+}
+
+#gt-songtext {
+  margin-top: 0px;
+  padding: 10px 15px;
+  /*! background: var(--accentDark); */
+  border-radius: 0 0 3px 3px;
+  font-size: 12px;
+  line-height: 1em;
+  /* color: #c5c5c5; */
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  height: 66%;
+  font-family: var(--font2);
+}
+
+@font-face {
+  font-family: "consolas-alt";
+  src: url('//web.archive.org/web/20250530191247im_/https://glen-assets.github.io/fonts/consolas.TTF');
+}
+/*
+     FILE ARCHIVED ON 19:12:47 May 30, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:32:52 Jan 11, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.53
+  exclusion.robots: 0.019
+  exclusion.robots.policy: 0.008
+  esindex: 0.009
+  cdx.remote: 40.615
+  LoadShardBlock: 118.326 (3)
+  PetaboxLoader3.datanode: 170.856 (4)
+  load_resource: 115.659
+  PetaboxLoader3.resolve: 52.9
+*/
