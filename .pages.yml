@@ -50,6 +50,7 @@ content:
         - { name: songPath, label: Song Link, type: string }
         - { name: songTitle, label: Song Title, type: string }
     - { name: Bio, label: Bio, type: rich-text }
+    - { name: Story, label: Story, type: rich-text }
     - name: Refs
       label: Reference Images
       type: image
