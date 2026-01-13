@@ -30,6 +30,7 @@ content:
     type: collection
     path: src/Markdown/oc/characters
     format: json
+    filename: '{fields.shortName}.11tydata.json'
     fields:
     - { name: shortName, label: First Name, type: string }
     - { name: Name, label: Name, type: string }
