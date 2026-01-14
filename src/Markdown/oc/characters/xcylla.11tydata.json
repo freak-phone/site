@@ -1,8 +1,8 @@
 {
   "shortName": "xcylla",
   "Name": "Xcylla Hecatonchires",
-  "Pfp": "/assets/graphics/oc/icons/sample.png",
-  "Stats":{
+  "Pfp": "/img/oc/icons/xcylla.png",
+  "Stats": {
     "Pronouns": "she/her",
     "Age": "2 Centuries",
     "Height": "7'4",
@@ -10,28 +10,32 @@
     "Species": "Robot",
     "Job": "Cleric"
   },
-  "Song":{
+  "Song": {
     "songPath": "https://files.catbox.moe/p4l6yj.mp3",
     "songTitle": "Venus As A Boy"
   },
   "Bio": "put your bio here lol",
-  "Refs":[
+  "Refs": [
     "/img/oc/template/xcylla_design2.png",
     "/img/oc/template/xcylla_design1.png"
   ],
-  "Notes":[
+  "Notes": [
     "note one",
     "note two haha"
   ],
-  "Traits":{
+  "Traits": {
     "Confidence": "4",
     "Intelligence": "4",
     "Kindness": "4",
     "Social": "4",
     "Luck": "4"
   },
+<<<<<<< HEAD
   "Story": "put story here",
   "Ships":[
+=======
+  "Ships": [
+>>>>>>> 3f36467014d2359ea3db53bf8084a3bc3c68be46
     {
       "pfp": "/img/oc/template/relation_placeholder.png",
       "name": "name here",
@@ -45,6 +49,4 @@
       "description": "blah blah blah"
     }
   ]
-
-  
 }
