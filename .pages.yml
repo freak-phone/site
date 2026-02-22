@@ -151,10 +151,10 @@ content:
     - { name: title, label: Title, type:  string }
     - { name: date, label: Date, type: date }
     - name: cover
-      label: Coverr
+      label: Cover
       type: image
       options:
-        media: medialogCovers
+        path: assets/graphics/blog/covers
     - { name: body, label: Body, type: rich-text }
     - name: type
       label: Type
