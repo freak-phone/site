@@ -1,8 +1,4 @@
 media:
-  - name: media # Note: 'name' key is required here
-    label: Media
-    input: img
-    output: /img
   - name: ocIcons # Note: 'name' key is required here
     label: OC Icons
     input: img/oc/icons
