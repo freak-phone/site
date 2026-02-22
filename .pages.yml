@@ -147,7 +147,7 @@ content:
     - { name: title, label: Title, type:  string }
     - { name: date, label: Date, type: date }
     - name: cover
-      label: Cover
+      label: Coverr
       type: image
       options:
         path: assets/graphics/medialog/covers
