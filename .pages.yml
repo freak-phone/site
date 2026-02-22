@@ -1,5 +1,5 @@
 media:
-  - name: mediaz # Note: 'name' key is required here
+  - name: media # Note: 'name' key is required here
     label: Media
     input: img
     output: /img
