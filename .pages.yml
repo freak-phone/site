@@ -127,7 +127,7 @@ content:
       label: Cover
       type: image
       options:
-        path: blogCover
+        path: assets/graphics/blog/covers
     - { name: preview, label: Preview, type: rich-text }
     - { name: body, label: Body, type: rich-text }
     - name: categories
