@@ -127,7 +127,7 @@ content:
       label: Cover
       type: image
       options:
-        path: assets/graphics/blog/covers
+        path: /assets/graphics/blog/covers
     - { name: preview, label: Preview, type: rich-text }
     - { name: body, label: Body, type: rich-text }
     - name: categories
@@ -150,7 +150,7 @@ content:
       label: Coverr
       type: image
       options:
-        path: assets/graphics/medialog/covers
+        path: /assets/graphics/medialog/covers
     - { name: body, label: Body, type: rich-text }
     - name: type
       label: Type
