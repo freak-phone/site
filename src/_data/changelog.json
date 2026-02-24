@@ -1,5 +1,10 @@
 [
   {
+    "date": "2/24/26",
+    "text": "I've left my guestbook queue going for a bit too long, but I just published and responded to a bunch of messages. Thank you so much to anyone who stops by and says hi! I promise I read every message, and they always make my day.",
+    "link": "https://freakphone.net/guestbook/"
+  },
+  {
     "date": "11/10/25",
     "text": "FREAKPHONE is now version 3.5! Most pages have been updated. Under the hood, the site is now generated with 11ty. New pages include a blog, a few explore pages, and updates to the about and link directories.",
     "link": "https://freakphone.net/",
@@ -22,10 +27,5 @@
     "text": "New artwork, on a rebuilt art page.",
     "link": "https://freakphone.net/games/dressup",
     "image": "/assets/graphics/news/3.png"
-  },
-  {
-    "date": "2/24/26",
-    "text": "I've left my guestbook queue going for a bit too long, but I just published and responded to a bunch of messages. Thank you so much to anyone who stops by and says hi! I promise I read every message, and they always make my day.",
-    "link": "https://freakphone.net/guestbook/"
   }
 ]
