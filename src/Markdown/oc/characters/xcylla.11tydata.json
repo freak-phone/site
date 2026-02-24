@@ -30,12 +30,8 @@
     "Social": "4",
     "Luck": "4"
   },
-<<<<<<< HEAD
   "Story": "put story here",
-  "Ships":[
-=======
   "Ships": [
->>>>>>> 3f36467014d2359ea3db53bf8084a3bc3c68be46
     {
       "pfp": "/img/oc/template/relation_placeholder.png",
       "name": "name here",

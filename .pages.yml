@@ -1,21 +1,21 @@
 media:
-  - name: ocIcons
+  - name: media # Note: 'name' key is required here
+    label: Media
+    input: img
+    output: /img
+  - name: ocIcons # Note: 'name' key is required here
     label: OC Icons
     input: img/oc/icons
     output: /img/oc/icons
-  - name: blogCover
+  - name: blogCover # Note: 'name' key is required here
     label: Blog Covers
     input: assets/graphics/blog/covers
     output: assets/graphics/blog/covers
-  - name: medialogCover
-    label: Medialog Covers
-    input: assets/graphics/medialog/covers
-    output: assets/graphics/medialog/covers
-  - name: ocAssets
+  - name: ocAssets # Note: 'name' key is required here
     label: OC Assets
     input: img/oc/template
     output: /img/oc/template
-  - name: art
+  - name: art # Note: 'name' key is required here
     label: Gallery
     input: img/gallery
     output: /img/gallery
@@ -127,7 +127,7 @@ content:
       label: Cover
       type: image
       options:
-        path: /assets/graphics/blog/covers
+        path: blogCover
     - { name: preview, label: Preview, type: rich-text }
     - { name: body, label: Body, type: rich-text }
     - name: categories
@@ -146,11 +146,7 @@ content:
     - { name: tags, hidden: true, type: string, default: medialog }
     - { name: title, label: Title, type:  string }
     - { name: date, label: Date, type: date }
-    - name: cover
-      label: Cover
-      type: image
-      options:
-        path: assets/graphics/blog/covers
+    - { name: cover, label: Cover, type: image }
     - { name: body, label: Body, type: rich-text }
     - name: type
       label: Type
