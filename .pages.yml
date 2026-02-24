@@ -1,17 +1,21 @@
 media:
-  - name: media # Note: 'name' key is required here
-    label: Media
-    input: img
-    output: /img
-  - name: ocIcons # Note: 'name' key is required here
+  - name: ocIcons
     label: OC Icons
     input: img/oc/icons
     output: /img/oc/icons
-  - name: ocAssets # Note: 'name' key is required here
+  - name: blogCover
+    label: Blog Covers
+    input: assets/graphics/blog/covers
+    output: assets/graphics/blog/covers
+  - name: medialogCover
+    label: Medialog Covers
+    input: assets/graphics/medialog/covers
+    output: assets/graphics/medialog/covers
+  - name: ocAssets
     label: OC Assets
     input: img/oc/template
     output: /img/oc/template
-  - name: art # Note: 'name' key is required here
+  - name: art
     label: Gallery
     input: img/gallery
     output: /img/gallery
@@ -109,6 +113,29 @@ content:
         multiple: true
         creatable: true
         values: [ Design ]
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/Markdown/blog/entries
+    fields:
+    - { name: layout, hidden: true, type: string, default: blog/index.njk }
+    - { name: permalink, hidden: true, type: string, default: "{{ page.filePathStem }}.html"}
+    - { name: tags, hidden: true, type: string, default: Blog }
+    - { name: title, label: Title, type: string }
+    - { name: date, label: Date, type: date }
+    - name: cover
+      label: Cover
+      type: image
+      options:
+        path: /assets/graphics/blog/covers
+    - { name: preview, label: Preview, type: rich-text }
+    - { name: body, label: Body, type: rich-text }
+    - name: categories
+      label: Categories
+      type: select
+      options:
+        multiple: true
+        values: [ personal, site update, art, web stuff]  
   - name: medialog
     label: Medialog
     type: collection
@@ -119,7 +146,11 @@ content:
     - { name: tags, hidden: true, type: string, default: medialog }
     - { name: title, label: Title, type:  string }
     - { name: date, label: Date, type: date }
-    - { name: cover, label: Cover, type: image }
+    - name: cover
+      label: Cover
+      type: image
+      options:
+        path: assets/graphics/blog/covers
     - { name: body, label: Body, type: rich-text }
     - name: type
       label: Type
