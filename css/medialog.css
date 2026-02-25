@@ -139,6 +139,7 @@
     top: 10px;
     width: 100%;
     background-color: white;
+    cursor: pointer;
   }
 
   .movie>.mediatitle,
@@ -195,7 +196,7 @@
   }
 
   .cover {
-    height: 150px;
+    width: 100px;
   }
 
   .infotable {
@@ -323,4 +324,11 @@ td {
 }
 table img{
   height: 100px;
+}
+.summary a{
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted;
+  background: #a2c7d6;
 }

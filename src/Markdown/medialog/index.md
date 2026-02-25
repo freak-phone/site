@@ -15,7 +15,7 @@ templateEngineOverride: njk,md
                 {% for emoji in post.data.ratings %}<img src="/assets/graphics/medialog/ratings/{{ emoji }}.png">{% endfor %}
                  </span></li>
               </ul>
-              {{- post.content -}}
+              {{- post.content | safe -}}
               </div>
               </article>
 
