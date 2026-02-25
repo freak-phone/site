@@ -2,6 +2,7 @@
 layout: medialog_index.njk
 title: MEDIALOG
 permalink: /medialog/index.html
+templateEngineOverride: njk,md
 ---
   {% for post in collections.medialog | reverse %}
               <article class="{{ post.data.type }}">
