@@ -9,6 +9,7 @@ type: game
 ratings:
   - fun
   - love
+templateEngineOverride: md
 ---
 I finally got around to playing the latest game by Splendidland, one of my favorite artists, and I really loved it!
 
