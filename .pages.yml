@@ -11,6 +11,10 @@ media:
     label: Blog Covers
     input: assets/graphics/blog/covers
     output: assets/graphics/blog/covers
+  - name: medialogCover # Note: 'name' key is required here
+    label: Medialog Covers
+    input: assets/graphics/medialog/covers
+    output: assets/graphics/medialog/covers
   - name: ocAssets # Note: 'name' key is required here
     label: OC Assets
     input: img/oc/template
@@ -27,6 +31,11 @@ media:
     label: Fonts
     input: assets/fonts
     output: /assets/fonts
+  - name: newspics
+    label: News Graphics
+    input: assets/graphics/news
+    output: /assets/graphics/news
+    
     
 content:
   - name: OCJson
