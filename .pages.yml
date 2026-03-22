@@ -134,7 +134,11 @@ content:
     - { name: title, label: Title, type: string }
     - { name: date, label: Date, type: date }
     - { name: description, label: Description, type: string }
-    - { name: image, label: Image, media: art, type: image }
+    - name: image
+      label: Image
+      type: image
+      options:
+        media: design
     - name: tags
       label: Tags
       type: select
@@ -175,7 +179,11 @@ content:
     - { name: tags, hidden: true, type: string, default: medialog }
     - { name: title, label: Title, type:  string }
     - { name: date, label: Date, type: date }
-    - { name: cover, label: Cover, type: image }
+    - name: cover
+      label: cover
+      type: image
+      options:
+        media: medialogCover
     - { name: body, label: Body, type: rich-text }
     - name: type
       label: Type
