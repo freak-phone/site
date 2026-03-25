@@ -27,12 +27,14 @@
       </a>
     </ul>
 
-{{ content | safe }}
+<section id="siteinfo">
+  {{ content | safe }}
+</section>
 
 
-
+{% include 'home.njk' %}
   </main>
-        {% include 'home.njk' %}
+        
 
 
 
