@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DESIGN</title>
+  <script src="/js/masonry.min.js"></script>
+  <script src="/js/imagesloaded.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
   <link rel="stylesheet" href="/css/art.css">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <style>
+  </style>
 </head>
 
 <body>
@@ -59,7 +64,7 @@
       <div class="bar"></div>
       <hr>
       <div id="content" class="designpage flex">
-        <div id="galleryDesign">
+        <div id="galleryDesign" class="grid">
           {{ content | safe }}
         </div>
 
@@ -76,6 +81,15 @@
     touchNavigation: true,
     zoomable: true,
   });
+</script>
+
+<script>
+  var $grid = $('.grid').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+  });
+});
 </script>
 
 </html>
