@@ -56,7 +56,6 @@ media:
     input: assets/graphics/layout
     output: /assets/graphics/layout
     
-    
 content:
   - name: OCJson
     label: OC Json
