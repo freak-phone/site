@@ -11,7 +11,7 @@ media:
     label: Artwork - Illustration
     input: img/gallery/illustration
     output: /img/gallery/illustration
-  - name: sketch
+  - name: sketchlog
     label: Artwork - Sketches
     input: img/gallery/sketch
     output: /img/gallery/sketch
