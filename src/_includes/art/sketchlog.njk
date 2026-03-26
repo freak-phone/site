@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/sketchlog.css">
+    <title>sketchlog</title>
+  </head>
+  <body>
+    <aside>
+      <a href="sketchlog">
+        <div id="sidebarBox"></div>
+      </a>
+      <ul id="menu">
+        <a href="tags">
+          <li>tag list</li>
+        </a>
+        <a href="archive">
+          <li>post archive</li>
+        </a>
+        <a href="/art">
+          <li>back to gallery</li>
+        </a>
+        <a href="/">
+          <li>back home</li>
+        </a>
+      </ul>
+    </aside>
+
+    <main>
+      {{ content | safe }}
+
+    </main>
+  </body>
+  <script>
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    zoomable: true,
+  });
+</script>
+</html>

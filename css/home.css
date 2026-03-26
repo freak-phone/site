@@ -1172,3 +1172,15 @@ h {}
 #latestblog {
   padding-bottom: 5px;
 }
+
+
+/* home.css | http://localhost:8080/css/home.css */
+
+.newz {
+  /* max-height: 352px; */
+  max-height: 510px;
+}
+
+#inside {
+  height: 521px;
+}
