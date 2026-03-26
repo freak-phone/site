@@ -11,7 +11,7 @@ media:
     label: Artwork - Illustration
     input: img/gallery/illustration
     output: /img/gallery/illustration
-  - name: sketch
+  - name: sketchlog
     label: Artwork - Sketches
     input: img/gallery/sketch
     output: /img/gallery/sketch
@@ -153,6 +153,29 @@ content:
         multiple: true
         creatable: true
         values: [ Design ]
+  - name: sketchlog
+    label: Sketch Log
+    type: collection
+    path: src/Markdown/art/sketchlog
+    fields:
+    - { name: layout, hidden: true, type: string, default: art/sketchlog.njk}
+    - { name: permalink, hidden: true, type: string, default: "{{ page.filePathStem }}.html"}
+    - { name: tags, hidden: true, type: string, default: sketchlog }
+    - { name: date, label: Date, type: date }
+    - name: images
+      label: Art
+      type: image
+      options:
+        multiple: true
+        media: sketchlog
+    - { name: description, label: Description, type: rich-text }
+    - name: postTags
+      label: Post Tags
+      type: reference
+      options:
+        collection: sketchlogTags
+        multiple: true
+    
   - name: blog
     label: Blog
     type: collection
