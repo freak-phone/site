@@ -1,6 +1,6 @@
 ---
 layout: art/sketchlog.njk
-permalink: "{{ page.title }}.html"
+permalink: /art/sketchlog/{{ title | slugify }}.html
 title: deltarune sketches
 tags: Sketchlog
 date: 2025-09-13
