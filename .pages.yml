@@ -153,7 +153,7 @@ content:
         multiple: true
         creatable: true
         values: [ Design ]
-  - name: sketchlog
+  - name: Sketchlog
     label: Sketch Log
     type: collection
     path: src/Markdown/art/sketchlog
