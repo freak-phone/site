@@ -20,10 +20,6 @@ templateEngineOverride: njk,md
     {{ post.data.description }}
 </div>
 <hr />
-  <ul class="tags">
-  {% for tag in post.data.PostTags %}
-    <a href="{{tag}}"><li>{{tag}}</li></a>
-  {% endfor %}
-  </ul>
+  <ul class="tags">{% for tag in post.data.postTags %}<a href="{{tag}}"><li>{{tag}}</li></a>{% endfor %}</ul>
 </article>
 {% endfor %}

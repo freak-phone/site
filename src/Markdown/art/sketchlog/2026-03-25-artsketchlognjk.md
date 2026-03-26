@@ -2,7 +2,7 @@
 layout: art/sketchlog.njk
 permalink: "{{ page.filePathStem }}.html"
 title: pomni
-tags: sketchlog
+tags: Sketchlog
 date: 2025-12-15
 images:
   - /img/gallery/sketch/pommy.png
