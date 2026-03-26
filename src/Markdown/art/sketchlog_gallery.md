@@ -11,7 +11,10 @@ templateEngineOverride: njk,md
 
 <article>
 {% for art in post.data.images %}
-  <img src="{{ art }}" alt="" class="art" />
+<a  class="glightbox" href="{{ art }}">
+          <img src="{{ art }}" alt="" class="art" />
+      </a>    
+
 {% endfor %}
     <div class="content">
     {{ post.data.description }}

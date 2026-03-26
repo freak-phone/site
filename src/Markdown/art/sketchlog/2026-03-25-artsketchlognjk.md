@@ -1,7 +1,7 @@
 ---
 layout: art/sketchlog.njk
 permalink: "{{ page.filePathStem }}.html"
-tags: sketchlog
+tags: Sketchlog
 date: 2026-03-25
 images:
   - /img/gallery/sketch/4041.png
