@@ -171,11 +171,10 @@ content:
     - { name: description, label: Description, type: rich-text }
     - name: postTags
       label: Post Tags
-      type: reference
+      type: select
       options:
-        collection: sketchlogTags
         multiple: true
-        value: {name}
+        values: [ "fanart", "original", "ttrpg", "oubliette", "deltarune" ]
     
   - name: blog
     label: Blog
