@@ -175,6 +175,8 @@ content:
       options:
         collection: sketchlogTags
         multiple: true
+        value: "{primary}"
+        label: "{primary}"
     
   - name: blog
     label: Blog
