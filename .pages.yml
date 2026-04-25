@@ -26,10 +26,10 @@ media:
   - name: blogCover # Note: 'name' key is required here
     label: Blog Covers
     input: assets/graphics/blog/covers
-    output: assets/graphics/blog/covers
+    output: /assets/graphics/blog/covers
   - name: medialogCover # Note: 'name' key is required here
     label: Medialog Covers
-    input: /assets/graphics/medialog/covers
+    input: assets/graphics/medialog/covers
     output: /assets/graphics/medialog/covers
   - name: ocAssets # Note: 'name' key is required here
     label: OC Assets
