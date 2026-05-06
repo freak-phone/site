@@ -332,3 +332,33 @@ table img{
   border-bottom: 1px dotted;
   background: #a2c7d6;
 }
+@media (max-width: 800px){
+
+/* medialog.css | https://freakphone.net/css/medialog.css */
+
+aside {
+  /* width: 30%; */
+  /* margin-top: -20px; */
+  width: 100%;
+  margin-top: 3px;
+  display: flex;
+}
+
+main {
+  /* width: calc(70% - 10px); */
+  width: 100%;
+}
+
+#content {
+  flex-wrap: wrap;
+}
+
+#sidebar {
+  /* height: calc(100% - 160px); */
+}
+
+#sidebar {
+  margin-left: 15px;
+}
+
+}
