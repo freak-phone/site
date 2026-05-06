@@ -6,7 +6,7 @@ templateEngineOverride: njk,md
 ---
   {% for post in collections.medialog | reverse %}
               <article class="{{ post.data.type }}">
-              <h3 class="mediatitle">{{ post.data.title }}</h3>
+              <h3 class="mediatitle"><a href="{{ post.data.permalink }}">{{ post.data.title }}</a></h3>
               <img src="{{ post.data.cover }}" class="cover">
               <div class="summary">
               <ul class="infotable">

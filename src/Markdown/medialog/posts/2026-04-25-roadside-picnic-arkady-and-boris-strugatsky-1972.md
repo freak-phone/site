@@ -1,6 +1,7 @@
 ---
-layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+layout: medialog_post.njk
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: Roadside Picnic - Arkady and Boris Strugatsky (1972)
 date: 2026-04-22

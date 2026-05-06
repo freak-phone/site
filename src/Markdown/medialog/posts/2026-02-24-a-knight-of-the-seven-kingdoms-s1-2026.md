@@ -1,6 +1,7 @@
 ---
-layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+layout: medialog_post.njk
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: A Knight of the Seven Kingdoms S1 (2026)
 date: 2026-02-22

@@ -25,6 +25,18 @@ eleventyConfig.addCollection("ocCollection", function(collectionApi) {
     return collectionApi.getFilteredByTags("oc");
   });
 
+const nunjucks = require('nunjucks');
+const slugify = require('slugify');
+
+const env = new nunjucks.Environment();
+
+env.addFilter('slugify', function(str) {
+    return slugify(str, {
+        lower: true,      // convert to lower case
+        strict: true,     // strip special characters except replacement
+        remove: /[*+~.()'"!:@]/g // extra characters to remove
+    });
+});
 
 
   eleventyConfig.addFilter("itemLimit", function (array, maximum) {

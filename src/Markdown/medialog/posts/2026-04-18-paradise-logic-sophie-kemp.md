@@ -1,6 +1,7 @@
 ---
-layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+layout: medialog_post.njk
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: Paradise Logic - Sophie Kemp
 date: 2026-04-16

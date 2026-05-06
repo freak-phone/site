@@ -1,6 +1,7 @@
 ---
-layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+layout: medialog_post.njk
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: Nirvanna The Band The Show The Movie (2025)
 date: 2026-02-13

@@ -8,13 +8,11 @@ templateEngineOverride: njk,md
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
 {%- for post in collections.Sketchlog | reverse -%}
-
 <article>
 {% for art in post.data.images %}
 <a  class="glightbox" href="{{ art }}">
           <img src="{{ art }}" alt="" class="art" />
       </a>    
-
 {% endfor %}
     <div class="content">
     {{ post.data.description }}

@@ -1,8 +1,10 @@
 ---
-layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+layout: medialog_post.njk
+templateEngineOverride: njk,md
 tags: medialog
 title: House Of Leaves - Mark Z. Danielewski (2000)
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 date: 2026-05-05
 cover: /assets/graphics/medialog/covers/House_of_leaves-dithered.png
 type: book
@@ -18,7 +20,7 @@ Phew.
 
 I finally got through this monster, and I'm afraid I will have to write a whole dedicated blog page about my thoughts on it as a whole. TLDR; I really liked this book. Parts of it touched me very deeply, I will be thinking about it for a long time, and as a nut who values a media experience being interesting more than strictly 'enjoyable', the frustrating and hard to get through sections of this book were super up my alley.
 
-What I *am* going to write about here is more a review of other people's reviews. Spoilers below.
+What I *am* going to write about here is more a review of other people's reviews. Spoilers below!
 
 <details>
 <summary class="postlink">( ✱ read more?)</summary>

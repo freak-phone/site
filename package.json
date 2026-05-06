@@ -15,7 +15,8 @@
     "@11ty/eleventy-img": "^6.0.4",
     "@kevingimbel/eleventy-plugin-emoji-rating": "^1.0.0",
     "fast-glob": "^3.3.3",
-    "markdown-it-emoji-customizer": "github:actuallysomecat/markdown-it-emoji-customizer"
+    "markdown-it-emoji-customizer": "github:actuallysomecat/markdown-it-emoji-customizer",
+    "slugify": "^1.6.9"
   },
   "devDependencies": {
     "find-unused-images": "^1.2.0",
