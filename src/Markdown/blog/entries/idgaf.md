@@ -1,5 +1,5 @@
 ---
-layout: blog/index.njk
+layout: blog/entry.njk
 permalink: /blog/newyearnewfreakphone.html
 tags: Blog
 title: New Year New Freakphone

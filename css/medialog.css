@@ -352,6 +352,17 @@ aside {
 main {
   /* width: calc(70% - 10px); */
   width: 100%;
+  margin: 0;
+
+}
+
+.infotable {
+  margin-left: 10px;
+  float: right;
+  margin-bottom: 20px;
+}
+.infotable b {
+  margin-top: 5px;
 }
 
 #content {
