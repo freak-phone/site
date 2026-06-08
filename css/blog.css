@@ -201,3 +201,21 @@ header {
   position: sticky;
   top: 0;
 }
+
+
+.entry ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.entry ul li::before {
+  content: "❖";
+  margin-right: 5px;
+  color: #acac55;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.entry ul {
+  padding-left: 14px;
+}
