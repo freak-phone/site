@@ -22,10 +22,10 @@
       <div id="entry" class="entry">
 
           <div class="entryheader">
-            <img src="{{ post.data.cover }}" class="cover">
+            <img src="{{ cover }}" class="cover">
             <div class="info">
-              <h1>{{ post.data.title }}</h1>
-              <span class="date">posted on {{post.data.date | postDate}} - {% for category in post.data.categories %}#
+              <h1>{{ title }}</h1>
+              <span class="date">posted on {{ date | postDate}} - {% for category in categories %}#
                 {{category}} {% endfor %}</span>
             </div>
           </div>

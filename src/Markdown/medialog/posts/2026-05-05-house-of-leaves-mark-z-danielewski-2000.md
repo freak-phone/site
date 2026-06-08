@@ -1,10 +1,8 @@
 ---
 layout: medialog_post.njk
-templateEngineOverride: njk,md
+permalink: "{{ page.filePathStem }}.html"
 tags: medialog
 title: House Of Leaves - Mark Z. Danielewski (2000)
-eleventyComputed:
-  permalink: "medialog/posts/{{ title | slugify }}.html"
 date: 2026-05-05
 cover: /assets/graphics/medialog/covers/House_of_leaves-dithered.png
 type: book
@@ -20,7 +18,7 @@ Phew.
 
 I finally got through this monster, and I'm afraid I will have to write a whole dedicated blog page about my thoughts on it as a whole. TLDR; I really liked this book. Parts of it touched me very deeply, I will be thinking about it for a long time, and as a nut who values a media experience being interesting more than strictly 'enjoyable', the frustrating and hard to get through sections of this book were super up my alley.
 
-What I *am* going to write about here is more a review of other people's reviews. Spoilers below!
+What I *am* going to write about here is more a review of other people's reviews? Spoilers below, and content warning for mention of CSA.
 
 <details>
 <summary class="postlink">( ✱ read more?)</summary>
@@ -37,11 +35,11 @@ So it boggled my mind seeing how many people were (along with calling the book p
 
 I took notes while reading this book, and spent quite a bit of time pausing mid-read to just think about what it was trying to say. Which... I don't say that to brag or think that's an extraordinary feat, but it's pretty startling realizing how many people seem to totally lack the impulse to ask themselves questions about what they are reading/watching/etc, who feel deep discomfort and frustration with not having immediate answers. I'm not saying it's anti-intellectual to dislike his parts (I especially have a bone to pick with how misogynistic his tangents frequently are) but seeing so many people say they didn't get the point of their inclusion at all is like... you're so close! You're almost there!!!
 
-When he started to annoy me, I also started to question what the *point* of his asides were. Assuming the author doesn't just think him scoring with women is super cool and noteworthy, there has to be a *reason* Johnny keeps going on these tangents about his scummy personal life. Pretty early on, there's a bit where he admits that he changed the 'original' text as an excuse to talk about something bugging him in real life, and mocks the reader for their imagined frustration at this. I feel like this sets the tone for everything else he says, or doesn't say, or (in my opinion) has 'Zampano' and the figures mentioned in the Record say for him.
+When he started to annoy me, I also started to question what the *point* of his asides were. Assuming the author doesn't just think him scoring with women is super cool and noteworthy, there has to be a *reason* Johnny keeps going on these tangents about his personal life. Pretty early on, there's a bit where he admits that he changed the 'original' text as an excuse to talk about something bugging him in real life, and mocks the reader for their imagined frustration at this. I feel like this sets the tone for everything else he says, or doesn't say, or (in my opinion) has 'Zampano' and the figures mentioned in the Record say for him.
 
 A, you're being very directly clued in (not for the last time) that he can and does lie to the reader, and B, if you read HoL believing that Johnny truly is adapting some other writer's body of work, you're being given a hint that his experiences will continue to color the contents of the Record. 
 
-I think that Johnny uses sex (or, arguably, stories he is making up about his sex life) to self-soothe and distract himself from the things that are really bothering him. I think that he keeps focusing on that in the text in the beginning because he is avoiding talking about other things that he reveals later. 
+I think that Johnny uses sex (or, arguably, stories he is making up about his sex life. guys I think he's making a lot of that up) to self-soothe and distract himself from the things that are really bothering him. I think that he keeps focusing on that in the text in the beginning because he is avoiding talking about other things that he reveals later. 
 
 This ties into my interpretation of what the house *is* that I won't really get into here, but I don't think it's a coincidence that Johnny's keeps talking about sex rather than the disturbing things he's experienced recently and in his past, while at the same time in the main text, the family is struggling to acknowledge the anomaly in the house and making tiny explorations into the mysterious space while trying to maintain some level of normalcy.
 
