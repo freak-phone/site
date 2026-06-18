@@ -1,6 +1,7 @@
 ---
 layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: i hate myself :) /  2013
 date: 2025-11-29

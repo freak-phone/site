@@ -1,11 +1,12 @@
 ---
 layout: medialog_index.njk
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 title: Spoorloos (The Vanishing) / 1988
 type: movie
 tags: medialog
 cover: /assets/graphics/medialog/covers/thevanishing.png
 date: 2025-11-10
-permalink: "{{ page.filePathStem }}.html"
 ratings:
   - love
   - scared

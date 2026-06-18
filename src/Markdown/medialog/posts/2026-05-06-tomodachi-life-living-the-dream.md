@@ -1,6 +1,7 @@
 ---
 layout: medialog_index.njk
-permalink: "{{ page.filePathStem }}.html"
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: "Tomodachi Life: Living the Dream"
 date: 2026-04-16
