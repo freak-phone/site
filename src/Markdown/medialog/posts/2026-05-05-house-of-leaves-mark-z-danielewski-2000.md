@@ -1,6 +1,7 @@
 ---
 layout: medialog_post.njk
-permalink: "{{ page.filePathStem }}.html"
+eleventyComputed:
+  permalink: "medialog/posts/{{ title | slugify }}.html"
 tags: medialog
 title: House Of Leaves - Mark Z. Danielewski (2000)
 date: 2026-05-05
