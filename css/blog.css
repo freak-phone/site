@@ -236,3 +236,10 @@ nav a {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+#content img{
+  max-width: 100%;
+    height: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
