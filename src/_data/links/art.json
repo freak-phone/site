@@ -1,7 +1,181 @@
 [
   {
-    "Title": "Reference Angle 2",
+    "Title": "Reference Angle",
     "URL": "http://referenceangle.com/",
     "Description": "Find reference photos for the human head at any angle using a posable head."
+  },
+  {
+    "Title": "Pose Search",
+    "URL": "https://x6ud.github.io/pose-search/#/",
+    "Description": "find reference photos for any part of the body at any angle/pose using a posable skeleton."
+  },
+  {
+    "Title": "Height Comparison",
+    "URL": "https://www.mrinitialman.com/OddsEnds/Sizes/sizes.html",
+    "Description": "Compare heights."
+  },
+  {
+    "Title": "Screentones",
+    "URL": "http://psychobob.xepher.net/screentonez/",
+    "Description": "Screentones and textures for Photoshop."
+  },
+  {
+    "Title": "Texturelabs",
+    "URL": "https://texturelabs.org/",
+    "Description": "Free texture images."
+  },
+  {
+    "Title": "Watercolor Guide",
+    "URL": "https://www.handprint.com/HP/WCL/water.html",
+    "Description": "Guide to watercolor techniques and tools."
+  },
+  {
+    "Title": "Perspective Grid Assignments",
+    "URL": "https://www.brianlemay.com/Pages/animationschool/layout/perspective/assignment01intro.html",
+    "Description": "Exercises in making perspective grids."
+  },
+  {
+    "Title": "The Theory and Practice of Perspective",
+    "URL": "https://www.gutenberg.org/ebooks/20165",
+    "Description": "Learn perspective."
+  },
+  {
+    "Title": "Anatomylearning",
+    "URL": "https://anatomylearning.com/",
+    "Description": "Anatomy reference tool"
+  },
+  {
+    "Title": "Color Calibration tool",
+    "URL": "https://w4zt.com/screen/",
+    "Description": "Tools to help calibrate color and gamma balance on your screen."
+  },
+  {
+    "Title": "Color and Light by James Gurney",
+    "URL": "https://archive.org/details/Color_and_Light_James_Gurney_English",
+    "Description": "Highly recommended book on learning to use color."
+  },
+  {
+    "Title": "Drawingbooks",
+    "URL": "https://drawingbooks.org/",
+    "Description": "Library of artbooks"
+  },
+  {
+    "Title": "Blender Beginner's Course",
+    "URL": "https://youtube.com/playlist?list=PL3GeP3YLZn5ixsnIOIx9tB4v6s-rsw48X",
+    "Description": "Beginner's tutorials on Blender 3.0"
+  },
+  {
+    "Title": "Adobe Flash Archive",
+    "URL": "https://animatearchive.neocities.org/?home",
+    "Description": "archives of adobe flash. as this program is now abandonware, download freely."
+  },
+  {
+    "Title": "Silkyshark",
+    "URL": "https://github.com/stoicshark/silkyshark",
+    "Description": "free open source mouse/tablet stabilizer, similar to lazynezumi"
+  },
+  {
+    "Title": "Human Proportion Calculator",
+    "URL": "https://hpc.anatomy4sculptors.com/"
+  },
+  {
+    "Title": "Paletton",
+    "URL": "https://paletton.com/#uid=13e0u0kllllaFw0g0qFqFg0w0aF",
+    "Description": "Color palette generator."
+  },
+  {
+    "Title": "Sketch Simplification Tool",
+    "URL": "https://esslab.jp/~ess/en/research/sketch/"
+  },
+  {
+    "Title": "SAI Thumbs",
+    "URL": "https://wunkolo.itch.io/saithumbs",
+    "Description": "Tool to create visible thumbnails for .sai files."
+  },
+  {
+    "Title": "CSPExtract",
+    "URL": "https://github.com/Loperamide/CSPExtract",
+    "Description": "Extract PNG images from CSP brushes."
+  },
+  {
+    "Title": "Muscle Reference Guides",
+    "URL": "https://vk.com/album-73879451_261556055"
+  },
+  {
+    "Title": "Characterdesigns.com",
+    "URL": "https://www.characterdesigns.com/",
+    "Description": "Photo references for drawing, including nude and clothed models."
+  },
+  {
+    "Title": "PureRef",
+    "URL": "https://pureref.com/",
+    "Description": "software to organize reference images all in one place"
+  },
+  {
+    "Title": "Hairfinder",
+    "URL": "https://www.hairfinder.com/",
+    "Description": "galleries and information on many styles of hair."
+  },
+  {
+    "Title": "Posemaniacs",
+    "URL": "https://www.posemaniacs.com/",
+    "Description": "3D \"skinless\" models of different poses."
+  },
+  {
+    "Title": "Line of Action",
+    "URL": "https://line-of-action.com/",
+    "Description": "photo references of nude and clothed models, animals, face, hands and feet. You can also set a timer for a drawing session."
+  },
+  {
+    "Title": "Artbook Scans",
+    "URL": "http://marla-isp.ludost.net/Artbooks/",
+    "Description": "mostly anime artbooks."
+  },
+  {
+    "Title": "Comic Dialogue Formatter",
+    "URL": "https://script.google.com/macros/s/AKfycby4e5YpDMcjOUAYEZC-r40yedUbjiHd3yAGyHuAiucMM7a0LQ4K/exec",
+    "Description": "script that formats comic dialogue to be in a diamond/centered shape for word bubbles. if you are working in a program without text centering/formatting."
+  },
+  {
+    "Title": "Anatomy Standard",
+    "URL": "https://www.anatomystandard.com/",
+    "Description": "3d anatomy reference"
+  },
+  {
+    "Title": "Biodigital",
+    "URL": "https://human.biodigital.com/login?returnUrl=/explore",
+    "Description": "More 3d anatomy reference"
+  },
+  {
+    "Title": "Compress PDF",
+    "URL": "https://tools.pdf24.org/en/compress-pdf"
+  },
+  {
+    "Title": "Diagramify",
+    "URL": "https://diagramify.agiliq.com/",
+    "Description": "Flowchart Maker"
+  },
+  {
+    "Title": "Excalidraw",
+    "URL": "https://excalidraw.com/",
+    "Description": "Online whiteboard"
+  },
+  {
+    "Title": "Floorplan Maker",
+    "URL": "https://floorplancreator.net/"
+  },
+  {
+    "Title": "EZGallery",
+    "URL": "https://netfriend.neocities.org/ez-gallery/",
+    "Description": "plugin to make easy html galleries"
+  },
+  {
+    "Title": "Scanline Maker",
+    "URL": "https://github.com/JargeZ/ntscqt",
+    "Description": "Apply scanlines to image"
+  },
+  {
+    "Title": "Extract Text from Image",
+    "URL": "https://www.onlineocr.net/"
   }
 ]
