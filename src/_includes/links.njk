@@ -55,7 +55,7 @@
        <details id="art">
         <summary> <img src="/assets/graphics/pixels/painticon.png" alt="">art resources</summary>
 
-        {% for item in art | reverse %}
+        {% for item in links.art | reverse %}
         <p> <a href="{{ item.URL }}">{{ item.Title }}</a>
         {{ item.Description}}
         </p>
