@@ -296,3 +296,19 @@ content:
         label: fileExtension
         description: png gif or jpg idk
         type: string
+  - name: artlinks
+    label: Links - Art
+    path: src/_data/links/art.json
+    type: file
+    list: true
+    fields:
+      - name: Title
+        label: Title
+        type: string
+      - name: URL
+        label: url
+        type: string
+        pattern: ^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$
+      - name: Description
+        label: Description
+        type: rich-text
