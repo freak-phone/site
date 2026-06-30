@@ -54,6 +54,13 @@
       <div class="page2">
        <details id="art">
         <summary> <img src="/assets/graphics/pixels/painticon.png" alt="">art resources</summary>
+
+        {% for item in art | reverse %}
+        <p> <a href="{{ item.URL }}">{{ item.Title }}</a>
+        {{ item.Description}}
+        </p>
+        {% endfor %}
+
         <p><a href="http://referenceangle.com/">reference angle</a>
           find reference photos for the human head at any angle using a posable head.</p>
         <p><a href="https://x6ud.github.io/pose-search/#/">pose search</a>
