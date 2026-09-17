@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"
+    integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://github.com/loadingio/transition.css/blob/master/dist/transition.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murder Party</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+  </style>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Geist+Pixel&display=swap');
+</style>
+
+  <style>
+    * {
+
+      font-family: xga;
+      font-weight: bold;
+    }
+
+@font-face {
+  font-family: xga;
+  src: url(assets/font/XGA.woff);
+}
+
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Geist Pixel;
+      background-image:
+        url(assets/heaven.gif), url(assets/galaxy.gif), url(assets/twinkle.gif);
+      background-blend-mode: color-burn, multiply, exclusion;
+      background-size: cover;
+      background-color: #4a4bb3;
+      color: white;
+    }
+
+    .bouncy {
+ -webkit-animation: pop 1s ease-in-out infinite alternate;
+ animation: pop 1s ease-in-out infinite alternate;
+ -moz-animation: pop 1s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+from {
+transform:scale(0.95)
+}
+
+50% {
+transform:scale(1)
+}
+
+to {
+transform:scale(0.95)
+}
+}
+
+@-webkit-keyframes pop {
+from {
+-webkit-transform:scale(0.95)
+
+}
+
+50% {
+-webkit-transform:scale(1)
+
+}
+
+to {
+-webkit-transform:scale(0.95)
+
+}
+}
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+
+      50% {
+        text-shadow: none;
+      }
+
+      100% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+    }
+
+    @-webkit-keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+
+      50% {
+        text-shadow: 0 0 0;
+      }
+
+      100% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+    }
+
+    .glow-text {
+      font-weight: bold;
+      -webkit-animation: glow 2.0s linear infinite;
+      -moz-animation: glow 2.0s linear infinite;
+      -ms-animation: glow 2.0s linear infinite;
+      -o-animation: glow 2.0s linear infinite;
+      animation: glow 2.0s linear infinite;
+    }
+
+        .typewriter h1 {
+          width: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  margin-bottom: 50px;
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end) 1s forwards,
+    pop 5s ease-in-out infinite alternate,
+    glow 4.0s linear infinite;
+}
+
+@starting-style {
+  .typewriter h1 {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+    #carousel {
+      overflow: hidden;
+      width: 70%;
+      min-height: calc(100vh - 20vh);
+      border-radius: 4px;
+      text-align: center;
+      margin: auto;
+      margin-top: 20vh;
+      
+    }
+
+    .p-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    #button_a:checked~#carousel .panel_a .typewriter h1,
+    #button_a:checked~#carousel .panel_a .form-group{
+      animation-play-state: running;
+    }
+
+
+    #button_b:checked~#carousel .panel_b .typewriter h1,
+    #button_b:checked~#carousel .panel_b .form-group{
+      animation-play-state: running;
+    }
+
+
+    #button_c:checked~#carousel .panel_c .typewriter h1,
+    #button_c:checked~#carousel .panel_c .form-group{
+      animation-play-state: running;
+    }
+
+
+    #button_d:checked~#carousel .panel_d .typewriter h1,
+    #button_d:checked~#carousel .panel_d .form-group {
+      animation-play-state: running;
+    }
+
+    [class^="panel_"] {
+      position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+    }
+
+    .panel{
+        opacity: 0;
+    }
+
+   .typewriter {
+  display: block;
+  margin: auto;
+}
+
+input[type=text] {
+  background: none;
+  color: white;
+  border: none;
+  text-align: center;
+  font-size: 1.5em;
+  margin: auto;
+  width: 100%;
+}
+
+input[type="text"]:focus-visible {
+  outline: none;
+}
+
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+textarea {
+  resize: none;
+  background: none;
+  color: white;
+  border: none;
+  width: calc(100% - 10px);
+  height: 150px;
+  margin: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.5em;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.03);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
+textarea:focus-visible{
+  outline: none;
+}
+
+.form-group{
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 4s; }
+.form-group:nth-child(2) { animation-delay: 4.5s; }
+.form-group:nth-child(3) { animation-delay: 5s; }
+.form-group:nth-child(4) { animation-delay: 5.5s; }
+.form-group:nth-child(5) { animation-delay: 6s; }
+.form-group:nth-child(6) { animation-delay: 7s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+.next{
+  font-size: 2em;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 4s forwards;
+}
+.next:hover{
+        webkit-filter: blur(0.5px);
+        filter: blur(2px);}
+
+        input[type=radio]:checked + label.choice{
+          text-shadow: 1px 1px 5px white;
+          transition: all .2s ease-in-out;
+        }
+
+        .choice::before {
+          content: "";
+          height: 20px;
+          width: 30px;
+          background-image: url(assets/daemoneye1-1.png);
+          background-size: contain;
+          display: inline-block;
+          background-repeat: no-repeat;
+          margin-right: 10px;
+          filter: opacity(.3);
+          transition: all .2s ease-in-out;
+        }
+        input[type=radio]:checked + label.choice::before{
+          background-image: url(assets/daemoneye2.png);
+filter: opacity(1);
+        }
+
+        .multiholder{
+          display: grid;
+        }
+
+.choiceB {
+  border: 1px solid #1d1d1d;
+  width: 100%;
+  padding: 10px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.03);
+border-radius: 10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+transition: all .2s ease-in-out;
+  position: relative;
+}
+
+input[type=radio]:checked + label.choiceB{
+  background-color: rgba(255, 255, 255, 0.195);
+}
+.choiceB::before {
+          content: "";
+          height: 20px;
+          width: 30px;
+          background-image: url(assets/daemoneye1-1.png);
+          background-size: contain;
+          display: inline-block;
+          background-repeat: no-repeat;
+          margin-right: 10px;
+          filter: opacity(.3);
+          transition: all .2s ease-in-out;
+          background-color: none;
+          position: absolute;
+          left: -10px;
+          top: -4px;
+        }
+input[type=radio]:checked + label.choiceB::before {
+  background-image: url(assets/daemoneye2.png);
+filter: opacity(1);
+  filter: drop-shadow(1px 1px 2px);
+}
+
+.typing {
+  border-right: 2px solid #000; /* The cursor */
+}
+.pulsing {
+    animation: 
+    pop 5s ease-in-out infinite alternate,
+    glow 4.0s linear infinite;
+}
+
+.active{
+  opacity: 1;
+    pointer-events: auto;
+}
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <input hidden type="radio" name="carousel-control" id="button_a" checked />
+    <input hidden type="radio" name="carousel-control" id="button_b" />
+    <input hidden type="radio" name="carousel-control" id="button_c" />
+    <input hidden type="radio" name="carousel-control" id="button_d" />
+    <input hidden type="radio" name="carousel-control" id="button_e" />
+    <input hidden type="radio" name="carousel-control" id="button_f" />
+
+
+
+    <div id="carousel">
+      <div class="p-wrapper">
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLSetp8vdTHLL4TbSBwI_75s70c5nmfa0zjPn8_MBPzQCeZ8DVQ/formResponse"
+                target="_self" id="bootstrapForm" method="POST">
+
+        <section id="q_a" class="active panel">
+          <!-- The element where the text will be typed -->
+          <h1 class="typing pulsing" data-text="LET  US  BEGIN."></h1>
+
+          <h2>Describe your vessel.</h2>
+
+              <!-- Field type: "short" id: "301731611" -->
+                <div class="form-group">
+                  <input id="769088717" type="text" name="entry.769088717" class="form-control" placeholder="NAME">
+                </div>
+              
+              
+              <!-- Field type: "short" id: "709551969" -->
+                <div class="form-group">
+                  <input id="327182991" type="text" name="entry.327182991" class="form-control" placeholder="PRONOUNS">
+                </div>
+              
+              
+              <!-- Field type: "paragraph" id: "1439017602" -->
+
+                <div class="form-group">
+                  <textarea id="1403773669" name="entry.1403773669" class="form-control" placeholder="PERSONALITY"></textarea>
+                </div>
+          
+
+          <label for="button_b" class="label_b"> <span class="next">⮚</span> </label>
+        </section>
+
+        <section id="q_b" class="panel_b panel">
+                    <h1 class="typing pulsing" data-text="WILL YOU BESTOW A NEW"></h1>
+
+
+
+            <div class="form-group">
+              <div class="radio">
+                
+                  <input hidden type="radio" name="entry.626231536" value="Yes" id="question2yes">
+                <label for="question2yes" class="choice">YES</label>
+              </div>
+              <div class="radio">
+                  <input hidden type="radio" name="entry.626231536" value="No" id="question2no">
+                <label for="question2no" class="choice">NO</label>
+              </div>
+            </div>
+
+
+
+
+                    <label for="button_c" class="label_c"> <span class="next">⮚</span> </label>
+
+        </section>
+
+        <section id="q_c" class="panel_c panel">
+          <span class="typewriter"><h1 class="glow-text">WHAT SHALL YOU PLACE YOUR BETS ON?</h1></span>
+
+          
+            <div class="form-group multiholder">
+              <div class="radio">
+                
+                  <input hidden type="radio" name="entry.1358262268" value="Enact your vision of justice" id="question3Justice">
+                  <label for="question3Justice" class="choiceB">Enact your vision of justice.</label>
+                
+              </div>
+              <div class="radio">
+                
+                  <input hidden type="radio" name="entry.1358262268" value="perform under a grand spotlight" id="question3Spotlight">
+                <label for="question3Spotlight" class="choiceB">Perform under a grand spotlight.</label>
+              </div>
+              <div class="radio">
+               
+                  <input hidden type="radio" name="entry.1358262268" value="ask god for forgiveness" id="question3Forgiveness">
+                <label for="question3Forgiveness" class="choiceB">Ask God for forgiveness.</label>
+              </div>
+              <div class="radio">
+                  <input hidden type="radio" name="entry.1358262268" value="all bets are off" id="question3Bets">
+                  <label for="question3Bets" class="choiceB">All bets are off.</label>
+                
+              </div>
+          </div>
+                    <label for="button_a" class="label_a"> <span class="next">⮚</span> </label>
+
+
+        </section>
+
+        <section id="q_d"class="panel_d panel">
+          <h2>Panel d</h2>
+          <p>Aenean maximus accumsan mauris. Praesent rutrum vitae purus et mattis. Nunc at mi et diam pulvinar euismod.
+            Curabitur interdum, leo quis tincidunt pharetra, risus nisl mollis velit, interdum consectetur justo orci in
+            nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elit
+            turpis, tincidunt non dui et, molestie maximus nisl. Duis pretium eros sed ultricies convallis. Pellentesque
+            vitae tempor lorem, eu laoreet metus. Vivamus sit amet lorem libero. Vestibulum tristique ligula in gravida
+            volutpat. Sed facilisis ipsum velit, et pharetra nisi ullamcorper ut. Maecenas purus dui, tincidunt non
+            ipsum
+            vel, bibendum aliquam elit. Cras rutrum velit diam, semper aliquet libero posuere nec.</p>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ut
+            eleifend
+            lacus. Sed fringilla ullamcorper justo, porttitor cursus nisl. Sed et mi aliquet, rutrum erat at, porttitor
+            felis. Mauris consequat mauris id posuere dictum. Proin nec congue purus, nec rhoncus justo. Cras sit amet
+            neque
+            eu ex feugiat auctor at dignissim augue. Sed commodo tellus id erat lobortis, sit amet elementum felis
+            commodo.
+            Ut massa diam, tristique vel lacinia sed, vulputate eget mauris. Fusce lacinia bibendum iaculis.</p>
+          <label for="button_e" class="label_e"> <span>question 5</span> </label>
+        </section>
+
+        <section id="q_e" class="panel_e panel">
+          <h2>Panel e</h2>
+          <p>Aenean maximus accumsan mauris. Praesent rutrum vitae purus et mattis. Nunc at mi et diam pulvinar euismod.
+            Curabitur interdum, leo quis tincidunt pharetra, risus nisl mollis velit, interdum consectetur justo orci in
+            nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elit
+            turpis, tincidunt non dui et, molestie maximus nisl. Duis pretium eros sed ultricies convallis. Pellentesque
+            vitae tempor lorem, eu laoreet metus. Vivamus sit amet lorem libero. Vestibulum tristique ligula in gravida
+            volutpat. Sed facilisis ipsum velit, et pharetra nisi ullamcorper ut. Maecenas purus dui, tincidunt non
+            ipsum
+            vel, bibendum aliquam elit. Cras rutrum velit diam, semper aliquet libero posuere nec.</p>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ut
+            eleifend
+            lacus. Sed fringilla ullamcorper justo, porttitor cursus nisl. Sed et mi aliquet, rutrum erat at, porttitor
+            felis. Mauris consequat mauris id posuere dictum. Proin nec congue purus, nec rhoncus justo. Cras sit amet
+            neque
+            eu ex feugiat auctor at dignissim augue. Sed commodo tellus id erat lobortis, sit amet elementum felis
+            commodo.
+            Ut massa diam, tristique vel lacinia sed, vulputate eget mauris. Fusce lacinia bibendum iaculis.</p>
+          <label for="button_f" class="label_f"> <span>question 6</span> </label>
+        </section>
+
+        <section id="q_f" class="panel_f panel">
+          <h2>Panel e</h2>
+          <p>Aenean maximus accumsan mauris. Praesent rutrum vitae purus et mattis. Nunc at mi et diam pulvinar euismod.
+            Curabitur interdum, leo quis tincidunt pharetra, risus nisl mollis velit, interdum consectetur justo orci in
+            nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elit
+            turpis, tincidunt non dui et, molestie maximus nisl. Duis pretium eros sed ultricies convallis. Pellentesque
+            vitae tempor lorem, eu laoreet metus. Vivamus sit amet lorem libero. Vestibulum tristique ligula in gravida
+            volutpat. Sed facilisis ipsum velit, et pharetra nisi ullamcorper ut. Maecenas purus dui, tincidunt non
+            ipsum
+            vel, bibendum aliquam elit. Cras rutrum velit diam, semper aliquet libero posuere nec.</p>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ut
+            eleifend
+            lacus. Sed fringilla ullamcorper justo, porttitor cursus nisl. Sed et mi aliquet, rutrum erat at, porttitor
+            felis. Mauris consequat mauris id posuere dictum. Proin nec congue purus, nec rhoncus justo. Cras sit amet
+            neque
+            eu ex feugiat auctor at dignissim augue. Sed commodo tellus id erat lobortis, sit amet elementum felis
+            commodo.
+            Ut massa diam, tristique vel lacinia sed, vulputate eget mauris. Fusce lacinia bibendum iaculis.</p>
+          <label for="button_g" class="label_g"> <span>question 6</span> </label>
+        </section>
+
+        <section id="q_g" class="panel_g panel">
+          <h2>Panel e</h2>
+          <p>Aenean maximus accumsan mauris. Praesent rutrum vitae purus et mattis. Nunc at mi et diam pulvinar euismod.
+            Curabitur interdum, leo quis tincidunt pharetra, risus nisl mollis velit, interdum consectetur justo orci in
+            nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus elit
+            turpis, tincidunt non dui et, molestie maximus nisl. Duis pretium eros sed ultricies convallis. Pellentesque
+            vitae tempor lorem, eu laoreet metus. Vivamus sit amet lorem libero. Vestibulum tristique ligula in gravida
+            volutpat. Sed facilisis ipsum velit, et pharetra nisi ullamcorper ut. Maecenas purus dui, tincidunt non
+            ipsum
+            vel, bibendum aliquam elit. Cras rutrum velit diam, semper aliquet libero posuere nec.</p>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ut
+            eleifend
+            lacus. Sed fringilla ullamcorper justo, porttitor cursus nisl. Sed et mi aliquet, rutrum erat at, porttitor
+            felis. Mauris consequat mauris id posuere dictum. Proin nec congue purus, nec rhoncus justo. Cras sit amet
+            neque
+            eu ex feugiat auctor at dignissim augue. Sed commodo tellus id erat lobortis, sit amet elementum felis
+            commodo.
+            Ut massa diam, tristique vel lacinia sed, vulputate eget mauris. Fusce lacinia bibendum iaculis.</p>
+          <label for="button_g" class="label_g"> <span>question 6</span> </label>
+        </section>
+
+      </div> <!-- // .p-wrapper -->
+    </div> <!-- // #carousel -->
+
+
+  </div>
+
+</body>
+<script>
+  const checkbox1 = document.getElementById('button_a');
+  const target1 = document.getElementById('q_a');
+
+  checkbox1.addEventListener('change', function () {
+      // If true, adds the class. If false, removes it.
+      target1.classList.toggle('active', this.checked);
+    });
+
+
+</script>
+<script>
+  const checkbox2 = document.getElementById('button_b');
+  const target2 = document.getElementById('q_b');
+
+    checkbox2.addEventListener('change', function () {
+      // If true, adds the class. If false, removes it.
+      target2.classList.toggle('active', this.checked);
+  });
+
+
+</script>
+<script>
+  const checkbox3 = document.getElementById('button_c');
+  const target3 = document.getElementById('q_c');
+
+  checkbox3.addEventListener('change', function () {
+    if (this.checked) {
+      target3.classList.add('active');
+    } else {
+      target3.classList.remove('active');
+    }
+  });
+
+
+</script>
+<script>
+  const checkbox4 = document.getElementById('button_d');
+  const target4 = document.getElementById('q_d');
+
+  checkbox4.addEventListener('change', function () {
+    if (this.checked) {
+      target4.classList.add('active');
+    } else {
+      target4.classList.remove('active');
+    }
+  });
+
+
+</script>
+<script>
+  const checkbox5 = document.getElementById('button_e');
+  const target5 = document.getElementById('q_e');
+
+  checkbox5.addEventListener('change', function () {
+    if (this.checked) {
+      target5.classList.add('active');
+    } else {
+      target5.classList.remove('active');
+    }
+  });
+
+
+</script>
+<script>
+  const checkbox6 = document.getElementById('button_f');
+  const target6 = document.getElementById('q_f');
+
+  checkbox6.addEventListener('change', function () {
+    if (this.checked) {
+      target6.classList.add('active');
+    } else {
+      target6.classList.remove('active');
+    }
+  });
+
+
+</script>
+<script>
+  const checkbox7 = document.getElementById('button_g');
+  const target7 = document.getElementById('q_g');
+
+  checkbox7.addEventListener('change', function () {
+    if (this.checked) {
+      target7.classList.add('active');
+    } else {
+      target7.classList.remove('active');
+    }
+  });
+
+
+</script>
+<script>
+  // 1. The Core Typing Function
+  function typeEffect(element, speed = 50) {
+    const text = element.getAttribute('data-text');
+    element.textContent = ''; // Clear previous text
+    let i = 0;
+
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
+  // 2. Setup Observer for Opacity Changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class' || mutation.attributeName === 'style') {
+        const slide = mutation.target;
+        const isVisible = window.getComputedStyle(slide).opacity === '1';
+        const textEl = slide.querySelector('.typing');
+
+        // Trigger typing only if the slide is fully visible and has a text element
+        if (isVisible && textEl) {
+          typeEffect(textEl, 60);
+        }
+      }
+    });
+  });
+
+  // 3. Attach Observer to all slides
+  const slides = document.querySelectorAll('.panel');
+  slides.forEach((slide) => {
+    observer.observe(slide, { attributes: true });
+  });
+
+  // 4. Trigger manually for the initial active slide on page load
+  const initialActive = document.querySelector('.panel.active .typing');
+  if (initialActive) typeEffect(initialActive, 60);
+
+
+</script>
+
+<script>
+  $('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+      data: extraData,
+      dataType: 'jsonp', // This won't really work. It's just to use a GET instead of a POST to allow cookies from different
+      error: function () {
+        // Submit of form should be successful but JSONP callback will fail because Google Forms
+        // does not support it, so this is handled as a failure.
+        alert('Form Submitted. Thanks.')
+        // You can also redirect the user to a custom thank-you page:
+        window.location = 'http://google.com'
+      }
+    })
+  })
+</script>
+
+</html>
