@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DESIGN</title>
+  <script src="/js/masonry.min.js"></script>
+  <script src="/js/imagesloaded.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
   <link rel="stylesheet" href="/css/art.css">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <style>
+  </style>
 </head>
 
 <body>
@@ -71,9 +76,21 @@
       <div class="bar"></div>
       <hr>
       <div id="content" class="designpage flex">
-        <div id="galleryDesign">
+        <div id="galleryDesign" class="grid">
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script><a class="glightbox" href="/img/gallery/design/orange.png" data-glightbox="description: Now-sold adoptable.">
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script><a class="glightbox" href="/img/gallery/design/des3.png" data-glightbox="description: A design for a friend.">
+  <img src="/img/gallery/design/des3.png">
+        </a><a class="glightbox" href="/img/gallery/design/devil.png" data-glightbox="description: ">
+  <img src="/img/gallery/design/devil.png">
+        </a><a class="glightbox" href="/img/gallery/design/oUUjB28.jpeg" data-glightbox="description: ">
+  <img src="/img/gallery/design/oUUjB28.jpeg">
+        </a><a class="glightbox" href="/img/gallery/design/tumblr_7437824c25aaede71fb005917f9878a9_3da30b4e_1280.png" data-glightbox="description: Some adoptables.">
+  <img src="/img/gallery/design/tumblr_7437824c25aaede71fb005917f9878a9_3da30b4e_1280.png">
+        </a><a class="glightbox" href="/img/gallery/design/des.png" data-glightbox="description: Now-sold adoptable.">
+  <img src="/img/gallery/design/des.png">
+        </a><a class="glightbox" href="/img/gallery/design/023.png" data-glightbox="description: A design for a friend.">
+  <img src="/img/gallery/design/023.png">
+        </a><a class="glightbox" href="/img/gallery/design/orange.png" data-glightbox="description: Now-sold adoptable.">
   <img src="/img/gallery/design/orange.png">
         </a><a class="glightbox" href="/img/gallery/design/dollmaker.png" data-glightbox="description: Now-sold D&amp;D themed adoptable.">
   <img src="/img/gallery/design/dollmaker.png">
@@ -93,6 +110,15 @@
     touchNavigation: true,
     zoomable: true,
   });
+</script>
+
+<script>
+  var $grid = $('.grid').imagesLoaded( function() {
+  // init Masonry after all images have loaded
+  $grid.masonry({
+    // options...
+  });
+});
 </script>
 
 </html>

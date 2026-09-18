@@ -139,6 +139,7 @@
     top: 10px;
     width: 100%;
     background-color: white;
+    cursor: pointer;
   }
 
   .movie>.mediatitle,
@@ -195,7 +196,7 @@
   }
 
   .cover {
-    height: 150px;
+    width: 100px;
   }
 
   .infotable {
@@ -323,4 +324,57 @@ td {
 }
 table img{
   height: 100px;
+}
+.summary a{
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted;
+  background: #a2c7d6;
+}
+
+h3 a{
+  color: black;
+  text-decoration: none;
+}
+@media (max-width: 800px){
+
+/* medialog.css | https://freakphone.net/css/medialog.css */
+
+aside {
+  /* width: 30%; */
+  /* margin-top: -20px; */
+  width: 100%;
+  margin-top: 3px;
+  display: flex;
+}
+
+main {
+  /* width: calc(70% - 10px); */
+  width: 100%;
+  margin: 0;
+
+}
+
+.infotable {
+  margin-left: 10px;
+  float: right;
+  margin-bottom: 20px;
+}
+.infotable b {
+  margin-top: 5px;
+}
+
+#content {
+  flex-wrap: wrap;
+}
+
+#sidebar {
+  /* height: calc(100% - 160px); */
+}
+
+#sidebar {
+  margin-left: 15px;
+}
+
 }

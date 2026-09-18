@@ -11,11 +11,11 @@
 }
 @font-face {
   font-family: ft88 extended;
-  src: url("../assets/fonts/FT88-Expanded.otf");
+  src: url("/assets/fonts/FT88-Expanded.otf");
 }
 @font-face {
   font-family: typicons;
-  src: url("../assets/fonts/typicons.ttf");
+  src: url("/assets/fonts/typicons.ttf");
 }
 @font-face {
   font-family: Cinetype;
@@ -629,14 +629,21 @@ src: url("https://www.dl.dropboxusercontent.com/s/02wgk95qclv1zca/Panic.ttf");}
 
 }
 @font-face {
+  font-family: bubbleboy;
+  src: url("/assets/fonts/BUBBLEBO.ttf");
+}
+@font-face {
   font-family: alagard;
   src: url("https: //www.dl.dropboxusercontent.com/scl/fi/qsjyy1paqain6xzgsfbg0/alagard.ttf");
 
 }
 @font-face {
   font-family: prime;
-  src: url("../assets/fonts/CourierPrimeCode.ttf");
-
+  src: url("/assets/fonts/CourierPrimeCode.ttf");
+}
+@font-face {
+  font-family: Courier Prime Code;
+  src: url("/assets/fonts/CourierPrimeCode.ttf");
 }
 @font-face {
   font-family: morningtea;
