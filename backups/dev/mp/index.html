@@ -1,28 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"
+    integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murder Party</title>
+  <title>CONNECTING . . .</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-  </style>
+    * {
 
-  <style>
-    *{
-
+      font-family: xga;
+      font-weight: bold;
     }
-    body{
-      padding: 0;
+
+    @font-face {
+      font-family: xga;
+      src: url(assets/font/XGA.woff);
+    }
+
+    body {
+      padding: 5%;
       margin: 0;
-      font-family: Didact Gothic;
-      background-image: url(assets/bg5.gif);
+      background-image:
+        url(assets/heaven.gif), url(assets/galaxy.gif), url(assets/twinkle.gif);
+      background-blend-mode: color-burn, multiply, exclusion;
+      background-size: cover;
+      background-color: #4a4bb3;
+      color: white;
+      font-size: 14px;
     }
+
+    @keyframes pop {
+      from {
+        transform: scale(0.95)
+      }
+
+      50% {
+        transform: scale(1)
+      }
+
+      to {
+        transform: scale(0.95)
+      }
+    }
+
+    @-webkit-keyframes pop {
+      from {
+        -webkit-transform: scale(0.95)
+      }
+
+      50% {
+        -webkit-transform: scale(1)
+      }
+
+      to {
+        -webkit-transform: scale(0.95)
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+
+      50% {
+        text-shadow: none;
+      }
+
+      100% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+    }
+
+    @-webkit-keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+
+      50% {
+        text-shadow: 0 0 0;
+      }
+
+      100% {
+        text-shadow: 0 0 10px #e2e2e7;
+      }
+    }
+
+    .type-text {
+      text-transform: uppercase;
+      animation:
+        pop 5s ease-in-out infinite alternate,
+        glow 4.0s linear infinite;
+    }
+
+    h2 {
+      font-weight: normal;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .slide h2{
+      animation-play-state: paused;
+    }
+
+    .slide .form-group{
+      animation-play-state: paused;
+    }
+
+    .slide.active .form-group{
+        animation-play-state: running;
+    }
+
+    .slide.active h2{
+        animation-play-state: running;
+    }
+    .form-group {
+      margin: 10px 0;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    input[type=text] {
+      background: none;
+      color: white;
+      border: none;
+      text-align: center;
+      font-size: 1.5em;
+      margin: auto;
+      width: 100%;
+    }
+
+    input[type="text"]:focus-visible {
+      outline: none;
+    }
+
+    .radio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 10px;
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    textarea {
+      resize: none;
+      background: none;
+      color: white;
+      border: none;
+      width: calc(100% - 10px);
+      height: 150px;
+      margin: 0 10px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 1.5em;
+      /* From https://css.glass */
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    textarea:focus-visible {
+      outline: none;
+    }
+
+    input[type=radio]:checked + label.choice{
+          text-shadow: 1px 1px 5px white;
+          transition: all .2s ease-in-out;
+        }
+
+        .choice::before {
+          content: "";
+          height: 20px;
+          width: 30px;
+          background-image: url(assets/daemoneye1-1.png);
+          background-size: contain;
+          display: inline-block;
+          background-repeat: no-repeat;
+          margin-right: 10px;
+          filter: opacity(.3);
+          transition: all .2s ease-in-out;
+        }
+        input[type=radio]:checked + label.choice::before{
+          background-image: url(assets/daemoneye2.png);
+filter: opacity(1);
+        }
+
+        .multiholder{
+          display: grid;
+        }
+
+.choiceB {
+  cursor: pointer;
+  border: 1px solid #1d1d1d;
+  width: 100%;
+  padding: 10px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.03);
+border-radius: 10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+transition: all .2s ease-in-out;
+  position: relative;
+}
+
+input[type=radio]:checked + label.choiceB{
+  background-color: rgba(255, 255, 255, 0.195);
+}
+.choiceB::before {
+          content: "";
+          height: 20px;
+          width: 30px;
+          background-image: url(assets/daemoneye1-1.png);
+          background-size: contain;
+          display: inline-block;
+          background-repeat: no-repeat;
+          margin-right: 10px;
+          filter: opacity(.3);
+          transition: all .2s ease-in-out;
+          background-color: none;
+          position: absolute;
+          left: -10px;
+          top: -4px;
+        }
+input[type=radio]:checked + label.choiceB::before {
+  background-image: url(assets/daemoneye2.png);
+filter: opacity(1);
+  filter: drop-shadow(1px 1px 2px);
+}
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .carousel-slides {
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease-in-out;
+      /* Smooth opacity change */
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .carousel-nav {
+      margin-top: 15px;
+    }
+
+    .hidden {
+    display: none;
+  }
+  
+  .next {
+    margin-top: 10px;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+    font-weight: normal;
+    cursor: pointer;
+    padding-bottom: 4px;
+    border: 1px solid #48474b6b;
+    /*! border-bottom-style: dashed; */
+    width: fit-content;
+    margin: auto;
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: 3px 3px 7px #48474b6b;
+  }
+
+  .btn.btn-primary {
+  background: none;
+  margin-top: 5%;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 19px;
+  margin: auto;
+  text-align: center;
+  padding-left: 14px;
+  animation:
+  glow 4.0s linear infinite;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.proceed::before{
+  content: '';
+  display: block;
+  height: 10px;
+  width: 10px;
+  background-image: url(assets/iconrose-3.gif);
+}
   </style>
 </head>
+
 <body>
-  test
-  
+  <div class="carousel-container">
+    
+      <div class="carousel-slides">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSetp8vdTHLL4TbSBwI_75s70c5nmfa0zjPn8_MBPzQCeZ8DVQ/formResponse"
+          target="_self" id="bootstrapForm" method="POST">
+        <!-- Q1 -->
+        <div class="slide active">
+          <h1 class="type-text" data-text="Let Us Begin."></h1>
+          <h2 style="animation-delay: 2s;">Describe your vessel.</h2>
+
+          <div class="form-group" style="animation-delay: 2s;">
+            <input id="769088717" type="text" name="entry.769088717" class="form-control" placeholder="NAME">
+          </div>
+          <div class="form-group" style="animation-delay: 2.5s;">
+            <input id="327182991" type="text" name="entry.327182991" class="form-control" placeholder="PRONOUNS">
+          </div>
+          <div class="form-group" style="animation-delay: 3s;">
+            <textarea id="1403773669" name="entry.1403773669" class="form-control" placeholder="DESCRIPTION"></textarea>
+          </div>
+
+        <div class="go next active proceed" data-slide="1"> Advance.</div>
+
+
+        </div>
+
+        <!-- Q2 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="Will you bestow a new occupation?"></h1>
+          <h2 style="animation-delay: 4.5s;">It does not need to usurp your old.</h2>
+
+          <div class="form-group" style="animation-delay: 5s;">
+            <div class="radio">
+              
+                <input hidden type="radio" name="entry.626231536" value="Yes" id="question2yes">
+                <label for="question2yes" class="choice go" data-slide="3">YES</label>
+              
+            </div>
+            <div class="radio">
+              <input hidden type="radio" name="entry.626231536" value="No" id="question2no">
+              <label for="question2no" class="choice go" data-slide="2">NO</label>
+            </div>
+          </div>
+
+        </div>
+        <!-- Q3 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="And what was that occupation again?"></h1>
+          <div class="form-group" style="animation-delay: 4s;">
+            <input id="1155883632" type="text" name="entry.1155883632" class="form-control" placeholder="You remember, don't you?">
+          </div>
+
+        <div class="go next proceed" data-slide="1">I've changed my mind.</div>
+          <div class="go next proceed" data-slide="4"> Advance.</div>
+
+        </div>
+
+        <!-- Q4 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="Now, with a roll of the dice, What shall you place your bets on?"></h1>
+          <div class="form-group multiholder" style="animation-delay: 6s;">
+            <div class="radio">
+          
+              <input hidden type="radio" name="entry.1358262268" value="Enact your vision of justice" id="question3Justice">
+              <label for="question3Justice" class="choiceB">Enact your vision of justice.</label>
+          
+            </div>
+            <div class="radio">
+          
+              <input hidden type="radio" name="entry.1358262268" value="perform under a grand spotlight" id="question3Spotlight">
+              <label for="question3Spotlight" class="choiceB">Perform under a grand spotlight.</label>
+            </div>
+            <div class="radio">
+          
+              <input hidden type="radio" name="entry.1358262268" value="ask god for forgiveness" id="question3Forgiveness">
+              <label for="question3Forgiveness" class="choiceB">Ask God for forgiveness.</label>
+            </div>
+            <div class="radio">
+              <input hidden type="radio" name="entry.1358262268" value="all bets are off" id="question3Bets">
+              <label for="question3Bets" class="choiceB">All bets are off!</label>
+          
+              
+            </div>
+          </div>
+
+        <div class="go next" data-slide="1">I've changed my mind.</div>
+        <div class="go next proceed" data-slide="4">Advance.</div>
+
+        </div>
+
+        <!-- Q5 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="Are you okay with obfuscating the truth?"></h1>
+          <div class="form-group" style="animation-delay: 5s;">
+            <div class="radio">
+              
+                <input hidden type="radio" name="entry.1996530810" value="Yes" id="question5yes">
+                <label for="question5yes" class="choice">YES</label>
+              
+            </div>
+            <div class="radio">
+              
+                <input hidden type="radio" name="entry.1996530810" value="No" id="question5no">
+                <label for="question5no" class="choice">NO</label>
+              
+            </div>
+          </div>
+
+        <div class="go next proceed" data-slide="5"> Advance.</div>
+
+        </div>
+
+        <!-- Q6 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="What hopes does the player have for this vessel?"></h1>
+          <div class="form-group" style="animation-delay: 4.5s;">
+            <textarea id="518169535" name="entry.518169535" class="form-control" placeholder="speak from the heart."></textarea>
+          </div>
+
+        <div class="go next proceed" data-slide="6"> Advance.</div>
+
+        </div>
+
+        <!-- Q7 -->
+        <div class="slide">
+          <h1 class="type-text" data-text="How do you feel about your creation?"></h1>
+          <div class="form-group" style="animation-delay: 4.5s;">
+            <input id="1155883632" type="text" name="entry.1155883632" class="form-control"
+              placeholder="Don't worry. It will not hear.">
+          </div>
+
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="fbzx" value="1564776941693905622">
+                <!--
+                        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+                        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+                        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+                        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+                    -->
+                <input type="hidden" name="pageHistory" value="0">
+                
+                <input class="btn btn-primary" type="submit" value="Submit">
+                </form>
+
+
+        </div>
+
+      </div>
+
+
+
+  </div>
+
 </body>
+
+<script>
+  // This script requires jQuery and jquery-form plugin
+  // You can use these ones from Cloudflare CDN:
+  // < src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+  $('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+      data: extraData,
+      dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+      error: function () {
+        // Submit of form should be successful but JSONP callback will fail because Google Forms
+        // does not support it, so this is handled as a failure.
+        //alert('Form Submitted. Thanks.')
+        // You can also redirect the user to a custom thank-you page:
+        window.location = 'https://crouton.net/'
+      }
+    })
+  })
+</script>
+
+<script>
+  $(document).ready(function () {
+    let typingTimer;
+
+    // Function to handle the typing effect
+    function typeEffect($element) {
+      // Clear any ongoing typing animations
+      clearInterval(typingTimer);
+
+      const fullText = $element.attr('data-text');
+      $element.text(''); // Reset text
+
+      let index = 0;
+
+      typingTimer = setInterval(function () {
+        if (index < fullText.length) {
+          $element.append(fullText.charAt(index));
+          index++;
+        } else {
+          clearInterval(typingTimer);
+        }
+      }, 80); // Typing speed in milliseconds
+    }
+
+    // Function to switch slides
+    function goToSlide(slideIndex) {
+      const $slides = $('.slide');
+      const $buttons = $('.nav-btn');
+      const $targetSlide = $slides.eq(slideIndex);
+
+      // 1. Fade out current slide, fade in new slide via opacity class
+      $slides.removeClass('active');
+      $targetSlide.addClass('active');
+
+      // 2. Update navigation button states
+      $buttons.removeClass('active');
+      $buttons.eq(slideIndex).addClass('active');
+
+      // 3. Trigger typing effect on the text inside the active slide
+      const $textElement = $targetSlide.find('.type-text');
+      typeEffect($textElement);
+    }
+
+    // Button click event
+    $('.go').on('click', function () {
+      const targetIndex = $(this).data('slide');
+
+      // Prevent restarting if clicking the already active button
+      if (!$('.slide').eq(targetIndex).hasClass('active')) {
+        goToSlide(targetIndex);
+      }
+    });
+
+    // Initialize the first slide's typing effect on load
+    typeEffect($('.slide.active .type-text'));
+  });
+
+</script>
+
 </html>
