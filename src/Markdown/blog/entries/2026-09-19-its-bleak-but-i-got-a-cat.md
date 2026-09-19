@@ -27,7 +27,7 @@ A breakup, a health scare that put me in the hospital, my housing becoming less 
 
 I got a cat. I did a lot of handwringing about the ethics of having another living thing in my care as incentive to keep myself alive, but cats don't really care about why you bring them into your house as long as you spoil them a little.
 
-![2026-09-19 03_58_15-#general _ neocreatives - Discord-dithered.png](blob:https:/app.pagescms.org/83b6a860-24d3-46bf-9f4d-5ce3e13dd450)
+![2026-09-19 03_58_15-#general _ neocreatives - Discord-dithered.png](blob:https:/app.pagescms.org/3e5c9039-0c1e-43ae-ab61-ea82a9d95ac6)
 
 His name is Soft Serve, he's 4 years old, he has a pathetic little whimper of a meow and likes smelling feet and he lets me carry him around like a baby when I'm feeling sad. It's helping a lot, so far.
 
