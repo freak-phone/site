@@ -1,6 +1,6 @@
 ---
 layout: blog/index.njk
-permalink: "{{ page.filePathStem }}.html"
+permalink: "/blog/{{ title | slugify }}.html"
 tags: Blog
 title: It's Bleak But I Got A Cat
 date: 2026-09-19
